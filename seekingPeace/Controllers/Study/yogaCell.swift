@@ -10,6 +10,8 @@ import UIKit
 
 class yogaCell: UICollectionViewCell {
     
+//    MIC CHECK ONE TWO ONE TWO!!!
+    
 //    MARK: UI OBJECTS
     
     lazy var yogaImage: UIImageView =  {
