@@ -68,8 +68,8 @@ class yoga: UIViewController {
     private func collectionViewConstraint() {
         yogaCollection.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            yogaCollection.topAnchor.constraint(equalTo: view.topAnchor, constant: 300),
-            yogaCollection.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 50),
+            yogaCollection.topAnchor.constraint(equalTo: view.topAnchor, constant: 450),
+            yogaCollection.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             yogaCollection.widthAnchor.constraint(equalTo: view.widthAnchor)])
     }
 

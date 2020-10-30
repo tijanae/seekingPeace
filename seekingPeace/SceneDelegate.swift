@@ -53,9 +53,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let firstvc = yoga()
         let secondvc = meditationFlow()
         let thirdvc  = Settings()
-        firstvc.tabBarItem = UITabBarItem(title: "Yoga", image: UIImage(named: "appointment"), tag: 0)
-        secondvc.tabBarItem = UITabBarItem(title: "Current Appointment ", image: UIImage(named: "order"), tag: 1)
-        thirdvc.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "userSettings"), tag: 2)
+       
+        firstvc.tabBarItem = UITabBarItem(title: "Yoga", image: UIImage(named: "appointment"), tag: 0),
+        secondvc.tabBarItem = UITabBarItem(title: "Current Appointment", image: UIImage(named: "order"), tag: 1)
+        thirdvc.tabBarItem = UITabBarItem(title: "Poses", image: UIImage(named: "Bookmarks"), tag: 2)
         let tabVC = UITabBarController()
         tabVC.setViewControllers([firstvc,secondvc,thirdvc], animated: false)
         return tabVC
