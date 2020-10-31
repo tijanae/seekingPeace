@@ -56,7 +56,7 @@ class yogaCell: UICollectionViewCell {
     
     private func constrainImageView(){
         yogaImage.translatesAutoresizingMaskIntoConstraints = false
-        [yogaImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 11),
+        [yogaImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 50),
          yogaImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 44),
          yogaImage.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.50),
          yogaImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -44)
@@ -65,15 +65,14 @@ class yogaCell: UICollectionViewCell {
     
     private func engLabelConstraint() {
         engName.translatesAutoresizingMaskIntoConstraints = false
-        [ engName.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-          engName.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+        [ engName.topAnchor.constraint(equalTo: yogaImage.bottomAnchor, constant: 20),
           engName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50),
           engName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50)].forEach{$0.isActive = true}
     }
     
     private func sanLabelConstraint() {
         sanskritName.translatesAutoresizingMaskIntoConstraints = false
-        [   sanskritName.topAnchor.constraint(equalTo: engName.bottomAnchor, constant: 25),
+        [   sanskritName.topAnchor.constraint(equalTo: engName.bottomAnchor, constant: 15),
             sanskritName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50),
             sanskritName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50)].forEach{$0.isActive = true}
     }

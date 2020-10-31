@@ -49,18 +49,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-    private func createMainTabBarController() -> UITabBarController {
-        let firstvc = yoga()
-        let secondvc = meditationFlow()
-        let thirdvc  = Settings()
-       
-        firstvc.tabBarItem = UITabBarItem(title: "Yoga", image: UIImage(named: "appointment"), tag: 0),
-        secondvc.tabBarItem = UITabBarItem(title: "Current Appointment", image: UIImage(named: "order"), tag: 1)
-        thirdvc.tabBarItem = UITabBarItem(title: "Poses", image: UIImage(named: "Bookmarks"), tag: 2)
-        let tabVC = UITabBarController()
-        tabVC.setViewControllers([firstvc,secondvc,thirdvc], animated: false)
-        return tabVC
-    }
-
+        private func createMainTabBarController() -> UITabBarController {
+            let firstvc = Yoga()
+            let secondvc = YogaFlow()
+            let thirdvc  = PoseIndex()
+    
+            firstvc.tabBarItem = UITabBarItem(title: "Yoga", image: UIImage(systemName: "1.circle"), tag: 0)
+            secondvc.tabBarItem = UITabBarItem(title: "Flow", image: UIImage(systemName: "flowchart"), tag: 1)
+            thirdvc.tabBarItem = UITabBarItem(title: "Poses", image: UIImage(systemName: "1.circle"), tag: 2)
+            let tabVC = UITabBarController()
+    
+            tabVC.setViewControllers([firstvc,secondvc,thirdvc], animated: false)
+            return tabVC
+        }
 }
 

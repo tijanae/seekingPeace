@@ -1,5 +1,5 @@
 //
-//  Settings.swift
+//  YogaFlow.swift
 //  seekingPeace
 //
 //  Created by Tia Lendor on 1/14/20.
@@ -8,12 +8,16 @@
 
 import UIKit
 
-class Settings: UIViewController {
+class YogaFlow: UIViewController {
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .yellow
 
-        // Do any additional setup after loading the view.
     }
     
 

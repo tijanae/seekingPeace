@@ -8,7 +8,7 @@
 
 import UIKit
 
-class yoga: UIViewController {
+class Yoga: UIViewController {
     
 // MARK: DATA
     
@@ -77,7 +77,7 @@ class yoga: UIViewController {
 
 }
 
-extension yoga: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension Yoga: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(yogaInfo.count)

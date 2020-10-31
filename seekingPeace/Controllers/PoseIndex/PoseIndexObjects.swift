@@ -1,14 +1,14 @@
 //
-//  meditationFlow.swift
+//  PoseIndexObjects.swift
 //  seekingPeace
 //
-//  Created by Tia Lendor on 1/14/20.
+//  Created by Tia Lendor on 10/30/20.
 //  Copyright © 2020 Tia Lendor. All rights reserved.
 //
 
 import UIKit
 
-class meditationFlow: UIViewController {
+class PoseIndexObjects: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,3 +28,5 @@ class meditationFlow: UIViewController {
     */
 
 }
+
+

@@ -15,10 +15,13 @@
 		4E29CB7A23CE735A009BFEC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E29CB7923CE735A009BFEC4 /* Assets.xcassets */; };
 		4E29CB8823CE735B009BFEC4 /* seekingPeaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CB8723CE735B009BFEC4 /* seekingPeaceTests.swift */; };
 		4E29CB9D23CE79A0009BFEC4 /* Yoga.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E29CB9C23CE79A0009BFEC4 /* Yoga.json */; };
-		4E29CB9F23CE7AB8009BFEC4 /* yoga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CB9E23CE7AB8009BFEC4 /* yoga.swift */; };
-		4E29CBA123CE7AD4009BFEC4 /* meditationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA023CE7AD4009BFEC4 /* meditationFlow.swift */; };
-		4E29CBA323CE7AE6009BFEC4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA223CE7AE6009BFEC4 /* Settings.swift */; };
+		4E29CB9F23CE7AB8009BFEC4 /* Yoga.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CB9E23CE7AB8009BFEC4 /* Yoga.swift */; };
+		4E29CBA123CE7AD4009BFEC4 /* YogaFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA023CE7AD4009BFEC4 /* YogaFlow.swift */; };
+		4E29CBA323CE7AE6009BFEC4 /* PoseIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA223CE7AE6009BFEC4 /* PoseIndex.swift */; };
 		4E29CBA523CE7B61009BFEC4 /* yogaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA423CE7B61009BFEC4 /* yogaModel.swift */; };
+		4EC1CF66254CCE650011DA10 /* PoseIndexObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF65254CCE650011DA10 /* PoseIndexObjects.swift */; };
+		4EC1CF6A254D0B530011DA10 /* PoseIndexTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF69254D0B530011DA10 /* PoseIndexTVC.swift */; };
+		4EC65ED5254C87F4006B2C7A /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +47,13 @@
 		4E29CB8723CE735B009BFEC4 /* seekingPeaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seekingPeaceTests.swift; sourceTree = "<group>"; };
 		4E29CB8923CE735B009BFEC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E29CB9C23CE79A0009BFEC4 /* Yoga.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Yoga.json; sourceTree = "<group>"; };
-		4E29CB9E23CE7AB8009BFEC4 /* yoga.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yoga.swift; sourceTree = "<group>"; };
-		4E29CBA023CE7AD4009BFEC4 /* meditationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meditationFlow.swift; sourceTree = "<group>"; };
-		4E29CBA223CE7AE6009BFEC4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		4E29CB9E23CE7AB8009BFEC4 /* Yoga.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yoga.swift; sourceTree = "<group>"; };
+		4E29CBA023CE7AD4009BFEC4 /* YogaFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaFlow.swift; sourceTree = "<group>"; };
+		4E29CBA223CE7AE6009BFEC4 /* PoseIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseIndex.swift; sourceTree = "<group>"; };
 		4E29CBA423CE7B61009BFEC4 /* yogaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaModel.swift; sourceTree = "<group>"; };
+		4EC1CF65254CCE650011DA10 /* PoseIndexObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseIndexObjects.swift; sourceTree = "<group>"; };
+		4EC1CF69254D0B530011DA10 /* PoseIndexTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseIndexTVC.swift; sourceTree = "<group>"; };
+		4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +77,7 @@
 		4E1EA56923E9D6E000780F86 /* Study */ = {
 			isa = PBXGroup;
 			children = (
-				4E29CB9E23CE7AB8009BFEC4 /* yoga.swift */,
+				4E29CB9E23CE7AB8009BFEC4 /* Yoga.swift */,
 				4E0526A023E9D8B0007D20E3 /* yogaCell.swift */,
 			);
 			path = Study;
@@ -80,17 +86,19 @@
 		4E1EA56A23E9D70700780F86 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				4E29CBA023CE7AD4009BFEC4 /* meditationFlow.swift */,
+				4E29CBA023CE7AD4009BFEC4 /* YogaFlow.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
 		};
-		4E1EA56B23E9D71000780F86 /* User */ = {
+		4E1EA56B23E9D71000780F86 /* PoseIndex */ = {
 			isa = PBXGroup;
 			children = (
-				4E29CBA223CE7AE6009BFEC4 /* Settings.swift */,
+				4E29CBA223CE7AE6009BFEC4 /* PoseIndex.swift */,
+				4EC1CF65254CCE650011DA10 /* PoseIndexObjects.swift */,
+				4EC1CF69254D0B530011DA10 /* PoseIndexTVC.swift */,
 			);
-			path = User;
+			path = PoseIndex;
 			sourceTree = "<group>";
 		};
 		4E1EA56C23E9D73000780F86 /* Authentication */ = {
@@ -157,7 +165,8 @@
 				4E1EA56C23E9D73000780F86 /* Authentication */,
 				4E1EA56923E9D6E000780F86 /* Study */,
 				4E1EA56A23E9D70700780F86 /* Flow */,
-				4E1EA56B23E9D71000780F86 /* User */,
+				4E1EA56B23E9D71000780F86 /* PoseIndex */,
+				4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -294,14 +303,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E29CB9F23CE7AB8009BFEC4 /* yoga.swift in Sources */,
+				4E29CB9F23CE7AB8009BFEC4 /* Yoga.swift in Sources */,
+				4EC65ED5254C87F4006B2C7A /* MainTabBarVC.swift in Sources */,
 				4E0526A123E9D8B0007D20E3 /* yogaCell.swift in Sources */,
-				4E29CBA123CE7AD4009BFEC4 /* meditationFlow.swift in Sources */,
+				4E29CBA123CE7AD4009BFEC4 /* YogaFlow.swift in Sources */,
 				4E1EA56823E9D56A00780F86 /* NetworkManger.swift in Sources */,
 				4E07E9A823FDD0FB00D65CEC /* yogaImageHelper.swift in Sources */,
 				4E29CB7123CE7358009BFEC4 /* AppDelegate.swift in Sources */,
 				4E29CB7323CE7358009BFEC4 /* SceneDelegate.swift in Sources */,
-				4E29CBA323CE7AE6009BFEC4 /* Settings.swift in Sources */,
+				4E29CBA323CE7AE6009BFEC4 /* PoseIndex.swift in Sources */,
+				4EC1CF6A254D0B530011DA10 /* PoseIndexTVC.swift in Sources */,
+				4EC1CF66254CCE650011DA10 /* PoseIndexObjects.swift in Sources */,
 				4E29CBA523CE7B61009BFEC4 /* yogaModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
