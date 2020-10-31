@@ -51,7 +51,7 @@ class Yoga: UIViewController {
             self.yogaInfo = try YogaPoses.getYogaPoses(from: data)
         } catch {
             print(error)
-            fatalError("Unexpected Error")
+            fatalError("Unexpected Error in yoga")
         }
     }
     
@@ -80,7 +80,7 @@ class Yoga: UIViewController {
 extension Yoga: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(yogaInfo.count)
+        print("yoga info count \(yogaInfo.count)")
         return yogaInfo.count
     }
     

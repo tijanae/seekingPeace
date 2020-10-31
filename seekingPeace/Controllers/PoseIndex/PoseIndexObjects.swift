@@ -9,23 +9,42 @@
 import UIKit
 
 class PoseIndexObjects: UIViewController {
+    
+//    MARK: UIOBJECTS
+    
+    
+    lazy var poseTableView: UITableView = {
+       let poseIndex = UITableView()
+        poseIndex.backgroundColor = .lightGray
+        poseIndex.register(PoseIndexTVC.self, forCellReuseIdentifier: "poseData")
+        return poseIndex
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addViews()
+        addConstraints()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func addViews() {
+        view.addSubview(poseTableView)
     }
-    */
+    
+    private func addConstraints() {
+        poseTableViewConstraint()
+    }
+    
+    private func poseTableViewConstraint() {
+        poseTableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        [poseTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+         poseTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+         poseTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+         poseTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)].forEach{$0.isActive = true}
+    }
+    
 
 }
 

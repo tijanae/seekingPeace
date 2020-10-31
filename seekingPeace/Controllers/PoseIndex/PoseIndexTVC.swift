@@ -60,22 +60,23 @@ class PoseIndexTVC: UITableViewCell {
         
         [poseImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
          poseImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-         poseImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 400),
+         poseImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -275),
 //         trailing is prob excessive- start here if issue
          poseImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5)].forEach{$0.isActive = true}
     }
     
     private func engTitleConstraint() {
         engTitle.translatesAutoresizingMaskIntoConstraints = false
-        [engTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
-         engTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 100),
+        [engTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -10),
+         engTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 175),
          engTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)].forEach{$0.isActive = true}
     }
     
     private func sanscritTitleConstraint() {
         sanscritTitle.translatesAutoresizingMaskIntoConstraints = false
-        [sanscritTitle.topAnchor.constraint(equalTo: engTitle.bottomAnchor, constant: 10),
-         sanscritTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10)].forEach{$0.isActive = true}
+        [sanscritTitle.topAnchor.constraint(equalTo: engTitle.bottomAnchor, constant: -40),
+         sanscritTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 175),
+         sanscritTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)].forEach{$0.isActive = true}
     }
     
     
