@@ -23,6 +23,7 @@ class Yoga: UIViewController {
         yogacv.register(yogaCell.self, forCellWithReuseIdentifier: "yogaCell")
         yogacv.dataSource = self
         yogacv.delegate = self
+        
         return yogacv
     }()
 

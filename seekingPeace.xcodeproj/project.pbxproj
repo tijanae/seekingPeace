@@ -19,6 +19,7 @@
 		4E29CBA123CE7AD4009BFEC4 /* YogaFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA023CE7AD4009BFEC4 /* YogaFlow.swift */; };
 		4E29CBA323CE7AE6009BFEC4 /* PoseIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA223CE7AE6009BFEC4 /* PoseIndex.swift */; };
 		4E29CBA523CE7B61009BFEC4 /* yogaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA423CE7B61009BFEC4 /* yogaModel.swift */; };
+		4E388EF4254E0A9100C86653 /* FlowCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E388EF3254E0A9100C86653 /* FlowCVC.swift */; };
 		4EC1CF66254CCE650011DA10 /* PoseIndexObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF65254CCE650011DA10 /* PoseIndexObjects.swift */; };
 		4EC1CF6A254D0B530011DA10 /* PoseIndexTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF69254D0B530011DA10 /* PoseIndexTVC.swift */; };
 		4EC65ED5254C87F4006B2C7A /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */; };
@@ -51,6 +52,7 @@
 		4E29CBA023CE7AD4009BFEC4 /* YogaFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaFlow.swift; sourceTree = "<group>"; };
 		4E29CBA223CE7AE6009BFEC4 /* PoseIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseIndex.swift; sourceTree = "<group>"; };
 		4E29CBA423CE7B61009BFEC4 /* yogaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaModel.swift; sourceTree = "<group>"; };
+		4E388EF3254E0A9100C86653 /* FlowCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCVC.swift; sourceTree = "<group>"; };
 		4EC1CF65254CCE650011DA10 /* PoseIndexObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseIndexObjects.swift; sourceTree = "<group>"; };
 		4EC1CF69254D0B530011DA10 /* PoseIndexTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseIndexTVC.swift; sourceTree = "<group>"; };
 		4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				4E29CBA023CE7AD4009BFEC4 /* YogaFlow.swift */,
+				4E388EF3254E0A9100C86653 /* FlowCVC.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				4E29CB7323CE7358009BFEC4 /* SceneDelegate.swift in Sources */,
 				4E29CBA323CE7AE6009BFEC4 /* PoseIndex.swift in Sources */,
 				4EC1CF6A254D0B530011DA10 /* PoseIndexTVC.swift in Sources */,
+				4E388EF4254E0A9100C86653 /* FlowCVC.swift in Sources */,
 				4EC1CF66254CCE650011DA10 /* PoseIndexObjects.swift in Sources */,
 				4E29CBA523CE7B61009BFEC4 /* yogaModel.swift in Sources */,
 			);

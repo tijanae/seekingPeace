@@ -10,25 +10,64 @@ import UIKit
 
 class YogaFlow: UIViewController {
     
+// MARK: Data
+    var flowData = [YogaPoses]()
+    
+//MARK: UIOBJECTS
+    lazy var flowCollection: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = .horizontal
+        let flowCV = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        flowCV.backgroundColor = .purple
+        flowCV.register(FlowCVC.self, forCellWithReuseIdentifier: "FlowCVC")
+        flowCV.dataSource = self
+        flowCV.delegate = self
+        return flowCV
+    }()
+    
     
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .yellow
 
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//    MARK: Private Func
+    
+    private func loadData() {
+        
     }
-    */
+    
+    private func addViews() {
+        
+    }
+    
+    private func addConstraint() {
+        
+    }
+    
 
+
+
+}
+
+extension YogaFlow: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+    
+    
 }
