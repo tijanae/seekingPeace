@@ -50,9 +50,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
         private func createMainTabBarController() -> UITabBarController {
-            let firstvc = Yoga()
-            let secondvc = YogaFlow()
-            let thirdvc  = PoseIndex()
+            let firstvc = YogaController()
+            let secondvc = YogaFlowController()
+            let thirdvc  = PoseIndexController()
     
             firstvc.tabBarItem = UITabBarItem(title: "Yoga", image: UIImage(systemName: "1.circle"), tag: 0)
             secondvc.tabBarItem = UITabBarItem(title: "Flow", image: UIImage(systemName: "flowchart"), tag: 1)

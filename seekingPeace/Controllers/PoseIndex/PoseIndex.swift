@@ -8,34 +8,26 @@
 
 import UIKit
 
-class PoseIndex: UIViewController {
+class PoseIndexController: UIViewController {
 
 //    MARK: DATA
     var poseIndex = [YogaPoses]()
     
+    private let poseView = PoseIndexView()
     
-    
-//    MARK: UIOBJECT
-    // will later be removed after refactor- moving to PoseIndexObjects
-    
-    lazy var poseTableView: UITableView = {
-       let poseIndex = UITableView()
-        poseIndex.backgroundColor = .lightGray
-        poseIndex.register(PoseIndexTVC.self, forCellReuseIdentifier: "poseData")
-        return poseIndex
-    }()
-    
-    
+    override func loadView() {
+        view = poseView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
+        view.backgroundColor = .darkGray
         loadData()
-        poseTableView.delegate = self
-        poseTableView.dataSource = self
-        addViews()
-        addConstraints()
+        poseView.poseTableView.dataSource = self
+        poseView.poseTableView.delegate = self
         
+        view.backgroundColor = .darkGray
+  
     }
     
 //    MARK:  PRIVATE FUNCS
@@ -52,32 +44,13 @@ class PoseIndex: UIViewController {
             print(error)
             fatalError("Unexpected Error in pose index")
         }
-        
     }
     
-    private func addViews() {
-        view.addSubview(poseTableView)
-    }
-    
-    private func addConstraints() {
-        poseTableViewConstraint()
-    }
-    
-    private func poseTableViewConstraint() {
-        poseTableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        [poseTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-         poseTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-         poseTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-         poseTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)].forEach{$0.isActive = true}
-    }
-    
-
-    
+   
 
 }
 
-extension PoseIndex: UITableViewDelegate, UITableViewDataSource {
+extension PoseIndexController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return poseIndex.count
     }

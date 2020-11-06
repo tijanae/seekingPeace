@@ -8,30 +8,24 @@
 
 import UIKit
 
-class Yoga: UIViewController {
+class YogaController: UIViewController {
     
 // MARK: DATA
     
     var yogaInfo = [YogaPoses]()
     
-// MARK: Objects
-    lazy var yogaCollection: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        let yogacv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        yogacv.backgroundColor = .lightGray
-        yogacv.register(yogaCell.self, forCellWithReuseIdentifier: "yogaCell")
-        yogacv.dataSource = self
-        yogacv.delegate = self
-        
-        return yogacv
-    }()
+    private let yogaView = YogaView()
+    
+    override func loadView() {
+        view = yogaView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        addViews()
-        addConstraint()
+        yogaView.yogaCollection.dataSource = self
+        yogaView.yogaCollection.delegate = self
+   
         view.backgroundColor = .darkGray
 
         // Do any additional setup after loading the view.
@@ -55,30 +49,11 @@ class Yoga: UIViewController {
             fatalError("Unexpected Error in yoga")
         }
     }
-    
-    
-    
-    private func addViews() {
-        view.addSubview(yogaCollection)
-    }
-    
-    private func addConstraint() {
-        collectionViewConstraint()
-    }
-    
-    private func collectionViewConstraint() {
-        yogaCollection.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            yogaCollection.topAnchor.constraint(equalTo: view.topAnchor, constant: 450),
-            yogaCollection.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            yogaCollection.widthAnchor.constraint(equalTo: view.widthAnchor)])
-    }
 
-    
 
 }
 
-extension Yoga: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension YogaController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("yoga info count \(yogaInfo.count)")
