@@ -61,15 +61,15 @@ class FlowCVC: UICollectionViewCell {
     
     private func engTitleConstraint() {
         engTitle.translatesAutoresizingMaskIntoConstraints = false
-        [ engTitle.topAnchor.constraint(equalTo: flowImage.bottomAnchor, constant: 30),
-          engTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50),
+        [ engTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+          engTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
           engTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50)].forEach{$0.isActive = true}
     }
     
     private func sanskritTitleConstraint() {
         sanskritTitle.translatesAutoresizingMaskIntoConstraints = false
-        [ sanskritTitle.topAnchor.constraint(equalTo: flowImage.bottomAnchor, constant: 10),
-          sanskritTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50),
+        [ sanskritTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 25),
+          sanskritTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
           sanskritTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50)].forEach{$0.isActive = true}
     }
     

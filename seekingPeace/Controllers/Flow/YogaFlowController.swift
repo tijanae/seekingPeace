@@ -22,9 +22,12 @@ class YogaFlowController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        flowView.flowCollection.dragDelegate = self
+        flowView.flowCollection.dragInteractionEnabled = true
         flowView.flowCollection.dataSource = self
         flowView.flowCollection.delegate = self
         view.backgroundColor = .darkGray
+        
 
     }
     
@@ -45,10 +48,10 @@ class YogaFlowController: UIViewController {
 
 }
 
-extension YogaFlowController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension YogaFlowController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 250, height: 250)
+        return CGSize(width: 175, height: 175)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -65,6 +68,19 @@ extension YogaFlowController: UICollectionViewDataSource, UICollectionViewDelega
         flowCell.flowImage.image = UIImage(named: "lotus")
         
         return flowCell
+    }
+    
+}
+
+extension YogaFlowController: UICollectionViewDragDelegate{
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        let item = self.flowData[indexPath.row]
+//        what do i really need to drag in order to play content?
+        let itemProvider = NSItemProvider(object: item.english_name as NSString)
+        
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = item
+        return[dragItem]
     }
     
     

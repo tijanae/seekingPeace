@@ -13,8 +13,11 @@ class FlowView: UIView {
 //  MARK: UIOBJECTS
         lazy var flowCollection: UICollectionView = {
             let layout = UICollectionViewFlowLayout()
-                layout.scrollDirection = .horizontal
-            let flowCV = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+            layout.minimumLineSpacing = 10
+            layout.minimumInteritemSpacing = 5
+//          layout.scrollDirection = .horizontal
+            
+            let flowCV = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: layout)
             flowCV.backgroundColor = .purple
             flowCV.register(FlowCVC.self, forCellWithReuseIdentifier: "FlowCVC")
 
@@ -37,10 +40,12 @@ class FlowView: UIView {
         addSubview(flowCollection)
         flowCollection.translatesAutoresizingMaskIntoConstraints = false
         [
-            flowCollection.topAnchor.constraint(equalTo: topAnchor),
+            flowCollection.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             flowCollection.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             flowCollection.leadingAnchor.constraint(equalTo: leadingAnchor),
             flowCollection.trailingAnchor.constraint(equalTo: trailingAnchor)].forEach {$0.isActive = true}
+        
+        flowCollection.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     
     }
     

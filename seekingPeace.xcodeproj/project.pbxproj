@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,11 +20,21 @@
 		4E29CBA323CE7AE6009BFEC4 /* PoseIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA223CE7AE6009BFEC4 /* PoseIndex.swift */; };
 		4E29CBA523CE7B61009BFEC4 /* yogaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA423CE7B61009BFEC4 /* yogaModel.swift */; };
 		4E388EF4254E0A9100C86653 /* FlowCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E388EF3254E0A9100C86653 /* FlowCVC.swift */; };
+		4E5402D42568AFAD0049A472 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5402D32568AFAD0049A472 /* FirestoreService.swift */; };
+		4E5402D82568B0940049A472 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5402D72568B0940049A472 /* UserModel.swift */; };
+		4E5402FB256967440049A472 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5402FA256967440049A472 /* LoginView.swift */; };
+		4E540301256967580049A472 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E540300256967580049A472 /* SignUpView.swift */; };
+		4E540305256969C10049A472 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E540304256969C10049A472 /* LoginVC.swift */; };
+		4E54030925696A140049A472 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E54030825696A140049A472 /* SignUpVC.swift */; };
+		4E54032A2569ABC70049A472 /* StringsValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5403292569ABC70049A472 /* StringsValidations.swift */; };
+		4E5676002568A1D700A4EE00 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5675FF2568A1D700A4EE00 /* FirebaseAuthService.swift */; };
 		4EC1CF66254CCE650011DA10 /* PoseIndexObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF65254CCE650011DA10 /* PoseIndexObjects.swift */; };
 		4EC1CF6A254D0B530011DA10 /* PoseIndexTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF69254D0B530011DA10 /* PoseIndexTVC.swift */; };
 		4EC65ED5254C87F4006B2C7A /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */; };
 		4ED82BA5255456AB00E5C594 /* YogaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED82BA4255456AB00E5C594 /* YogaView.swift */; };
 		4EF257AD2554E6BD001A425F /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF257AC2554E6BD001A425F /* FlowView.swift */; };
+		B79B34A1DF4217554C19DF74 /* Pods_seekingPeace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D82031FCA342A7A0FF55566 /* Pods_seekingPeace.framework */; };
+		E6CF666C3F6CD8B573DFA7C8 /* Pods_seekingPeaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE6A79644C7B929E1F71D70 /* Pods_seekingPeaceTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,11 +65,25 @@
 		4E29CBA223CE7AE6009BFEC4 /* PoseIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseIndex.swift; sourceTree = "<group>"; };
 		4E29CBA423CE7B61009BFEC4 /* yogaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaModel.swift; sourceTree = "<group>"; };
 		4E388EF3254E0A9100C86653 /* FlowCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCVC.swift; sourceTree = "<group>"; };
+		4E5402D32568AFAD0049A472 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		4E5402D72568B0940049A472 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		4E5402FA256967440049A472 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4E540300256967580049A472 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		4E540304256969C10049A472 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		4E54030825696A140049A472 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		4E5403292569ABC70049A472 /* StringsValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsValidations.swift; sourceTree = "<group>"; };
+		4E5675FF2568A1D700A4EE00 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		4EC1CF65254CCE650011DA10 /* PoseIndexObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseIndexObjects.swift; sourceTree = "<group>"; };
 		4EC1CF69254D0B530011DA10 /* PoseIndexTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseIndexTVC.swift; sourceTree = "<group>"; };
 		4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		4ED82BA4255456AB00E5C594 /* YogaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaView.swift; sourceTree = "<group>"; };
 		4EF257AC2554E6BD001A425F /* FlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowView.swift; sourceTree = "<group>"; };
+		7D82031FCA342A7A0FF55566 /* Pods_seekingPeace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seekingPeace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABE6A79644C7B929E1F71D70 /* Pods_seekingPeaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seekingPeaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0200D0D69222FDF55ABB802 /* Pods-seekingPeaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seekingPeaceTests.debug.xcconfig"; path = "Target Support Files/Pods-seekingPeaceTests/Pods-seekingPeaceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DBCA3F91293DBB37BD9FB5F5 /* Pods-seekingPeaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seekingPeaceTests.release.xcconfig"; path = "Target Support Files/Pods-seekingPeaceTests/Pods-seekingPeaceTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED1EECFE64B438C2A8B5B88B /* Pods-seekingPeace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seekingPeace.debug.xcconfig"; path = "Target Support Files/Pods-seekingPeace/Pods-seekingPeace.debug.xcconfig"; sourceTree = "<group>"; };
+		EFFCC59BDF07A715E5F03DCA /* Pods-seekingPeace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seekingPeace.release.xcconfig"; path = "Target Support Files/Pods-seekingPeace/Pods-seekingPeace.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B79B34A1DF4217554C19DF74 /* Pods_seekingPeace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +99,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6CF666C3F6CD8B573DFA7C8 /* Pods_seekingPeaceTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25A9C33066CA9FDA74A0047F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D82031FCA342A7A0FF55566 /* Pods_seekingPeace.framework */,
+				ABE6A79644C7B929E1F71D70 /* Pods_seekingPeaceTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4E1EA56923E9D6E000780F86 /* Study */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +151,8 @@
 				4E29CB6F23CE7358009BFEC4 /* seekingPeace */,
 				4E29CB8623CE735B009BFEC4 /* seekingPeaceTests */,
 				4E29CB6E23CE7358009BFEC4 /* Products */,
+				D8DCD4BE043CA333C0CF6EC0 /* Pods */,
+				25A9C33066CA9FDA74A0047F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,8 +168,9 @@
 		4E29CB6F23CE7358009BFEC4 /* seekingPeace */ = {
 			isa = PBXGroup;
 			children = (
-				4EDF2F852554949300EC5ED2 /* Authentication */,
 				4E29CB9323CE780A009BFEC4 /* Controllers */,
+				4E5403282569AB920049A472 /* Extensions */,
+				4E5675FE2568A16400A4EE00 /* Firebase */,
 				4E29CB9623CE7842009BFEC4 /* JSON */,
 				4E29CB9523CE7821009BFEC4 /* Models */,
 				4E29CB9823CE7929009BFEC4 /* Network Helpers */,
@@ -165,6 +203,7 @@
 		4E29CB9323CE780A009BFEC4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4E5402F7256967060049A472 /* Authentication */,
 				4E1EA56923E9D6E000780F86 /* Study */,
 				4E1EA56A23E9D70700780F86 /* Flow */,
 				4E1EA56B23E9D71000780F86 /* PoseIndex */,
@@ -177,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				4E29CBA423CE7B61009BFEC4 /* yogaModel.swift */,
+				4E5402D72568B0940049A472 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,11 +245,43 @@
 			path = Persistences;
 			sourceTree = "<group>";
 		};
-		4EDF2F852554949300EC5ED2 /* Authentication */ = {
+		4E5402F7256967060049A472 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				4E5402FA256967440049A472 /* LoginView.swift */,
+				4E540304256969C10049A472 /* LoginVC.swift */,
+				4E540300256967580049A472 /* SignUpView.swift */,
+				4E54030825696A140049A472 /* SignUpVC.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		4E5403282569AB920049A472 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4E5403292569ABC70049A472 /* StringsValidations.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4E5675FE2568A16400A4EE00 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				4E5675FF2568A1D700A4EE00 /* FirebaseAuthService.swift */,
+				4E5402D32568AFAD0049A472 /* FirestoreService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		D8DCD4BE043CA333C0CF6EC0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED1EECFE64B438C2A8B5B88B /* Pods-seekingPeace.debug.xcconfig */,
+				EFFCC59BDF07A715E5F03DCA /* Pods-seekingPeace.release.xcconfig */,
+				C0200D0D69222FDF55ABB802 /* Pods-seekingPeaceTests.debug.xcconfig */,
+				DBCA3F91293DBB37BD9FB5F5 /* Pods-seekingPeaceTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +291,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E29CB8C23CE735B009BFEC4 /* Build configuration list for PBXNativeTarget "seekingPeace" */;
 			buildPhases = (
+				6A3F4D848332E4ABAC54D37B /* [CP] Check Pods Manifest.lock */,
 				4E29CB6923CE7358009BFEC4 /* Sources */,
 				4E29CB6A23CE7358009BFEC4 /* Frameworks */,
 				4E29CB6B23CE7358009BFEC4 /* Resources */,
+				A31A30EC1AF6DA00B27C3C53 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,6 +310,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E29CB8F23CE735B009BFEC4 /* Build configuration list for PBXNativeTarget "seekingPeaceTests" */;
 			buildPhases = (
+				E86B7041B492249A6AC9546F /* [CP] Check Pods Manifest.lock */,
 				4E29CB7F23CE735B009BFEC4 /* Sources */,
 				4E29CB8023CE735B009BFEC4 /* Frameworks */,
 				4E29CB8123CE735B009BFEC4 /* Resources */,
@@ -307,12 +382,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6A3F4D848332E4ABAC54D37B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-seekingPeace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A31A30EC1AF6DA00B27C3C53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-seekingPeace/Pods-seekingPeace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-seekingPeace/Pods-seekingPeace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-seekingPeace/Pods-seekingPeace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E86B7041B492249A6AC9546F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-seekingPeaceTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4E29CB6923CE7358009BFEC4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E5676002568A1D700A4EE00 /* FirebaseAuthService.swift in Sources */,
 				4E29CB9F23CE7AB8009BFEC4 /* YogaController.swift in Sources */,
+				4E540305256969C10049A472 /* LoginVC.swift in Sources */,
 				4EC65ED5254C87F4006B2C7A /* MainTabBarVC.swift in Sources */,
 				4EF257AD2554E6BD001A425F /* FlowView.swift in Sources */,
 				4E0526A123E9D8B0007D20E3 /* yogaCell.swift in Sources */,
@@ -323,9 +464,15 @@
 				4E29CB7323CE7358009BFEC4 /* SceneDelegate.swift in Sources */,
 				4E29CBA323CE7AE6009BFEC4 /* PoseIndex.swift in Sources */,
 				4EC1CF6A254D0B530011DA10 /* PoseIndexTVC.swift in Sources */,
+				4E54032A2569ABC70049A472 /* StringsValidations.swift in Sources */,
 				4E388EF4254E0A9100C86653 /* FlowCVC.swift in Sources */,
+				4E54030925696A140049A472 /* SignUpVC.swift in Sources */,
 				4EC1CF66254CCE650011DA10 /* PoseIndexObjects.swift in Sources */,
+				4E5402D42568AFAD0049A472 /* FirestoreService.swift in Sources */,
 				4ED82BA5255456AB00E5C594 /* YogaView.swift in Sources */,
+				4E540301256967580049A472 /* SignUpView.swift in Sources */,
+				4E5402FB256967440049A472 /* LoginView.swift in Sources */,
+				4E5402D82568B0940049A472 /* UserModel.swift in Sources */,
 				4E29CBA523CE7B61009BFEC4 /* yogaModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +612,7 @@
 		};
 		4E29CB8D23CE735B009BFEC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED1EECFE64B438C2A8B5B88B /* Pods-seekingPeace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -482,6 +630,7 @@
 		};
 		4E29CB8E23CE735B009BFEC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFFCC59BDF07A715E5F03DCA /* Pods-seekingPeace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -499,6 +648,7 @@
 		};
 		4E29CB9023CE735B009BFEC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0200D0D69222FDF55ABB802 /* Pods-seekingPeaceTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -520,6 +670,7 @@
 		};
 		4E29CB9123CE735B009BFEC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBCA3F91293DBB37BD9FB5F5 /* Pods-seekingPeaceTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
