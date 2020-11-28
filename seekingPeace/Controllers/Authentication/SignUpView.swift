@@ -16,7 +16,6 @@ class SignUpView: UIView {
         let text = UITextField()
         text.text = "email"
         text.borderStyle = .line
-//        text.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         return text
     }()
     
@@ -24,13 +23,14 @@ class SignUpView: UIView {
         let passWord = UITextField()
         passWord.text = "password"
         passWord.borderStyle = .line
-//        passWord.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         return passWord
     }()
     
     lazy var cancelButton: UIButton = {
-        let login = UIButton()
-        return login
+        let button = UIButton()
+        button.backgroundColor = .blue
+        button.setTitle( "cancel", for: .normal)
+        return button
     }()
     
     lazy var signInError: UILabel = {
@@ -43,7 +43,7 @@ class SignUpView: UIView {
         let signUp = UIButton()
         signUp.backgroundColor = .blue
         signUp.setTitle("sign up", for: .normal)
-//        signUp.addTarget(self, action: #selector(trySignUp), for: .touchUpInside)
+
         return signUp
     }()
     
@@ -58,6 +58,8 @@ class SignUpView: UIView {
     
     private func constraints() {
         emailTextConstraint()
+        passwordTextConstraint()
+        signUpContraint()
     }
 
     
@@ -95,12 +97,6 @@ class SignUpView: UIView {
              signUpButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 200),
              signUpButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100)].forEach{$0.isActive = true}
         }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    
 
 }

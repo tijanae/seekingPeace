@@ -36,12 +36,14 @@ class LoginVC: UIViewController {
             loginView.loginButton.isEnabled = false
             return
         }
+        loginView.loginButton.isEnabled = true
+        loginView.loginButton.backgroundColor = .darkGray
     }
     
     @objc func showSignUp() {
         let signUp = SignUpVC()
         signUp.modalPresentationStyle = .formSheet
-        present(SignUpVC, animated: true, completion: nil)
+        present(signUp, animated: true, completion: nil)
     }
     
     @objc func tryLogin() {
@@ -51,7 +53,7 @@ class LoginVC: UIViewController {
         }
         
         guard email.isVaildEmail else {
-            showAlert(with: "Error", and: "Please enter a vaild email")
+            showAlert(with: "Error", and: "Please enter a valid email")
             return
         }
         

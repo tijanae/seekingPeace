@@ -71,6 +71,7 @@ class LoginView: UIView {
     
     private func emailTextConstraint() {
         addSubview(emailTextField)
+        
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         [ emailTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
           emailTextField.centerYAnchor.constraint(equalTo: centerYAnchor),
