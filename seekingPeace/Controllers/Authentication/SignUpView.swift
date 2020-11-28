@@ -59,7 +59,8 @@ class SignUpView: UIView {
     private func constraints() {
         emailTextConstraint()
         passwordTextConstraint()
-        signUpContraint()
+        signUpConstraint()
+        cancelConstraint()
     }
 
     
@@ -68,6 +69,7 @@ class SignUpView: UIView {
         addSubview(emailTextField)
         
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
+        
         [ emailTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
           emailTextField.centerYAnchor.constraint(equalTo: centerYAnchor),
           emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
@@ -81,6 +83,7 @@ class SignUpView: UIView {
         addSubview(passwordTextField)
         
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        
         [passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 25),
             passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
             passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50)].forEach{$0.isActive = true}
@@ -88,15 +91,27 @@ class SignUpView: UIView {
         }
         
         
-    private func signUpContraint() {
+    private func signUpConstraint() {
         
         addSubview(signUpButton)
         
         signUpButton.translatesAutoresizingMaskIntoConstraints = false
+        
         [signUpButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
-             signUpButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 200),
-             signUpButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100)].forEach{$0.isActive = true}
+        signUpButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 200),
+        signUpButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100)].forEach{$0.isActive = true}
         }
+    
+    private func cancelConstraint() {
+        
+        addSubview(cancelButton)
+        
+        cancelButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        [cancelButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
+         cancelButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100),
+         cancelButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 100)].forEach {$0.isActive = true}
+    }
     
 
 }

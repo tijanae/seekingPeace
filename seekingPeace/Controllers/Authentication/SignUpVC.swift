@@ -15,7 +15,7 @@ class SignUpVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUp()
 
         // Do any additional setup after loading the view.
     }
@@ -24,6 +24,7 @@ class SignUpVC: UIViewController {
         signUpView.emailTextField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         signUpView.passwordTextField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         signUpView.signUpButton.addTarget(self, action: #selector(trySignUp), for: .touchUpInside)
+        signUpView.cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
     }
     
 //    MARK: Objective C
@@ -35,10 +36,11 @@ class SignUpVC: UIViewController {
             signUpView.signUpButton.isEnabled = false
             return
         }
-        signUpView.cancelButton.isEnabled = true
+        signUpView.signUpButton.isEnabled = true
 //        button color
         signUpView.backgroundColor = .white
     }
+    
     
     @objc func trySignUp() {
         guard let email = signUpView.emailTextField.text, let password = signUpView.passwordTextField.text else {
@@ -57,6 +59,10 @@ class SignUpVC: UIViewController {
         FirebaseAuthService.manager.createNewUser(email: email.lowercased(), password: password) { [weak self] (result) in
             self?.accntCreationResponse(with: result)
         }
+    }
+    
+    @objc func cancel() {
+        dismiss(animated: true, completion: nil)
     }
     
 // MARK: Private Funcs
