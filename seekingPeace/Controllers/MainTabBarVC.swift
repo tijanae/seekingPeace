@@ -8,26 +8,27 @@
 
 import UIKit
 
-class MainTabBarVC: UIViewController {
+class MainTabBarVC: UITabBarController {
 
+    
+//    let firstvc = YogaController()
+    let firstvc = YogaFlowController()
+    let secondvc = PoseIndexController()
+    let thirdvc = YogaController()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        createMainTabBarController()
+        view.backgroundColor = .green
+        firstvc.tabBarItem = UITabBarItem(title: "Flow", image: UIImage(systemName: "flowchart"), tag: 0)
+        secondvc.tabBarItem = UITabBarItem(title: "Poses", image: UIImage(systemName: "doc.plaintext"), tag: 1)
+        thirdvc.tabBarItem = UITabBarItem(title: "Yoga", image: UIImage(systemName: "doc.plaintext"), tag: 2)
         
-        let firstvc = YogaController()
-        let secondvc = YogaFlowController()
-        let thirdvc  = PoseIndexController()
-       
-        firstvc.tabBarItem = UITabBarItem(title: "Yoga", image: UIImage(systemName: "1.circle"), tag: 0)
-        secondvc.tabBarItem = UITabBarItem(title: "Current Appointment", image: UIImage(systemName: "1.circle"), tag: 1)
-        thirdvc.tabBarItem = UITabBarItem(title: "Poses", image: UIImage(systemName: "1.circle"), tag: 2)
-        let tabVC = UITabBarController()
-
-        tabVC.setViewControllers([firstvc,secondvc,thirdvc], animated: false)
-       
-
+        self.viewControllers = [firstvc, secondvc, thirdvc]
+        self.viewControllers?.forEach({$0.tabBarController?.tabBar.barStyle = .default})
     }
-    
 
     
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E005B0925720451000CEF55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E005B0825720451000CEF55 /* GoogleService-Info.plist */; };
+		4E005B0D2572151C000CEF55 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E005B0C2572151C000CEF55 /* Notes.swift */; };
 		4E0526A123E9D8B0007D20E3 /* yogaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0526A023E9D8B0007D20E3 /* yogaCell.swift */; };
 		4E07E9A823FDD0FB00D65CEC /* yogaImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E9A723FDD0FB00D65CEC /* yogaImageHelper.swift */; };
 		4E1EA56823E9D56A00780F86 /* NetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1EA56723E9D56A00780F86 /* NetworkManger.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		4E005B0825720451000CEF55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4E005B0C2572151C000CEF55 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		4E0526A023E9D8B0007D20E3 /* yogaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaCell.swift; sourceTree = "<group>"; };
 		4E07E9A723FDD0FB00D65CEC /* yogaImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaImageHelper.swift; sourceTree = "<group>"; };
 		4E1EA56723E9D56A00780F86 /* NetworkManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManger.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				4E29CB7023CE7358009BFEC4 /* AppDelegate.swift */,
 				4E29CB7223CE7358009BFEC4 /* SceneDelegate.swift */,
 				4E29CB7923CE735A009BFEC4 /* Assets.xcassets */,
+				4E005B0C2572151C000CEF55 /* Notes.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				4E5402FB256967440049A472 /* LoginView.swift in Sources */,
 				4E5402D82568B0940049A472 /* UserModel.swift in Sources */,
 				4E29CBA523CE7B61009BFEC4 /* yogaModel.swift in Sources */,
+				4E005B0D2572151C000CEF55 /* Notes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

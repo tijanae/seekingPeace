@@ -70,44 +70,47 @@ class LoginView: UIView {
         }
     
     private func emailTextConstraint() {
+        
         addSubview(emailTextField)
         
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
+        
         [ emailTextField.centerXAnchor.constraint(equalTo: centerXAnchor),
           emailTextField.centerYAnchor.constraint(equalTo: centerYAnchor),
           emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
           emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50)].forEach{$0.isActive = true}
-
-        
         }
         
     private func passwordTextConstraint() {
+        
         addSubview(passwordTextField)
 
-            passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        
         [passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 25),
-            passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
-            passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50)].forEach{$0.isActive = true}
-            
+         passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
+         passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50)].forEach{$0.isActive = true}
         }
         
         
     private func signUpContraint() {
         addSubview(signUpButton)
 
-            signUpButton.translatesAutoresizingMaskIntoConstraints = false
+        signUpButton.translatesAutoresizingMaskIntoConstraints = false
+        
         [signUpButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
-             signUpButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 250),
-             signUpButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -75)].forEach{$0.isActive = true}
+        signUpButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 250),
+        signUpButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -75)].forEach{$0.isActive = true}
         }
     
     private func loginContraint() {
         addSubview(loginButton)
 
         loginButton.translatesAutoresizingMaskIntoConstraints = false
-    [loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
+        
+        [loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
          loginButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
          loginButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -275)].forEach{$0.isActive = true}
-    }
+        }
 
 }

@@ -98,7 +98,7 @@ class SignUpView: UIView {
         signUpButton.translatesAutoresizingMaskIntoConstraints = false
         
         [signUpButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
-        signUpButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 200),
+        signUpButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 225),
         signUpButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100)].forEach{$0.isActive = true}
         }
     
@@ -109,8 +109,8 @@ class SignUpView: UIView {
         cancelButton.translatesAutoresizingMaskIntoConstraints = false
         
         [cancelButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
-         cancelButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100),
-         cancelButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 100)].forEach {$0.isActive = true}
+         cancelButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 75),
+         cancelButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -250)].forEach {$0.isActive = true}
     }
     
 

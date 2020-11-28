@@ -13,9 +13,14 @@ class LoginVC: UIViewController {
     
     private let loginView = LoginView()
     
+    override func loadView() {
+        view = loginView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         objectSetUp()
+        view.backgroundColor = .darkGray
 
         // Do any additional setup after loading the view.
     }
@@ -83,7 +88,6 @@ class LoginVC: UIViewController {
             guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                   let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window else {
                 return
-//                    "error"
             }
             UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
                 window.rootViewController = {

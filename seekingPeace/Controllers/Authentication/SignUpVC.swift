@@ -12,10 +12,15 @@ import FirebaseAuth
 class SignUpVC: UIViewController {
     
     private let signUpView = SignUpView()
+    
+    override func loadView() {
+        view = signUpView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
+        view.backgroundColor = .white
 
         // Do any additional setup after loading the view.
     }
