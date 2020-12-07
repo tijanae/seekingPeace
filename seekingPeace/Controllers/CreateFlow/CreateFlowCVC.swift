@@ -21,6 +21,8 @@ class CreateFlowCVC: UICollectionViewCell {
     
     lazy var engTitle: UILabel = {
        let label = UILabel()
+        label.contentMode = .scaleToFill
+        label.numberOfLines = 2
         return label
     }()
     
@@ -32,43 +34,49 @@ class CreateFlowCVC: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addView()
         addConstraints()
-        contentView.backgroundColor = .darkGray
+        contentView.backgroundColor = .lightGray
     }
     
-    private func addView() {
-        contentView.addSubview(flowImage)
-        contentView.addSubview(engTitle)
-        contentView.addSubview(sanskritTitle)
-    }
     
     private func addConstraints() {
         flowImageConstraint()
         engTitleConstraint()
-        sanskritTitleConstraint()
+//        sanskritTitleConstraint()
     }
     
     private func flowImageConstraint() {
+        
+        contentView.addSubview(flowImage)
+        
         flowImage.translatesAutoresizingMaskIntoConstraints = false
-        [flowImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 50),
-         flowImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 44),
-         flowImage.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.50),
-         flowImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -44)
+        [flowImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+         flowImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+         flowImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+         flowImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -45)
             ].forEach{$0.isActive = true}
         
     }
     
     private func engTitleConstraint() {
+        
+        addSubview(engTitle)
+        
         engTitle.translatesAutoresizingMaskIntoConstraints = false
-        [ engTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+        
+        [ engTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 55),
           engTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-          engTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50)].forEach{$0.isActive = true}
+          engTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+          engTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)].forEach{$0.isActive = true}
     }
     
     private func sanskritTitleConstraint() {
+        
+        addSubview(sanskritTitle)
+        
         sanskritTitle.translatesAutoresizingMaskIntoConstraints = false
-        [ sanskritTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 25),
+        
+        [ sanskritTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 75),
           sanskritTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
           sanskritTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50)].forEach{$0.isActive = true}
     }

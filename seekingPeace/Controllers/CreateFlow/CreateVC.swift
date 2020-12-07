@@ -11,13 +11,15 @@ import UIKit
 class CreateVC: UIViewController {
     
 // MARK: Data
-    var flowData = [YogaPoses]()
+    var flowData = [YogaPose]()
     
     private let createFlowView = CreateView()
     
-    var yogiPoses = [String]()
-//    var yogiSelectedIndex = [IndexPath]()
-//    var yogiSelectedData = [Int]()
+    var yogiSelectedIndexPaths = [IndexPath]()
+    
+    var selectedPoses: [YogaPose] {
+        return yogiSelectedIndexPaths.map{flowData[$0.row]}
+    }
     
     override func loadView() {
         view = createFlowView
@@ -26,40 +28,33 @@ class CreateVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        createFlowView.createFlowCollection.allowsMultipleSelection = true
         createFlowView.createFlowCollection.dataSource = self
         createFlowView.createFlowCollection.delegate = self
         view.backgroundColor = .darkGray
-        
-        
-//        createFlowView.createFlowCollection.dragDelegate = self
-//        createFlowView.createFlowCollection.dragInteractionEnabled = true
+        createObjectSetUp()
+
     }
     
-//    func createObjectSetUp() {
-//        createFlowView.createButton.addTarget(self, action: #selector(validateData), for: .touchUpInside)
-//    }
-//    
-//    @objc func validateData() {
-//        guard yogiSelectedData != nil else {
-//            print("please select some poses")
-//            createFlowView.createButton.backgroundColor = .darkGray
-//            createFlowView.createButton.isEnabled = false
-//            return
-//        }
-//        createFlowView.createButton.isEnabled = true
-//        createFlowView.createButton.backgroundColor = CrayonBox.Green.mid
-//        
-//    }
-//    
-//    @objc func showPlaylistDetails() {
-//        let detailedPlaylist = createSequenceVC()
-//        detailedPlaylist.poseIds = yogiSelectedData
-//        
-//        detailedPlaylist.modalPresentationStyle = .fullScreen
-//        present(detailedPlaylist, animated: true, completion: nil)
-//        
-//    }
+    func createObjectSetUp() {
+        createFlowView.createButton.addTarget(self, action: #selector(createPlaylistTapped), for: .touchUpInside)
+    }
+
+    @objc func createPlaylistTapped() {
+        guard yogiSelectedIndexPaths.count > 0 else {
+            print("please select some poses")
+            return
+        }
+        showPlaylistDetails()
+
+    }
+//
+    func showPlaylistDetails() {
+        let detailedPlaylist = createSequenceVC()
+        detailedPlaylist.poses = selectedPoses
+
+        detailedPlaylist.modalPresentationStyle = .fullScreen
+        present(detailedPlaylist, animated: true, completion: nil)
+    }
     
     
     
@@ -71,7 +66,7 @@ class CreateVC: UIViewController {
         let url = URL(fileURLWithPath: pathToJSON)
         do{
             let data = try Data(contentsOf: url)
-            self.flowData = try YogaPoses.getYogaPoses(from: data)
+            self.flowData = try YogaPose.getYogaPoses(from: data)
         } catch {
             print(error)
             fatalError("Unexpected Error in yogaFlow")
@@ -99,15 +94,26 @@ extension CreateVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 175, height: 175)
+        return CGSize(width: 125, height: 110)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        let cell = collectionView.cellForItem(at: indexPath)
+        
+        if yogiSelectedIndexPaths.contains(indexPath) {
+            yogiSelectedIndexPaths.removeAll(where: {$0 == indexPath})
+//            print(indexPath)
+            cell?.contentView.backgroundColor = .darkGray
+        
+        } else {
+            yogiSelectedIndexPaths.append(indexPath)
+            cell?.contentView.backgroundColor = CrayonBox.Green.mid
+        }
         
 
-        collectionView.reloadData()
     }
+    
+    
     
 }
 

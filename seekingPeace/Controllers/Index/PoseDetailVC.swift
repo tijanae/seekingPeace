@@ -11,7 +11,7 @@ import UIKit
 class PoseDetailVC: UIViewController {
     
 //    MARK: Data
-    var poseIndex: YogaPoses!
+    var poseIndex: YogaPose!
     var poseObjects = PoseDetailView()
     
     override func loadView() {

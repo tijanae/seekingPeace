@@ -12,8 +12,8 @@ class createSequenceVC: UIViewController {
     
 //    MARK: DATA
     
-    var poses: YogaPoses!
-    var poseIds: [Int]!
+    var poses: [YogaPose]!
+//    var poseIds: [Int]!
     var sequenceDetailView = createSequenceDetail()
     
     override func loadView() {
@@ -24,6 +24,8 @@ class createSequenceVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .blue
         loadData()
+        print(poses)
+        
 //        sequenceDetailView.playlistTV.dataSource = self
 //        sequenceDetailView.playlistTV.delegate = self
 
@@ -33,6 +35,7 @@ class createSequenceVC: UIViewController {
 
     private func loadData() {
         sequenceDetailView.playlistImage.image = UIImage(named: "plant")
+//        sequenceDetailView.playlistTV
         
         
     }

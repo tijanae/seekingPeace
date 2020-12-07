@@ -12,7 +12,7 @@ class YogaController: UIViewController {
     
 // MARK: DATA
     
-    var yogaInfo = [YogaPoses]()
+    var yogaInfo = [YogaPose]()
     
     private let yogaView = YogaView()
     
@@ -43,7 +43,7 @@ class YogaController: UIViewController {
         let url = URL(fileURLWithPath: pathToJSONFile)
         do{
             let data = try Data(contentsOf: url)
-            self.yogaInfo = try YogaPoses.getYogaPoses(from: data)
+            self.yogaInfo = try YogaPose.getYogaPoses(from: data)
         } catch {
             print(error)
             fatalError("Unexpected Error in yoga")

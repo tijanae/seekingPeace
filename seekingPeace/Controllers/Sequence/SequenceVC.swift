@@ -11,7 +11,7 @@ import UIKit
 class SequenceVC: UIViewController {
 
 //    MARK: DATA
-    var poseIndex = [YogaPoses]()
+    var poseIndex = [YogaPose]()
     
     private let sequenceView = SequenceView()
     
@@ -39,7 +39,7 @@ class SequenceVC: UIViewController {
         let url = URL(fileURLWithPath: pathToJSONFile)
         do{
             let data = try Data(contentsOf: url)
-            self.poseIndex = try YogaPoses.getYogaPoses(from: data)
+            self.poseIndex = try YogaPose.getYogaPoses(from: data)
         } catch {
             print(error)
             fatalError("Unexpected Error in pose index")
