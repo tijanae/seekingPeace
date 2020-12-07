@@ -1,5 +1,5 @@
 //
-//  FlowCVC.swift
+//  CreateFlowCVC.swift
 //  seekingPeace
 //
 //  Created by Tia Lendor on 10/31/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FlowCVC: UICollectionViewCell {
+class CreateFlowCVC: UICollectionViewCell {
     
     
 //    MARK: UI OBJECTS
@@ -34,7 +34,7 @@ class FlowCVC: UICollectionViewCell {
         super.init(frame: frame)
         addView()
         addConstraints()
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = .darkGray
     }
     
     private func addView() {

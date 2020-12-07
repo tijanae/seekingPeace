@@ -8,23 +8,23 @@
 
 import UIKit
 
-class PoseIndexController: UIViewController {
+class SequenceVC: UIViewController {
 
 //    MARK: DATA
     var poseIndex = [YogaPoses]()
     
-    private let poseView = PoseIndexView()
+    private let sequenceView = SequenceView()
     
     override func loadView() {
-        view = poseView
+        view = sequenceView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .darkGray
         loadData()
-        poseView.poseTableView.dataSource = self
-        poseView.poseTableView.delegate = self
+        sequenceView.poseTableView.dataSource = self
+        sequenceView.poseTableView.delegate = self
         
         view.backgroundColor = .darkGray
   
@@ -50,15 +50,16 @@ class PoseIndexController: UIViewController {
 
 }
 
-extension PoseIndexController: UITableViewDelegate, UITableViewDataSource {
+extension SequenceVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(poseIndex.count)
         return poseIndex.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = poseIndex[indexPath.row]
         
-        guard let poseCell = tableView.dequeueReusableCell(withIdentifier: "poseData", for: indexPath) as? PoseIndexTVC else{return UITableViewCell()}
+        guard let poseCell = tableView.dequeueReusableCell(withIdentifier: "poseData", for: indexPath) as? SequenceTVC else{return UITableViewCell()}
         poseCell.engTitle.text = data.english_name
         poseCell.sanscritTitle.text = data.sanskrit_name
         

@@ -24,6 +24,7 @@ import Foundation
  
     - download & store images for poses
     - store pose names
+    - fix constraints on flow collection
     - create pose detail page: pose names, images, impacted muscle groups
     - find a way to create a sliding gallery in the app- last of which being a video of the pose being practiced
     - ( maybe using a collection view)
@@ -35,6 +36,12 @@ import Foundation
     - create log out button
     - dark mode
  
+ 11/30 Notes
+ 
+ Color Palette
+ green/ white/ black
+ 
+ Button Style
  
  
  */

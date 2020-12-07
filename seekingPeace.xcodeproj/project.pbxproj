@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4E005B0925720451000CEF55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E005B0825720451000CEF55 /* GoogleService-Info.plist */; };
 		4E005B0D2572151C000CEF55 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E005B0C2572151C000CEF55 /* Notes.swift */; };
+		4E005B112572E801000CEF55 /* CrayonBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E005B102572E801000CEF55 /* CrayonBox.swift */; };
 		4E0526A123E9D8B0007D20E3 /* yogaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0526A023E9D8B0007D20E3 /* yogaCell.swift */; };
 		4E07E9A823FDD0FB00D65CEC /* yogaImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E9A723FDD0FB00D65CEC /* yogaImageHelper.swift */; };
 		4E1EA56823E9D56A00780F86 /* NetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1EA56723E9D56A00780F86 /* NetworkManger.swift */; };
@@ -18,10 +19,10 @@
 		4E29CB8823CE735B009BFEC4 /* seekingPeaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CB8723CE735B009BFEC4 /* seekingPeaceTests.swift */; };
 		4E29CB9D23CE79A0009BFEC4 /* Yoga.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E29CB9C23CE79A0009BFEC4 /* Yoga.json */; };
 		4E29CB9F23CE7AB8009BFEC4 /* YogaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CB9E23CE7AB8009BFEC4 /* YogaController.swift */; };
-		4E29CBA123CE7AD4009BFEC4 /* YogaFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA023CE7AD4009BFEC4 /* YogaFlowController.swift */; };
-		4E29CBA323CE7AE6009BFEC4 /* PoseIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA223CE7AE6009BFEC4 /* PoseIndex.swift */; };
+		4E29CBA123CE7AD4009BFEC4 /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA023CE7AD4009BFEC4 /* CreateVC.swift */; };
+		4E29CBA323CE7AE6009BFEC4 /* SequenceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA223CE7AE6009BFEC4 /* SequenceVC.swift */; };
 		4E29CBA523CE7B61009BFEC4 /* yogaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA423CE7B61009BFEC4 /* yogaModel.swift */; };
-		4E388EF4254E0A9100C86653 /* FlowCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E388EF3254E0A9100C86653 /* FlowCVC.swift */; };
+		4E388EF4254E0A9100C86653 /* CreateFlowCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E388EF3254E0A9100C86653 /* CreateFlowCVC.swift */; };
 		4E5402D42568AFAD0049A472 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5402D32568AFAD0049A472 /* FirestoreService.swift */; };
 		4E5402D82568B0940049A472 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5402D72568B0940049A472 /* UserModel.swift */; };
 		4E5402FB256967440049A472 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5402FA256967440049A472 /* LoginView.swift */; };
@@ -30,11 +31,25 @@
 		4E54030925696A140049A472 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E54030825696A140049A472 /* SignUpVC.swift */; };
 		4E54032A2569ABC70049A472 /* StringsValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5403292569ABC70049A472 /* StringsValidations.swift */; };
 		4E5676002568A1D700A4EE00 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5675FF2568A1D700A4EE00 /* FirebaseAuthService.swift */; };
-		4EC1CF66254CCE650011DA10 /* PoseIndexObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF65254CCE650011DA10 /* PoseIndexObjects.swift */; };
-		4EC1CF6A254D0B530011DA10 /* PoseIndexTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF69254D0B530011DA10 /* PoseIndexTVC.swift */; };
+		4E66BBAC2575964500376289 /* DetailedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66BBAB2575964500376289 /* DetailedVC.swift */; };
+		4E66BBB22575967100376289 /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66BBB12575967100376289 /* DetailedView.swift */; };
+		4E7D436C257D2B9D006FEB92 /* YogiPlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D436B257D2B9D006FEB92 /* YogiPlaylistModel.swift */; };
+		4E7D4370257D3494006FEB92 /* PlaylistPoseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D436F257D3494006FEB92 /* PlaylistPoseModel.swift */; };
+		4E7D4374257D3F8A006FEB92 /* YogiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D4373257D3F8A006FEB92 /* YogiModel.swift */; };
+		4EC1CF66254CCE650011DA10 /* SequenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF65254CCE650011DA10 /* SequenceView.swift */; };
+		4EC1CF6A254D0B530011DA10 /* SequenceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF69254D0B530011DA10 /* SequenceTVC.swift */; };
 		4EC65ED5254C87F4006B2C7A /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */; };
+		4ECF70F4257DA55E00F92BA2 /* createSequenceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF70F3257DA55E00F92BA2 /* createSequenceDetail.swift */; };
+		4ECF70F8257DA86200F92BA2 /* createSequenceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF70F7257DA86200F92BA2 /* createSequenceVC.swift */; };
+		4ECF711A257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF7119257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift */; };
 		4ED82BA5255456AB00E5C594 /* YogaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED82BA4255456AB00E5C594 /* YogaView.swift */; };
-		4EF257AD2554E6BD001A425F /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF257AC2554E6BD001A425F /* FlowView.swift */; };
+		4EECC0212577F732008AF4AC /* SpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC0202577F732008AF4AC /* SpTextField.swift */; };
+		4EECC06625787FE6008AF4AC /* IndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC06525787FE6008AF4AC /* IndexView.swift */; };
+		4EECC06C25787FFF008AF4AC /* IndexVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC06B25787FFF008AF4AC /* IndexVC.swift */; };
+		4EECC07025788093008AF4AC /* PoseDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC06F25788093008AF4AC /* PoseDetailVC.swift */; };
+		4EECC074257880B8008AF4AC /* PoseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC073257880B8008AF4AC /* PoseDetailView.swift */; };
+		4EECC07A257886DE008AF4AC /* IndexTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC079257886DE008AF4AC /* IndexTVC.swift */; };
+		4EF257AD2554E6BD001A425F /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF257AC2554E6BD001A425F /* CreateView.swift */; };
 		B79B34A1DF4217554C19DF74 /* Pods_seekingPeace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D82031FCA342A7A0FF55566 /* Pods_seekingPeace.framework */; };
 		E6CF666C3F6CD8B573DFA7C8 /* Pods_seekingPeaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE6A79644C7B929E1F71D70 /* Pods_seekingPeaceTests.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +67,7 @@
 /* Begin PBXFileReference section */
 		4E005B0825720451000CEF55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4E005B0C2572151C000CEF55 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		4E005B102572E801000CEF55 /* CrayonBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrayonBox.swift; sourceTree = "<group>"; };
 		4E0526A023E9D8B0007D20E3 /* yogaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaCell.swift; sourceTree = "<group>"; };
 		4E07E9A723FDD0FB00D65CEC /* yogaImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaImageHelper.swift; sourceTree = "<group>"; };
 		4E1EA56723E9D56A00780F86 /* NetworkManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManger.swift; sourceTree = "<group>"; };
@@ -65,10 +81,10 @@
 		4E29CB8923CE735B009BFEC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E29CB9C23CE79A0009BFEC4 /* Yoga.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Yoga.json; sourceTree = "<group>"; };
 		4E29CB9E23CE7AB8009BFEC4 /* YogaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaController.swift; sourceTree = "<group>"; };
-		4E29CBA023CE7AD4009BFEC4 /* YogaFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaFlowController.swift; sourceTree = "<group>"; };
-		4E29CBA223CE7AE6009BFEC4 /* PoseIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseIndex.swift; sourceTree = "<group>"; };
+		4E29CBA023CE7AD4009BFEC4 /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
+		4E29CBA223CE7AE6009BFEC4 /* SequenceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceVC.swift; sourceTree = "<group>"; };
 		4E29CBA423CE7B61009BFEC4 /* yogaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaModel.swift; sourceTree = "<group>"; };
-		4E388EF3254E0A9100C86653 /* FlowCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCVC.swift; sourceTree = "<group>"; };
+		4E388EF3254E0A9100C86653 /* CreateFlowCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlowCVC.swift; sourceTree = "<group>"; };
 		4E5402D32568AFAD0049A472 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		4E5402D72568B0940049A472 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4E5402FA256967440049A472 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -77,11 +93,25 @@
 		4E54030825696A140049A472 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		4E5403292569ABC70049A472 /* StringsValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsValidations.swift; sourceTree = "<group>"; };
 		4E5675FF2568A1D700A4EE00 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
-		4EC1CF65254CCE650011DA10 /* PoseIndexObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseIndexObjects.swift; sourceTree = "<group>"; };
-		4EC1CF69254D0B530011DA10 /* PoseIndexTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseIndexTVC.swift; sourceTree = "<group>"; };
+		4E66BBAB2575964500376289 /* DetailedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedVC.swift; sourceTree = "<group>"; };
+		4E66BBB12575967100376289 /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
+		4E7D436B257D2B9D006FEB92 /* YogiPlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogiPlaylistModel.swift; sourceTree = "<group>"; };
+		4E7D436F257D3494006FEB92 /* PlaylistPoseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistPoseModel.swift; sourceTree = "<group>"; };
+		4E7D4373257D3F8A006FEB92 /* YogiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogiModel.swift; sourceTree = "<group>"; };
+		4EC1CF65254CCE650011DA10 /* SequenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceView.swift; sourceTree = "<group>"; };
+		4EC1CF69254D0B530011DA10 /* SequenceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceTVC.swift; sourceTree = "<group>"; };
 		4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
+		4ECF70F3257DA55E00F92BA2 /* createSequenceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createSequenceDetail.swift; sourceTree = "<group>"; };
+		4ECF70F7257DA86200F92BA2 /* createSequenceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createSequenceVC.swift; sourceTree = "<group>"; };
+		4ECF7119257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistTableViewCell.swift; sourceTree = "<group>"; };
 		4ED82BA4255456AB00E5C594 /* YogaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaView.swift; sourceTree = "<group>"; };
-		4EF257AC2554E6BD001A425F /* FlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowView.swift; sourceTree = "<group>"; };
+		4EECC0202577F732008AF4AC /* SpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpTextField.swift; sourceTree = "<group>"; };
+		4EECC06525787FE6008AF4AC /* IndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexView.swift; sourceTree = "<group>"; };
+		4EECC06B25787FFF008AF4AC /* IndexVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexVC.swift; sourceTree = "<group>"; };
+		4EECC06F25788093008AF4AC /* PoseDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseDetailVC.swift; sourceTree = "<group>"; };
+		4EECC073257880B8008AF4AC /* PoseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseDetailView.swift; sourceTree = "<group>"; };
+		4EECC079257886DE008AF4AC /* IndexTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTVC.swift; sourceTree = "<group>"; };
+		4EF257AC2554E6BD001A425F /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		7D82031FCA342A7A0FF55566 /* Pods_seekingPeace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seekingPeace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE6A79644C7B929E1F71D70 /* Pods_seekingPeaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seekingPeaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0200D0D69222FDF55ABB802 /* Pods-seekingPeaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seekingPeaceTests.debug.xcconfig"; path = "Target Support Files/Pods-seekingPeaceTests/Pods-seekingPeaceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,31 +152,35 @@
 		4E1EA56923E9D6E000780F86 /* Study */ = {
 			isa = PBXGroup;
 			children = (
+				4E0526A023E9D8B0007D20E3 /* yogaCell.swift */,
 				4E29CB9E23CE7AB8009BFEC4 /* YogaController.swift */,
 				4ED82BA4255456AB00E5C594 /* YogaView.swift */,
-				4E0526A023E9D8B0007D20E3 /* yogaCell.swift */,
+				4E66BBAB2575964500376289 /* DetailedVC.swift */,
+				4E66BBB12575967100376289 /* DetailedView.swift */,
 			);
 			path = Study;
 			sourceTree = "<group>";
 		};
-		4E1EA56A23E9D70700780F86 /* Flow */ = {
+		4E1EA56A23E9D70700780F86 /* CreateFlow */ = {
 			isa = PBXGroup;
 			children = (
-				4E29CBA023CE7AD4009BFEC4 /* YogaFlowController.swift */,
-				4EF257AC2554E6BD001A425F /* FlowView.swift */,
-				4E388EF3254E0A9100C86653 /* FlowCVC.swift */,
+				4E29CBA023CE7AD4009BFEC4 /* CreateVC.swift */,
+				4EF257AC2554E6BD001A425F /* CreateView.swift */,
+				4E388EF3254E0A9100C86653 /* CreateFlowCVC.swift */,
+				4ECF70F7257DA86200F92BA2 /* createSequenceVC.swift */,
+				4ECF70F3257DA55E00F92BA2 /* createSequenceDetail.swift */,
 			);
-			path = Flow;
+			path = CreateFlow;
 			sourceTree = "<group>";
 		};
-		4E1EA56B23E9D71000780F86 /* PoseIndex */ = {
+		4E1EA56B23E9D71000780F86 /* Sequence */ = {
 			isa = PBXGroup;
 			children = (
-				4E29CBA223CE7AE6009BFEC4 /* PoseIndex.swift */,
-				4EC1CF65254CCE650011DA10 /* PoseIndexObjects.swift */,
-				4EC1CF69254D0B530011DA10 /* PoseIndexTVC.swift */,
+				4E29CBA223CE7AE6009BFEC4 /* SequenceVC.swift */,
+				4EC1CF65254CCE650011DA10 /* SequenceView.swift */,
+				4EC1CF69254D0B530011DA10 /* SequenceTVC.swift */,
 			);
-			path = PoseIndex;
+			path = Sequence;
 			sourceTree = "<group>";
 		};
 		4E29CB6423CE7358009BFEC4 = {
@@ -209,11 +243,12 @@
 		4E29CB9323CE780A009BFEC4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4E5402F7256967060049A472 /* Authentication */,
-				4E1EA56923E9D6E000780F86 /* Study */,
-				4E1EA56A23E9D70700780F86 /* Flow */,
-				4E1EA56B23E9D71000780F86 /* PoseIndex */,
 				4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */,
+				4E5402F7256967060049A472 /* Authentication */,
+				4E1EA56A23E9D70700780F86 /* CreateFlow */,
+				4E1EA56B23E9D71000780F86 /* Sequence */,
+				4EECC06425787F94008AF4AC /* Index */,
+				4E1EA56923E9D6E000780F86 /* Study */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -223,6 +258,9 @@
 			children = (
 				4E29CBA423CE7B61009BFEC4 /* yogaModel.swift */,
 				4E5402D72568B0940049A472 /* UserModel.swift */,
+				4E7D4373257D3F8A006FEB92 /* YogiModel.swift */,
+				4E7D436B257D2B9D006FEB92 /* YogiPlaylistModel.swift */,
+				4E7D436F257D3494006FEB92 /* PlaylistPoseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -266,6 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				4E5403292569ABC70049A472 /* StringsValidations.swift */,
+				4E005B102572E801000CEF55 /* CrayonBox.swift */,
+				4EECC0202577F732008AF4AC /* SpTextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -277,6 +317,19 @@
 				4E5402D32568AFAD0049A472 /* FirestoreService.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		4EECC06425787F94008AF4AC /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				4EECC06B25787FFF008AF4AC /* IndexVC.swift */,
+				4EECC06525787FE6008AF4AC /* IndexView.swift */,
+				4EECC079257886DE008AF4AC /* IndexTVC.swift */,
+				4EECC06F25788093008AF4AC /* PoseDetailVC.swift */,
+				4ECF7119257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift */,
+				4EECC073257880B8008AF4AC /* PoseDetailView.swift */,
+			);
+			path = Index;
 			sourceTree = "<group>";
 		};
 		D8DCD4BE043CA333C0CF6EC0 /* Pods */ = {
@@ -462,21 +515,36 @@
 				4E29CB9F23CE7AB8009BFEC4 /* YogaController.swift in Sources */,
 				4E540305256969C10049A472 /* LoginVC.swift in Sources */,
 				4EC65ED5254C87F4006B2C7A /* MainTabBarVC.swift in Sources */,
-				4EF257AD2554E6BD001A425F /* FlowView.swift in Sources */,
+				4EF257AD2554E6BD001A425F /* CreateView.swift in Sources */,
 				4E0526A123E9D8B0007D20E3 /* yogaCell.swift in Sources */,
-				4E29CBA123CE7AD4009BFEC4 /* YogaFlowController.swift in Sources */,
+				4E7D436C257D2B9D006FEB92 /* YogiPlaylistModel.swift in Sources */,
+				4E29CBA123CE7AD4009BFEC4 /* CreateVC.swift in Sources */,
+				4ECF70F4257DA55E00F92BA2 /* createSequenceDetail.swift in Sources */,
 				4E1EA56823E9D56A00780F86 /* NetworkManger.swift in Sources */,
 				4E07E9A823FDD0FB00D65CEC /* yogaImageHelper.swift in Sources */,
 				4E29CB7123CE7358009BFEC4 /* AppDelegate.swift in Sources */,
+				4EECC06625787FE6008AF4AC /* IndexView.swift in Sources */,
+				4EECC07A257886DE008AF4AC /* IndexTVC.swift in Sources */,
+				4E66BBB22575967100376289 /* DetailedView.swift in Sources */,
+				4E7D4370257D3494006FEB92 /* PlaylistPoseModel.swift in Sources */,
 				4E29CB7323CE7358009BFEC4 /* SceneDelegate.swift in Sources */,
-				4E29CBA323CE7AE6009BFEC4 /* PoseIndex.swift in Sources */,
-				4EC1CF6A254D0B530011DA10 /* PoseIndexTVC.swift in Sources */,
+				4EECC07025788093008AF4AC /* PoseDetailVC.swift in Sources */,
+				4E29CBA323CE7AE6009BFEC4 /* SequenceVC.swift in Sources */,
+				4EC1CF6A254D0B530011DA10 /* SequenceTVC.swift in Sources */,
+				4EECC06C25787FFF008AF4AC /* IndexVC.swift in Sources */,
 				4E54032A2569ABC70049A472 /* StringsValidations.swift in Sources */,
-				4E388EF4254E0A9100C86653 /* FlowCVC.swift in Sources */,
+				4E388EF4254E0A9100C86653 /* CreateFlowCVC.swift in Sources */,
+				4E005B112572E801000CEF55 /* CrayonBox.swift in Sources */,
+				4EECC074257880B8008AF4AC /* PoseDetailView.swift in Sources */,
 				4E54030925696A140049A472 /* SignUpVC.swift in Sources */,
-				4EC1CF66254CCE650011DA10 /* PoseIndexObjects.swift in Sources */,
+				4EC1CF66254CCE650011DA10 /* SequenceView.swift in Sources */,
+				4E66BBAC2575964500376289 /* DetailedVC.swift in Sources */,
+				4EECC0212577F732008AF4AC /* SpTextField.swift in Sources */,
+				4ECF70F8257DA86200F92BA2 /* createSequenceVC.swift in Sources */,
 				4E5402D42568AFAD0049A472 /* FirestoreService.swift in Sources */,
+				4ECF711A257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift in Sources */,
 				4ED82BA5255456AB00E5C594 /* YogaView.swift in Sources */,
+				4E7D4374257D3F8A006FEB92 /* YogiModel.swift in Sources */,
 				4E540301256967580049A472 /* SignUpView.swift in Sources */,
 				4E5402FB256967440049A472 /* LoginView.swift in Sources */,
 				4E5402D82568B0940049A472 /* UserModel.swift in Sources */,

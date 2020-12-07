@@ -9,20 +9,40 @@
 import UIKit
 
 class LoginView: UIView {
+    
+//    var crayonBox = CrayonBox()
 
 //    MARK: UIOBJECTS
-    lazy var emailTextField: UITextField = {
-        let text = UITextField()
-        text.text = "email"
-        text.borderStyle = .line
-        return text
-       }()
+    
+    
+    lazy var backdrop: UIImageView = {
+       let img = UIImageView()
+        img.image = UIImage(named: "plant")
+        return img
+    }()
+    
+//    lazy var emailTextField: UITextField = {
+//        let text = UITextField()
+//        text.text = "email"
+//        text.backgroundColor = CrayonBox.Green.mid
+//        text.borderStyle = .line
+//        text.textColor = CrayonBox.White.opaque
+//        text.layer.borderWidth = 2
+//        text.layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
+//        return text
+//       }()
+    
+    var emailTextField = SpTextField(placeholder: "enter email")
        
     lazy var passwordTextField: UITextField = {
         let passWord = UITextField()
         passWord.text = "password"
+        passWord.backgroundColor = CrayonBox.Green.mid
         passWord.borderStyle = .line
-
+        passWord.isSecureTextEntry = true
+        passWord.textColor = CrayonBox.White.opaque
+        passWord.layer.borderWidth = 2
+        passWord.layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
         return passWord
        }()
     
@@ -33,19 +53,21 @@ class LoginView: UIView {
     
     lazy var loginButton: UIButton = {
         let login = UIButton()
-        login.backgroundColor = .white
-        login.setTitleColor(.blue, for: .normal)
+        login.backgroundColor = CrayonBox.Green.mid
+        login.layer.borderWidth = 2
+        login.layer.borderColor = CGColor.init(red: 1, green: 1, blue: 1, alpha: 1)
+        login.setTitleColor(.white, for: .normal)
         login.setTitle("login", for: .normal)
-//        login.addTarget(self, action: #selector(tryLogin), for: .touchUpInside)
         return login
        }()
     
     lazy var signUpButton: UIButton = {
         let signUp = UIButton()
-        signUp.backgroundColor = .white
-        signUp.setTitleColor(.blue, for: .normal)
+        signUp.backgroundColor = CrayonBox.Green.mid
+        signUp.layer.borderWidth = 2
+        signUp.layer.borderColor = CGColor.init(red: 1, green: 1, blue: 1, alpha: 1)
+        signUp.setTitleColor(.white, for: .normal)
         signUp.setTitle("sign up", for: .normal)
-//        signUp.addTarget(self, action: #selector(showSignUp), for: .touchUpInside)
         return signUp
        }()
     
@@ -62,12 +84,25 @@ class LoginView: UIView {
     
         
     private func constraints() {
-
+        backdropConstraint()
         emailTextConstraint()
         passwordTextConstraint()
         signUpContraint()
         loginContraint()
         }
+    
+    private func backdropConstraint() {
+        
+        addSubview(backdrop)
+        
+        backdrop.translatesAutoresizingMaskIntoConstraints = false
+        
+        [backdrop.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+         backdrop.leadingAnchor.constraint(equalTo: leadingAnchor),
+         backdrop.trailingAnchor.constraint(equalTo: trailingAnchor),
+         backdrop.bottomAnchor.constraint(equalTo: bottomAnchor)].forEach{$0.isActive = true}
+    }
+    
     
     private func emailTextConstraint() {
         

@@ -10,9 +10,10 @@ import Foundation
 import FirebaseFirestore
 
 fileprivate enum FireStoreCollections: String {
-    case users
-    case posts
-    case comments
+    case yogis
+    case yogiData
+    case playlists
+    case sequenceItems
 }
 
 enum SortingCriteria: String {
@@ -34,10 +35,11 @@ class FirestoreService {
     func createAppUser(user: AppUser, completion: @escaping (Result<(), Error>) -> ()) {
         var fields = user.fieldsDict
         fields["dateCreated"] = Date()
-        db.collection(FireStoreCollections.users.rawValue).document(user.uid).setData(fields) { (error) in
+        db.collection(FireStoreCollections.yogis.rawValue).document(user.uid).setData(fields) { (error) in
             if let error = error {
-                completion(.failure(error))
                 print(error)
+                completion(.failure(error))
+//                print(error)
             }
             completion(.success(()))
         }
@@ -60,7 +62,7 @@ class FirestoreService {
         
        
         //PUT request
-        db.collection(FireStoreCollections.users.rawValue).document(userId).updateData(updateFields) { (error) in
+        db.collection(FireStoreCollections.yogis.rawValue).document(userId).updateData(updateFields) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {
@@ -71,7 +73,7 @@ class FirestoreService {
     }
     
     func getAllUsers(completion: @escaping (Result<[AppUser], Error>) -> ()) {
-        db.collection(FireStoreCollections.users.rawValue).getDocuments { (snapshot, error) in
+        db.collection(FireStoreCollections.yogis.rawValue).getDocuments { (snapshot, error) in
             if let error = error {
                 completion(.failure(error))
             } else {
@@ -84,6 +86,43 @@ class FirestoreService {
             }
         }
     }
+    
+    
+    func createYogaSequence(yogi: YogiModel, playlist: YogiPlaylistModel, poses: PlaylistPoseModel, completion: @escaping (Result<(), Error>) -> ()){
+        let yogiId = yogi.fieldsDict
+        let fields = playlist.fieldsDict
+        let poseData = poses.fieldsDict
+        
+        db.collection(FireStoreCollections.yogiData.rawValue).addDocument(data: yogiId) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
+        }
+        
+        db.collection(FireStoreCollections.yogiData.rawValue).document().collection(FireStoreCollections.playlists.rawValue).addDocument(data: fields) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
+        }
+        db.collection(FireStoreCollections.playlists.rawValue).document().collection(FireStoreCollections.sequenceItems.rawValue).document().collection(FireStoreCollections.sequenceItems.rawValue).addDocument(data: poseData) {
+            (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
+            
+        }
+            
+            
+    }
+    
+    
+
     
     private init () {}
 }

@@ -1,39 +1,37 @@
 //
-//  PoseIndexTVC.swift
+//  CreatePlaylistTableViewCell.swift
 //  seekingPeace
 //
-//  Created by Tia Lendor on 10/30/20.
+//  Created by Tia Lendor on 12/6/20.
 //  Copyright © 2020 Tia Lendor. All rights reserved.
 //
 
 import UIKit
 
-class PoseIndexTVC: UITableViewCell {
-    
-//    MARK: UI OBJECTS
+class CreatePlaylistTableViewCell: UITableViewCell {
     
     lazy var poseImage: UIImageView = {
-       let poseView = UIImageView()
+        let poseView = UIImageView()
         poseView.image = UIImage(named: "lotus")
         return poseView
     }()
     
     lazy var engTitle: UILabel = {
-       let engLabel = UILabel()
+        let engLabel = UILabel()
         engLabel.text = "Yoga Pose: Eng Name"
         return engLabel
-    }()
-    
-    lazy var sanscritTitle: UILabel = {
-       let sanscritLabel = UILabel()
-        sanscritLabel.text = "Yoga Pose: Sanscrit Name"
-        return sanscritLabel
     }()
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    lazy var sanscritTitle: UILabel = {
+        let sanscritLabel = UILabel()
+        sanscritLabel.text = "Yoga Pose: Sanscrit Name"
+        return sanscritLabel
+    }()
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -61,7 +59,7 @@ class PoseIndexTVC: UITableViewCell {
         [poseImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
          poseImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
          poseImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -275),
-//         trailing is prob excessive- start here if issue
+         //         trailing is prob excessive- start here if issue
          poseImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5)].forEach{$0.isActive = true}
     }
     
@@ -78,7 +76,5 @@ class PoseIndexTVC: UITableViewCell {
          sanscritTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 175),
          sanscritTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)].forEach{$0.isActive = true}
     }
-    
-    
 
 }

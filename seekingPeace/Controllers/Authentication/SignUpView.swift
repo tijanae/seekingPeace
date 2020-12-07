@@ -10,25 +10,44 @@ import UIKit
 
 class SignUpView: UIView {
     
+//    var crayonBox = CrayonBox()
+    
 //    MARK: UIOBJECTS
+    
+    lazy var backdrop: UIImageView = {
+        let img = UIImageView()
+        img.image = UIImage(named: "tea")
+        return img
+    }()
     
     lazy var emailTextField: UITextField = {
         let text = UITextField()
         text.text = "email"
+        text.backgroundColor = CrayonBox.Green.mid
         text.borderStyle = .line
+        text.textColor = CrayonBox.White.opaque
+        text.layer.borderWidth = 2
+        text.layer.borderColor = CGColor(red: 255/255, green: 255/255.0, blue: 255/255.0, alpha: 1)
         return text
     }()
     
     lazy var passwordTextField: UITextField = {
         let passWord = UITextField()
         passWord.text = "password"
+        passWord.backgroundColor = CrayonBox.Green.mid
         passWord.borderStyle = .line
+        passWord.textColor = CrayonBox.White.opaque
+        passWord.layer.borderWidth = 2
+        passWord.layer.borderColor = CGColor(red: 255/255, green: 255/255.0, blue: 255/255.0, alpha: 1)
         return passWord
     }()
     
     lazy var cancelButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .blue
+        button.backgroundColor = CrayonBox.Green.mid
+        button.layer.borderWidth = 2
+        button.layer.borderColor = CGColor.init(red: 1, green: 1, blue: 1, alpha: 1)
+        button.setTitleColor(.white, for: .normal)
         button.setTitle( "cancel", for: .normal)
         return button
     }()
@@ -41,9 +60,11 @@ class SignUpView: UIView {
     
     lazy var signUpButton: UIButton = {
         let signUp = UIButton()
-        signUp.backgroundColor = .blue
+        signUp.backgroundColor = CrayonBox.Green.mid
+        signUp.layer.borderWidth = 2
+        signUp.layer.borderColor = CGColor.init(red: 1, green: 1, blue: 1, alpha: 1)
+        signUp.setTitleColor(.white, for: .normal)
         signUp.setTitle("sign up", for: .normal)
-
         return signUp
     }()
     
@@ -57,10 +78,23 @@ class SignUpView: UIView {
     }
     
     private func constraints() {
+        backdropConstraint()
         emailTextConstraint()
         passwordTextConstraint()
         signUpConstraint()
         cancelConstraint()
+    }
+    
+    private func backdropConstraint() {
+        
+        addSubview(backdrop)
+        
+        backdrop.translatesAutoresizingMaskIntoConstraints = false
+        
+        [backdrop.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+         backdrop.bottomAnchor.constraint(equalTo: bottomAnchor),
+         backdrop.leadingAnchor.constraint(equalTo: leadingAnchor),
+         backdrop.trailingAnchor.constraint(equalTo: trailingAnchor)].forEach{$0.isActive = true}
     }
 
     

@@ -82,13 +82,13 @@ class SignUpVC: UIViewController {
     private func accntCreationResponse(with result: Result<User, Error>) {
         DispatchQueue.main.async { [weak self] in
             switch result {
-            case .failure(let error):
-                self?.showAlert(with: "Error creating User", and: "An error occured while creating new account \(error)")
             case .success(let user):
                 FirestoreService.manager.createAppUser(user: AppUser(from: user)) { [weak self] newResult in
                     self?.handleCreatedUserInFirestore(result: newResult)
                     self?.showAlert(with: "Congrats!", and: "You've Joined this App")
                 }
+            case .failure(let error):
+                        self?.showAlert(with: "Error creating User", and: "An error occured while creating new account \(error)")
             }
         }
     }
@@ -96,14 +96,10 @@ class SignUpVC: UIViewController {
     private func handleCreatedUserInFirestore(result: Result<(), Error>) {
         switch result {
         case .success:
-            guard let windowScene = UIApplication.shared.connectedScenes.first as?
-                    UIWindowScene, let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window else {return}
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
+            else {return}
             UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromBottom, animations: {
-                
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "main") as! MainTabBarVC
-                    nextViewController.modalPresentationStyle = .fullScreen
-                self.present(nextViewController, animated:true, completion:nil)
+                window.rootViewController = MainTabBarVC()
                 }, completion: nil)
             
         case .failure(let error):

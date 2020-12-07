@@ -20,7 +20,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         objectSetUp()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .white
 
         // Do any additional setup after loading the view.
     }
@@ -42,12 +42,12 @@ class LoginVC: UIViewController {
             return
         }
         loginView.loginButton.isEnabled = true
-        loginView.loginButton.backgroundColor = .darkGray
+        loginView.loginButton.backgroundColor = UIColor(red: 8/255.0, green: 100/255.0, blue: 8/255.0, alpha: 0.7)
     }
     
     @objc func showSignUp() {
         let signUp = SignUpVC()
-        signUp.modalPresentationStyle = .formSheet
+        signUp.modalPresentationStyle = .fullScreen
         present(signUp, animated: true, completion: nil)
     }
     
@@ -86,15 +86,14 @@ class LoginVC: UIViewController {
             showAlert(with: "Error", and: "Could not log in. Error: \(error)")
         case .success:
             guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                  let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window else {
-                return
-            }
+                  let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window else {return}
             UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                window.rootViewController = {
-                    let mainTBC = MainTabBarVC()
-                    self.navigationController?.pushViewController(mainTBC, animated: true)
-                    return mainTBC
-                }()
+                window.rootViewController = MainTabBarVC()
+//                window.rootViewController = {
+//                    let mainTBC = MainTabBarVC()
+//                    self.navigationController?.pushViewController(mainTBC, animated: true)
+//                    return mainTBC
+//                }()
             }, completion: nil)
         }
     }
