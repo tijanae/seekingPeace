@@ -10,19 +10,21 @@ import UIKit
 
 class createSequenceDetail: UIView {
     
+//    MARK: UIOBJECTS
+    
     lazy var playlistImage: UIImageView = {
        let img = UIImageView()
-        img.image = UIImage(named: "plant")
+        img.image = UIImage(named: "love")
         return img
     }()
     
     var playlistName = SpTextField(placeholder: "playlist name")
     
     lazy var playlistTV: UITableView = {
-        let poseIndex = UITableView()
-        poseIndex.backgroundColor = .lightGray
-        poseIndex.register(SequenceTVC.self, forCellReuseIdentifier: "playlistPoses")
-        return poseIndex
+        let poseTable = UITableView()
+        poseTable.backgroundColor = .lightGray
+        poseTable.register(SequenceDetailTVC.self, forCellReuseIdentifier: "playlistTable")
+        return poseTable
     }()
     
     
@@ -32,7 +34,17 @@ class createSequenceDetail: UIView {
         button.layer.borderWidth = 2
         button.layer.borderColor = CGColor.init(red: 1, green: 1, blue: 1, alpha: 1)
         button.setTitleColor(.white, for: .normal)
-        button.setTitle("create", for: .normal)
+        button.setTitle("save", for: .normal)
+        return button
+    }()
+    
+    lazy var cancelPlaylistButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = CrayonBox.Green.mid
+        button.layer.borderWidth = 2
+        button.layer.borderColor = CGColor.init(red: 1, green: 1, blue: 1, alpha: 1)
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle("cancel", for: .normal)
         return button
     }()
     
@@ -50,9 +62,12 @@ class createSequenceDetail: UIView {
         playlistImageConstraint()
         playlistNameConstraint()
         playlistTVConstraint()
+        savebuttonConstraint()
+        cancelbuttonConstraint()
     }
     
     private func savebuttonConstraint() {
+        
         addSubview(savePlaylistButton)
         
         savePlaylistButton.translatesAutoresizingMaskIntoConstraints = false
@@ -62,6 +77,19 @@ class createSequenceDetail: UIView {
          savePlaylistButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 275),
          savePlaylistButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)].forEach {$0.isActive = true}
     }
+    
+    private func cancelbuttonConstraint() {
+        
+        addSubview(cancelPlaylistButton)
+        
+        cancelPlaylistButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        [cancelPlaylistButton.topAnchor.constraint(equalTo: topAnchor, constant: 50),
+         cancelPlaylistButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 90),
+         cancelPlaylistButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+         cancelPlaylistButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -275)].forEach {$0.isActive = true}
+    }
+    
     
     private func playlistImageConstraint() {
         
@@ -81,8 +109,8 @@ class createSequenceDetail: UIView {
         
         playlistName.translatesAutoresizingMaskIntoConstraints = false
         
-        [playlistName.topAnchor.constraint(equalTo: topAnchor, constant: 250),
-         playlistName.bottomAnchor.constraint(equalTo: topAnchor, constant: 275),
+        [playlistName.topAnchor.constraint(equalTo: topAnchor, constant: 255),
+         playlistName.bottomAnchor.constraint(equalTo: topAnchor, constant: 280),
          playlistName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 150),
          playlistName.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -150)].forEach{$0.isActive = true}
         

@@ -18,7 +18,9 @@ class CreateVC: UIViewController {
     var yogiSelectedIndexPaths = [IndexPath]()
     
     var selectedPoses: [YogaPose] {
+        
         return yogiSelectedIndexPaths.map{flowData[$0.row]}
+        
     }
     
     override func loadView() {
@@ -45,13 +47,13 @@ class CreateVC: UIViewController {
             return
         }
         showPlaylistDetails()
-
+//        print(selectedPoses)
     }
 //
     func showPlaylistDetails() {
         let detailedPlaylist = createSequenceVC()
         detailedPlaylist.poses = selectedPoses
-
+//        print(detailedPlaylist.poses)
         detailedPlaylist.modalPresentationStyle = .fullScreen
         present(detailedPlaylist, animated: true, completion: nil)
     }

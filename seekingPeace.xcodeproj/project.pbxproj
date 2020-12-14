@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E002C8D257F38020046639C /* PoseSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E002C8C257F38020046639C /* PoseSettingsView.swift */; };
+		4E002C91257F38980046639C /* PoseSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E002C90257F38980046639C /* PoseSettingsVC.swift */; };
+		4E002C952581731A0046639C /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E002C942581731A0046639C /* PersistenceHelper.swift */; };
 		4E005B0925720451000CEF55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E005B0825720451000CEF55 /* GoogleService-Info.plist */; };
 		4E005B0D2572151C000CEF55 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E005B0C2572151C000CEF55 /* Notes.swift */; };
 		4E005B112572E801000CEF55 /* CrayonBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E005B102572E801000CEF55 /* CrayonBox.swift */; };
@@ -42,6 +45,7 @@
 		4ECF70F4257DA55E00F92BA2 /* createSequenceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF70F3257DA55E00F92BA2 /* createSequenceDetail.swift */; };
 		4ECF70F8257DA86200F92BA2 /* createSequenceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF70F7257DA86200F92BA2 /* createSequenceVC.swift */; };
 		4ECF711A257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF7119257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift */; };
+		4ECF711E257EFF6F00F92BA2 /* SequenceDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF711D257EFF6E00F92BA2 /* SequenceDetailTVC.swift */; };
 		4ED82BA5255456AB00E5C594 /* YogaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED82BA4255456AB00E5C594 /* YogaView.swift */; };
 		4EECC0212577F732008AF4AC /* SpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC0202577F732008AF4AC /* SpTextField.swift */; };
 		4EECC06625787FE6008AF4AC /* IndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC06525787FE6008AF4AC /* IndexView.swift */; };
@@ -65,6 +69,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E002C8C257F38020046639C /* PoseSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseSettingsView.swift; sourceTree = "<group>"; };
+		4E002C90257F38980046639C /* PoseSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseSettingsVC.swift; sourceTree = "<group>"; };
+		4E002C942581731A0046639C /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		4E005B0825720451000CEF55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4E005B0C2572151C000CEF55 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		4E005B102572E801000CEF55 /* CrayonBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrayonBox.swift; sourceTree = "<group>"; };
@@ -104,6 +111,7 @@
 		4ECF70F3257DA55E00F92BA2 /* createSequenceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createSequenceDetail.swift; sourceTree = "<group>"; };
 		4ECF70F7257DA86200F92BA2 /* createSequenceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createSequenceVC.swift; sourceTree = "<group>"; };
 		4ECF7119257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistTableViewCell.swift; sourceTree = "<group>"; };
+		4ECF711D257EFF6E00F92BA2 /* SequenceDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceDetailTVC.swift; sourceTree = "<group>"; };
 		4ED82BA4255456AB00E5C594 /* YogaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaView.swift; sourceTree = "<group>"; };
 		4EECC0202577F732008AF4AC /* SpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpTextField.swift; sourceTree = "<group>"; };
 		4EECC06525787FE6008AF4AC /* IndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexView.swift; sourceTree = "<group>"; };
@@ -169,6 +177,9 @@
 				4E388EF3254E0A9100C86653 /* CreateFlowCVC.swift */,
 				4ECF70F7257DA86200F92BA2 /* createSequenceVC.swift */,
 				4ECF70F3257DA55E00F92BA2 /* createSequenceDetail.swift */,
+				4ECF711D257EFF6E00F92BA2 /* SequenceDetailTVC.swift */,
+				4E002C8C257F38020046639C /* PoseSettingsView.swift */,
+				4E002C90257F38980046639C /* PoseSettingsVC.swift */,
 			);
 			path = CreateFlow;
 			sourceTree = "<group>";
@@ -212,7 +223,7 @@
 				4E29CB9623CE7842009BFEC4 /* JSON */,
 				4E29CB9523CE7821009BFEC4 /* Models */,
 				4E29CB9823CE7929009BFEC4 /* Network Helpers */,
-				4E29CB9923CE7933009BFEC4 /* Persistences */,
+				4E29CB9923CE7933009BFEC4 /* Persistence */,
 				4E29CB9223CE74AB009BFEC4 /* Supporting Files */,
 				4E29CB7E23CE735A009BFEC4 /* Info.plist */,
 				4E005B0825720451000CEF55 /* GoogleService-Info.plist */,
@@ -282,11 +293,12 @@
 			path = "Network Helpers";
 			sourceTree = "<group>";
 		};
-		4E29CB9923CE7933009BFEC4 /* Persistences */ = {
+		4E29CB9923CE7933009BFEC4 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				4E002C942581731A0046639C /* PersistenceHelper.swift */,
 			);
-			path = Persistences;
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		4E5402F7256967060049A472 /* Authentication */ = {
@@ -530,6 +542,8 @@
 				4E29CB7323CE7358009BFEC4 /* SceneDelegate.swift in Sources */,
 				4EECC07025788093008AF4AC /* PoseDetailVC.swift in Sources */,
 				4E29CBA323CE7AE6009BFEC4 /* SequenceVC.swift in Sources */,
+				4ECF711E257EFF6F00F92BA2 /* SequenceDetailTVC.swift in Sources */,
+				4E002C91257F38980046639C /* PoseSettingsVC.swift in Sources */,
 				4EC1CF6A254D0B530011DA10 /* SequenceTVC.swift in Sources */,
 				4EECC06C25787FFF008AF4AC /* IndexVC.swift in Sources */,
 				4E54032A2569ABC70049A472 /* StringsValidations.swift in Sources */,
@@ -549,7 +563,9 @@
 				4E5402FB256967440049A472 /* LoginView.swift in Sources */,
 				4E5402D82568B0940049A472 /* UserModel.swift in Sources */,
 				4E29CBA523CE7B61009BFEC4 /* yogaModel.swift in Sources */,
+				4E002C8D257F38020046639C /* PoseSettingsView.swift in Sources */,
 				4E005B0D2572151C000CEF55 /* Notes.swift in Sources */,
+				4E002C952581731A0046639C /* PersistenceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

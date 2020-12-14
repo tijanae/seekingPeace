@@ -26,7 +26,7 @@ class IndexVC: UIViewController {
         indexView.indexTableView.dataSource = self
         indexView.indexTableView.delegate = self
         
-        view.backgroundColor = .darkGray
+//        view.backgroundColor = .darkGray
         
     }
     

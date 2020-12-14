@@ -26,7 +26,7 @@ class SequenceVC: UIViewController {
         sequenceView.poseTableView.dataSource = self
         sequenceView.poseTableView.delegate = self
         
-        view.backgroundColor = .darkGray
+//        view.backgroundColor = .darkGray
   
     }
     
@@ -52,7 +52,7 @@ class SequenceVC: UIViewController {
 
 extension SequenceVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(poseIndex.count)
+//        print(poseIndex.count)
         return poseIndex.count
     }
     

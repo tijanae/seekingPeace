@@ -19,12 +19,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = scene
 
-        if FirebaseAuthService.manager.currentUser != nil {
-           window?.rootViewController = MainTabBarVC()
-        } else {
-            window?.rootViewController = LoginVC()
-        }
-//        window?.rootViewController = LoginVC()
+//        if FirebaseAuthService.manager.currentUser != nil {
+//           window?.rootViewController = MainTabBarVC()
+//        } else {
+//            window?.rootViewController = LoginVC()
+//        }
+        window?.rootViewController = LoginVC()
         window?.makeKeyAndVisible()
     }
 
