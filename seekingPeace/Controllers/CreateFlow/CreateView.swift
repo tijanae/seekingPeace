@@ -36,7 +36,7 @@ class CreateView: UIView {
 //          layout.scrollDirection = .horizontal
             let flowCV = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: layout)
             flowCV.backgroundColor = .white
-            flowCV.register(CreateFlowCVC.self, forCellWithReuseIdentifier: "CreateFlowCVC")
+            flowCV.register(CreateCVC.self, forCellWithReuseIdentifier: "CreateFlowCVC")
 
             return flowCV
         }()

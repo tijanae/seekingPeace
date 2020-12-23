@@ -18,7 +18,7 @@ struct YogaPose: Codable {
     let id: Int
     let sanskrit_name: String
     let english_name: String
-    let img_url: String
+//    let img_url: String
     
     
     static func getYogaPoses(from data: Data)  throws -> [YogaPose] {

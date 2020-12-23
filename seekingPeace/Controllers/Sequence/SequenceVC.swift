@@ -9,11 +9,17 @@
 import UIKit
 
 class SequenceVC: UIViewController {
+    
+    private let sequenceView = SequenceView()
 
 //    MARK: DATA
     var poseIndex = [YogaPose]()
     
-    private let sequenceView = SequenceView()
+    var savedPlaylists = [PlaylistPersisted]() {
+        didSet {
+            sequenceView.poseTableView.reloadData()
+        }
+    }
     
     override func loadView() {
         view = sequenceView
@@ -33,16 +39,10 @@ class SequenceVC: UIViewController {
 //    MARK:  PRIVATE FUNCS
     
     private func loadData() {
-        guard let pathToJSONFile = Bundle.main.path(forResource: "Yoga", ofType: "json") else {
-            fatalError("Unexpected Error: cannot find JSON")
-        }
-        let url = URL(fileURLWithPath: pathToJSONFile)
-        do{
-            let data = try Data(contentsOf: url)
-            self.poseIndex = try YogaPose.getYogaPoses(from: data)
+        do {
+            savedPlaylists = try PlaylistPersistenceManager.manager.getPlaylist()
         } catch {
-            print(error)
-            fatalError("Unexpected Error in pose index")
+            fatalError("Could Not Get Playlist")
         }
     }
     
@@ -53,15 +53,15 @@ class SequenceVC: UIViewController {
 extension SequenceVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        print(poseIndex.count)
-        return poseIndex.count
+        return savedPlaylists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let data = poseIndex[indexPath.row]
+        let data = savedPlaylists[indexPath.row]
         
         guard let poseCell = tableView.dequeueReusableCell(withIdentifier: "poseData", for: indexPath) as? SequenceTVC else{return UITableViewCell()}
-        poseCell.engTitle.text = data.english_name
-        poseCell.sanscritTitle.text = data.sanskrit_name
+        poseCell.playlistNameLabel.text = data.playlistName
+//        poseCell.sanscritTitle.text = data.sanskrit_name
         
         poseCell.poseImage.image = UIImage(named: "lotus")
         

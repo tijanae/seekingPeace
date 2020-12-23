@@ -1,5 +1,5 @@
 //
-//  CreateFlowCVC.swift
+//  CreateCVC.swift
 //  seekingPeace
 //
 //  Created by Tia Lendor on 10/31/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateFlowCVC: UICollectionViewCell {
+class CreateCVC: UICollectionViewCell {
     
     
 //    MARK: UI OBJECTS

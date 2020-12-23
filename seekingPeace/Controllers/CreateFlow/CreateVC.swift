@@ -84,7 +84,7 @@ extension CreateVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let flowCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CreateFlowCVC", for: indexPath) as? CreateFlowCVC else {return UICollectionViewCell()}
+        guard let flowCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CreateFlowCVC", for: indexPath) as? CreateCVC else {return UICollectionViewCell()}
         let data = flowData[indexPath.row]
         
         flowCell.engTitle.text = data.english_name

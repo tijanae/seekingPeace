@@ -32,7 +32,7 @@ class PoseSettingsVC: UIViewController {
     
     private func loadData() {
         poseSettingObject.engTitle.text = poseData.english_name
-        print(poseData.english_name)
+        print(poseData )
         poseSettingObject.poseImage.image = UIImage(named: "plant")
         
     }

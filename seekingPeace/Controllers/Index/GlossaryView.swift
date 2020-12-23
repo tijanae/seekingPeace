@@ -1,5 +1,5 @@
 //
-//  IndexView.swift
+//  GlossaryView.swift
 //  seekingPeace
 //
 //  Created by Tia Lendor on 12/2/20.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class IndexView: UIView {
+class GlossaryView: UIView {
     
 //    MARK: UIOBJECTS
     
-    lazy var indexTableView: UITableView = {
+    lazy var glossaryTableView: UITableView = {
         let poseIndex = UITableView()
         poseIndex.backgroundColor = .lightGray
         poseIndex.register(SequenceTVC.self, forCellReuseIdentifier: "poseData")
@@ -21,7 +21,7 @@ class IndexView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        indexTVConstraint()
+        glossaryTVConstraint()
     }
     
     required init?(coder: NSCoder) {
@@ -30,16 +30,16 @@ class IndexView: UIView {
     
 //    MARK: Constraints
     
-    private func indexTVConstraint() {
+    private func glossaryTVConstraint() {
         
-        addSubview(indexTableView)
+        addSubview(glossaryTableView)
         
-        indexTableView.translatesAutoresizingMaskIntoConstraints = false
+        glossaryTableView.translatesAutoresizingMaskIntoConstraints = false
         
-        [indexTableView.topAnchor.constraint(equalTo: topAnchor),
-         indexTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-         indexTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-         indexTableView.trailingAnchor.constraint(equalTo: trailingAnchor)].forEach{$0.isActive = true}
+        [glossaryTableView.topAnchor.constraint(equalTo: topAnchor),
+         glossaryTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+         glossaryTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+         glossaryTableView.trailingAnchor.constraint(equalTo: trailingAnchor)].forEach{$0.isActive = true}
     }
     
 }

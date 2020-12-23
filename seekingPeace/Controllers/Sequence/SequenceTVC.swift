@@ -18,16 +18,29 @@ class SequenceTVC: UITableViewCell {
         return poseView
     }()
     
-    lazy var engTitle: UILabel = {
-       let engLabel = UILabel()
-        engLabel.text = "Yoga Pose: Eng Name"
-        return engLabel
+    lazy var playlistNameLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Yoga Pose: Eng Name"
+        return label
     }()
     
     lazy var sanscritTitle: UILabel = {
        let sanscritLabel = UILabel()
         sanscritLabel.text = "Yoga Pose: Sanscrit Name"
         return sanscritLabel
+    }()
+    
+    lazy var deleteButton: UIButton = {
+       let button = UIButton()
+        button.setImage(UIImage(systemName: "trash"), for: .normal)
+
+        return button
+    }()
+    
+    lazy var playButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "play"), for: .normal)
+        return button
     }()
 
     override func awakeFromNib() {
@@ -44,15 +57,17 @@ class SequenceTVC: UITableViewCell {
     
     private func addViews() {
         contentView.addSubview(poseImage)
-        contentView.addSubview(engTitle)
-        contentView.addSubview(sanscritTitle)
+        contentView.addSubview(playlistNameLabel)
+//        contentView.addSubview(sanscritTitle)
+        contentView.addSubview(deleteButton)
         
     }
     
     private func addConstraints() {
         poseImageConstraint()
-        engTitleConstraint()
-        sanscritTitleConstraint()
+        playlistNameLabelConstraint()
+//        sanscritTitleConstraint()
+        deleteConstraint()
     }
     
     private func poseImageConstraint() {
@@ -65,20 +80,29 @@ class SequenceTVC: UITableViewCell {
          poseImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5)].forEach{$0.isActive = true}
     }
     
-    private func engTitleConstraint() {
-        engTitle.translatesAutoresizingMaskIntoConstraints = false
-        [engTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -10),
-         engTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 175),
-         engTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)].forEach{$0.isActive = true}
+    private func playlistNameLabelConstraint() {
+        playlistNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        [playlistNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -10),
+         playlistNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 175),
+         playlistNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)].forEach{$0.isActive = true}
     }
     
     private func sanscritTitleConstraint() {
         sanscritTitle.translatesAutoresizingMaskIntoConstraints = false
-        [sanscritTitle.topAnchor.constraint(equalTo: engTitle.bottomAnchor, constant: -40),
+        [sanscritTitle.topAnchor.constraint(equalTo: playlistNameLabel.bottomAnchor, constant: -40),
          sanscritTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 175),
          sanscritTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)].forEach{$0.isActive = true}
     }
     
+    private func deleteConstraint() {
+        
+        deleteButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        [deleteButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+         deleteButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 275),
+         deleteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+         deleteButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)].forEach {$0.isActive = true}
+    }
     
 
 }

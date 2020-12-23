@@ -14,7 +14,7 @@ class MainTabBarVC: UITabBarController {
 //    let firstvc = YogaController()
     let firstvc = CreateVC()
     let secondvc = SequenceVC()
-    let thirdvc = IndexVC()
+    let thirdvc = GlossaryVC()
     
     
     

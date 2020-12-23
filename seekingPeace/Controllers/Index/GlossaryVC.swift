@@ -1,5 +1,5 @@
 //
-//  IndexVC.swift
+//  GlossaryVC.swift
 //  seekingPeace
 //
 //  Created by Tia Lendor on 12/2/20.
@@ -8,23 +8,23 @@
 
 import UIKit
 
-class IndexVC: UIViewController {
+class GlossaryVC: UIViewController {
     
 //    MARK: DATA
     var poseIndex = [YogaPose]()
     
-    private let indexView = IndexView()
+    private let glossaryView = GlossaryView()
     
     override func loadView() {
-        view = indexView
+        view = glossaryView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .darkGray
         loadData()
-        indexView.indexTableView.dataSource = self
-        indexView.indexTableView.delegate = self
+        glossaryView.glossaryTableView.dataSource = self
+        glossaryView.glossaryTableView.delegate = self
         
 //        view.backgroundColor = .darkGray
         
@@ -51,7 +51,7 @@ class IndexVC: UIViewController {
     
 }
 
-extension IndexVC: UITableViewDelegate, UITableViewDataSource {
+extension GlossaryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        print(poseIndex.count) // 48
         return poseIndex.count
@@ -60,7 +60,7 @@ extension IndexVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = poseIndex[indexPath.row]
         
-        guard let poseCell = tableView.dequeueReusableCell(withIdentifier: "poseData", for: indexPath) as? SequenceTVC else{return UITableViewCell()}
+        guard let poseCell = tableView.dequeueReusableCell(withIdentifier: "poseData", for: indexPath) as? GlossaryTVC else{return UITableViewCell()}
         poseCell.engTitle.text = data.english_name
         poseCell.sanscritTitle.text = data.sanskrit_name
         poseCell.poseImage.image = UIImage(named: "lotus")

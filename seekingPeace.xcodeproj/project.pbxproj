@@ -25,7 +25,7 @@
 		4E29CBA123CE7AD4009BFEC4 /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA023CE7AD4009BFEC4 /* CreateVC.swift */; };
 		4E29CBA323CE7AE6009BFEC4 /* SequenceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA223CE7AE6009BFEC4 /* SequenceVC.swift */; };
 		4E29CBA523CE7B61009BFEC4 /* yogaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA423CE7B61009BFEC4 /* yogaModel.swift */; };
-		4E388EF4254E0A9100C86653 /* CreateFlowCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E388EF3254E0A9100C86653 /* CreateFlowCVC.swift */; };
+		4E388EF4254E0A9100C86653 /* CreateCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E388EF3254E0A9100C86653 /* CreateCVC.swift */; };
 		4E5402D42568AFAD0049A472 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5402D32568AFAD0049A472 /* FirestoreService.swift */; };
 		4E5402D82568B0940049A472 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5402D72568B0940049A472 /* UserModel.swift */; };
 		4E5402FB256967440049A472 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5402FA256967440049A472 /* LoginView.swift */; };
@@ -39,20 +39,23 @@
 		4E7D436C257D2B9D006FEB92 /* YogiPlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D436B257D2B9D006FEB92 /* YogiPlaylistModel.swift */; };
 		4E7D4370257D3494006FEB92 /* PlaylistPoseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D436F257D3494006FEB92 /* PlaylistPoseModel.swift */; };
 		4E7D4374257D3F8A006FEB92 /* YogiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D4373257D3F8A006FEB92 /* YogiModel.swift */; };
+		4E915315258AF55B00AAFBEE /* PlaylistPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E915314258AF55B00AAFBEE /* PlaylistPersistenceManager.swift */; };
+		4E915319258AF73100AAFBEE /* PlaylistPersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E915318258AF73100AAFBEE /* PlaylistPersisted.swift */; };
+		4E9153B5258B1FEE00AAFBEE /* createSequenceHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9153B4258B1FEE00AAFBEE /* createSequenceHeaderView.swift */; };
 		4EC1CF66254CCE650011DA10 /* SequenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF65254CCE650011DA10 /* SequenceView.swift */; };
 		4EC1CF6A254D0B530011DA10 /* SequenceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF69254D0B530011DA10 /* SequenceTVC.swift */; };
 		4EC65ED5254C87F4006B2C7A /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */; };
-		4ECF70F4257DA55E00F92BA2 /* createSequenceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF70F3257DA55E00F92BA2 /* createSequenceDetail.swift */; };
+		4ECF70F4257DA55E00F92BA2 /* createSequenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF70F3257DA55E00F92BA2 /* createSequenceView.swift */; };
 		4ECF70F8257DA86200F92BA2 /* createSequenceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF70F7257DA86200F92BA2 /* createSequenceVC.swift */; };
 		4ECF711A257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF7119257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift */; };
-		4ECF711E257EFF6F00F92BA2 /* SequenceDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF711D257EFF6E00F92BA2 /* SequenceDetailTVC.swift */; };
+		4ECF711E257EFF6F00F92BA2 /* CreateSequenceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF711D257EFF6E00F92BA2 /* CreateSequenceTVC.swift */; };
 		4ED82BA5255456AB00E5C594 /* YogaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED82BA4255456AB00E5C594 /* YogaView.swift */; };
 		4EECC0212577F732008AF4AC /* SpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC0202577F732008AF4AC /* SpTextField.swift */; };
-		4EECC06625787FE6008AF4AC /* IndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC06525787FE6008AF4AC /* IndexView.swift */; };
-		4EECC06C25787FFF008AF4AC /* IndexVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC06B25787FFF008AF4AC /* IndexVC.swift */; };
+		4EECC06625787FE6008AF4AC /* GlossaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC06525787FE6008AF4AC /* GlossaryView.swift */; };
+		4EECC06C25787FFF008AF4AC /* GlossaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC06B25787FFF008AF4AC /* GlossaryVC.swift */; };
 		4EECC07025788093008AF4AC /* PoseDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC06F25788093008AF4AC /* PoseDetailVC.swift */; };
 		4EECC074257880B8008AF4AC /* PoseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC073257880B8008AF4AC /* PoseDetailView.swift */; };
-		4EECC07A257886DE008AF4AC /* IndexTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC079257886DE008AF4AC /* IndexTVC.swift */; };
+		4EECC07A257886DE008AF4AC /* GlossaryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC079257886DE008AF4AC /* GlossaryTVC.swift */; };
 		4EF257AD2554E6BD001A425F /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF257AC2554E6BD001A425F /* CreateView.swift */; };
 		B79B34A1DF4217554C19DF74 /* Pods_seekingPeace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D82031FCA342A7A0FF55566 /* Pods_seekingPeace.framework */; };
 		E6CF666C3F6CD8B573DFA7C8 /* Pods_seekingPeaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE6A79644C7B929E1F71D70 /* Pods_seekingPeaceTests.framework */; };
@@ -91,7 +94,7 @@
 		4E29CBA023CE7AD4009BFEC4 /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
 		4E29CBA223CE7AE6009BFEC4 /* SequenceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceVC.swift; sourceTree = "<group>"; };
 		4E29CBA423CE7B61009BFEC4 /* yogaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaModel.swift; sourceTree = "<group>"; };
-		4E388EF3254E0A9100C86653 /* CreateFlowCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlowCVC.swift; sourceTree = "<group>"; };
+		4E388EF3254E0A9100C86653 /* CreateCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCVC.swift; sourceTree = "<group>"; };
 		4E5402D32568AFAD0049A472 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		4E5402D72568B0940049A472 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4E5402FA256967440049A472 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -105,20 +108,23 @@
 		4E7D436B257D2B9D006FEB92 /* YogiPlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogiPlaylistModel.swift; sourceTree = "<group>"; };
 		4E7D436F257D3494006FEB92 /* PlaylistPoseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistPoseModel.swift; sourceTree = "<group>"; };
 		4E7D4373257D3F8A006FEB92 /* YogiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogiModel.swift; sourceTree = "<group>"; };
+		4E915314258AF55B00AAFBEE /* PlaylistPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistPersistenceManager.swift; sourceTree = "<group>"; };
+		4E915318258AF73100AAFBEE /* PlaylistPersisted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistPersisted.swift; sourceTree = "<group>"; };
+		4E9153B4258B1FEE00AAFBEE /* createSequenceHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createSequenceHeaderView.swift; sourceTree = "<group>"; };
 		4EC1CF65254CCE650011DA10 /* SequenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceView.swift; sourceTree = "<group>"; };
 		4EC1CF69254D0B530011DA10 /* SequenceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceTVC.swift; sourceTree = "<group>"; };
 		4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
-		4ECF70F3257DA55E00F92BA2 /* createSequenceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createSequenceDetail.swift; sourceTree = "<group>"; };
+		4ECF70F3257DA55E00F92BA2 /* createSequenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createSequenceView.swift; sourceTree = "<group>"; };
 		4ECF70F7257DA86200F92BA2 /* createSequenceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createSequenceVC.swift; sourceTree = "<group>"; };
 		4ECF7119257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistTableViewCell.swift; sourceTree = "<group>"; };
-		4ECF711D257EFF6E00F92BA2 /* SequenceDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceDetailTVC.swift; sourceTree = "<group>"; };
+		4ECF711D257EFF6E00F92BA2 /* CreateSequenceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSequenceTVC.swift; sourceTree = "<group>"; };
 		4ED82BA4255456AB00E5C594 /* YogaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaView.swift; sourceTree = "<group>"; };
 		4EECC0202577F732008AF4AC /* SpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpTextField.swift; sourceTree = "<group>"; };
-		4EECC06525787FE6008AF4AC /* IndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexView.swift; sourceTree = "<group>"; };
-		4EECC06B25787FFF008AF4AC /* IndexVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexVC.swift; sourceTree = "<group>"; };
+		4EECC06525787FE6008AF4AC /* GlossaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryView.swift; sourceTree = "<group>"; };
+		4EECC06B25787FFF008AF4AC /* GlossaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryVC.swift; sourceTree = "<group>"; };
 		4EECC06F25788093008AF4AC /* PoseDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseDetailVC.swift; sourceTree = "<group>"; };
 		4EECC073257880B8008AF4AC /* PoseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseDetailView.swift; sourceTree = "<group>"; };
-		4EECC079257886DE008AF4AC /* IndexTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTVC.swift; sourceTree = "<group>"; };
+		4EECC079257886DE008AF4AC /* GlossaryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryTVC.swift; sourceTree = "<group>"; };
 		4EF257AC2554E6BD001A425F /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 		7D82031FCA342A7A0FF55566 /* Pods_seekingPeace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seekingPeace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE6A79644C7B929E1F71D70 /* Pods_seekingPeaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seekingPeaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,10 +180,11 @@
 			children = (
 				4E29CBA023CE7AD4009BFEC4 /* CreateVC.swift */,
 				4EF257AC2554E6BD001A425F /* CreateView.swift */,
-				4E388EF3254E0A9100C86653 /* CreateFlowCVC.swift */,
+				4E388EF3254E0A9100C86653 /* CreateCVC.swift */,
 				4ECF70F7257DA86200F92BA2 /* createSequenceVC.swift */,
-				4ECF70F3257DA55E00F92BA2 /* createSequenceDetail.swift */,
-				4ECF711D257EFF6E00F92BA2 /* SequenceDetailTVC.swift */,
+				4ECF70F3257DA55E00F92BA2 /* createSequenceView.swift */,
+				4E9153B4258B1FEE00AAFBEE /* createSequenceHeaderView.swift */,
+				4ECF711D257EFF6E00F92BA2 /* CreateSequenceTVC.swift */,
 				4E002C8C257F38020046639C /* PoseSettingsView.swift */,
 				4E002C90257F38980046639C /* PoseSettingsVC.swift */,
 			);
@@ -272,6 +279,7 @@
 				4E7D4373257D3F8A006FEB92 /* YogiModel.swift */,
 				4E7D436B257D2B9D006FEB92 /* YogiPlaylistModel.swift */,
 				4E7D436F257D3494006FEB92 /* PlaylistPoseModel.swift */,
+				4E915318258AF73100AAFBEE /* PlaylistPersisted.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -297,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				4E002C942581731A0046639C /* PersistenceHelper.swift */,
+				4E915314258AF55B00AAFBEE /* PlaylistPersistenceManager.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -334,9 +343,9 @@
 		4EECC06425787F94008AF4AC /* Index */ = {
 			isa = PBXGroup;
 			children = (
-				4EECC06B25787FFF008AF4AC /* IndexVC.swift */,
-				4EECC06525787FE6008AF4AC /* IndexView.swift */,
-				4EECC079257886DE008AF4AC /* IndexTVC.swift */,
+				4EECC06B25787FFF008AF4AC /* GlossaryVC.swift */,
+				4EECC06525787FE6008AF4AC /* GlossaryView.swift */,
+				4EECC079257886DE008AF4AC /* GlossaryTVC.swift */,
 				4EECC06F25788093008AF4AC /* PoseDetailVC.swift */,
 				4ECF7119257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift */,
 				4EECC073257880B8008AF4AC /* PoseDetailView.swift */,
@@ -525,29 +534,31 @@
 			files = (
 				4E5676002568A1D700A4EE00 /* FirebaseAuthService.swift in Sources */,
 				4E29CB9F23CE7AB8009BFEC4 /* YogaController.swift in Sources */,
+				4E915315258AF55B00AAFBEE /* PlaylistPersistenceManager.swift in Sources */,
 				4E540305256969C10049A472 /* LoginVC.swift in Sources */,
 				4EC65ED5254C87F4006B2C7A /* MainTabBarVC.swift in Sources */,
 				4EF257AD2554E6BD001A425F /* CreateView.swift in Sources */,
 				4E0526A123E9D8B0007D20E3 /* yogaCell.swift in Sources */,
 				4E7D436C257D2B9D006FEB92 /* YogiPlaylistModel.swift in Sources */,
+				4E9153B5258B1FEE00AAFBEE /* createSequenceHeaderView.swift in Sources */,
 				4E29CBA123CE7AD4009BFEC4 /* CreateVC.swift in Sources */,
-				4ECF70F4257DA55E00F92BA2 /* createSequenceDetail.swift in Sources */,
+				4ECF70F4257DA55E00F92BA2 /* createSequenceView.swift in Sources */,
 				4E1EA56823E9D56A00780F86 /* NetworkManger.swift in Sources */,
 				4E07E9A823FDD0FB00D65CEC /* yogaImageHelper.swift in Sources */,
 				4E29CB7123CE7358009BFEC4 /* AppDelegate.swift in Sources */,
-				4EECC06625787FE6008AF4AC /* IndexView.swift in Sources */,
-				4EECC07A257886DE008AF4AC /* IndexTVC.swift in Sources */,
+				4EECC06625787FE6008AF4AC /* GlossaryView.swift in Sources */,
+				4EECC07A257886DE008AF4AC /* GlossaryTVC.swift in Sources */,
 				4E66BBB22575967100376289 /* DetailedView.swift in Sources */,
 				4E7D4370257D3494006FEB92 /* PlaylistPoseModel.swift in Sources */,
 				4E29CB7323CE7358009BFEC4 /* SceneDelegate.swift in Sources */,
 				4EECC07025788093008AF4AC /* PoseDetailVC.swift in Sources */,
 				4E29CBA323CE7AE6009BFEC4 /* SequenceVC.swift in Sources */,
-				4ECF711E257EFF6F00F92BA2 /* SequenceDetailTVC.swift in Sources */,
+				4ECF711E257EFF6F00F92BA2 /* CreateSequenceTVC.swift in Sources */,
 				4E002C91257F38980046639C /* PoseSettingsVC.swift in Sources */,
 				4EC1CF6A254D0B530011DA10 /* SequenceTVC.swift in Sources */,
-				4EECC06C25787FFF008AF4AC /* IndexVC.swift in Sources */,
+				4EECC06C25787FFF008AF4AC /* GlossaryVC.swift in Sources */,
 				4E54032A2569ABC70049A472 /* StringsValidations.swift in Sources */,
-				4E388EF4254E0A9100C86653 /* CreateFlowCVC.swift in Sources */,
+				4E388EF4254E0A9100C86653 /* CreateCVC.swift in Sources */,
 				4E005B112572E801000CEF55 /* CrayonBox.swift in Sources */,
 				4EECC074257880B8008AF4AC /* PoseDetailView.swift in Sources */,
 				4E54030925696A140049A472 /* SignUpVC.swift in Sources */,
@@ -563,6 +574,7 @@
 				4E5402FB256967440049A472 /* LoginView.swift in Sources */,
 				4E5402D82568B0940049A472 /* UserModel.swift in Sources */,
 				4E29CBA523CE7B61009BFEC4 /* yogaModel.swift in Sources */,
+				4E915319258AF73100AAFBEE /* PlaylistPersisted.swift in Sources */,
 				4E002C8D257F38020046639C /* PoseSettingsView.swift in Sources */,
 				4E005B0D2572151C000CEF55 /* Notes.swift in Sources */,
 				4E002C952581731A0046639C /* PersistenceHelper.swift in Sources */,

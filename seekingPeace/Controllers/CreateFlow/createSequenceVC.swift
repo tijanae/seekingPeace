@@ -16,7 +16,11 @@ class createSequenceVC: UIViewController {
     
 //    var poseCell = poses
     
-    private let sequenceDetailView = createSequenceDetail()
+    private let sequenceDetailView = createSequenceView()
+    
+    private let sequenceHeaderView = createSequenceHeaderView()
+    
+    
     
     override func loadView() {
         view = sequenceDetailView
@@ -31,8 +35,8 @@ class createSequenceVC: UIViewController {
     }
     
     private func setUp() {
-//        sequenceDetailView.savePlaylistButton.addTarget
-        sequenceDetailView.cancelPlaylistButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
+        sequenceHeaderView.savePlaylistButton.addTarget(self, action: #selector(tryCreatePlaylist), for: .touchUpInside)
+        sequenceHeaderView.cancelPlaylistButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
     }
     
     @objc func cancel() {
@@ -40,13 +44,22 @@ class createSequenceVC: UIViewController {
     }
     
     @objc func tryCreatePlaylist() {
-        guard let playlistName = sequenceDetailView.playlistName.text else{
+        guard let playlistName = sequenceHeaderView.playlistName.text else{
             print("Error: No PlaylistName")
             return
         }
-        
-        
+        var sequenceItems = [SequenceItem]()
+        for pose in poses {
+            let sequenceItem = SequenceItem(poseDuration: 300, hasAudio: false, yogaPose: pose)
+            sequenceItems.append(sequenceItem)
+        }
+        let playlist = PlaylistPersisted(playlistName: playlistName, sequenceItem: sequenceItems)
+        DispatchQueue.global(qos: .utility).async {
+            try? PlaylistPersistenceManager.manager.savePlaylist(playlistData: playlist)
+        }
     }
+
+
     
 
 
@@ -56,13 +69,13 @@ class createSequenceVC: UIViewController {
 
 extension createSequenceVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        print(poses)
         return poses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = poses[indexPath.row]
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "playlistTable", for: indexPath) as? SequenceDetailTVC else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "playlistTable", for: indexPath) as? CreateSequenceTVC else {return UITableViewCell()}
     
         cell.engTitle.text = data.english_name
 //        cell.sanscritTitle = data.sanskrit_name
@@ -85,6 +98,17 @@ extension createSequenceVC: UITableViewDelegate, UITableViewDataSource {
         self.present(detailedVC, animated: true, completion: nil)
     }
     
-
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        sequenceHeaderView.backgroundColor = .darkGray
+        tableView.tableHeaderView = sequenceHeaderView
+        tableView.sectionHeaderHeight = 100
+        return sequenceHeaderView
+    }
+    
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 300
+//    }
+    
+    
     
 }

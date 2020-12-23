@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/*
 class YogaController: UIViewController {
     
 // MARK: DATA
@@ -91,3 +91,4 @@ extension YogaController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     
 }
+ */
