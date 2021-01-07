@@ -21,17 +21,16 @@ class CreateView: UIView {
     
         lazy var dismissButton: UIButton = {
             let button = UIButton()
-            button.backgroundColor = CrayonBox.Green.mid
-            button.layer.borderWidth = 2
-            button.layer.borderColor = CGColor.init(red: 1, green: 1, blue: 1, alpha: 1)
-            button.setTitleColor(.white, for: .normal)
-            button.setTitle("cancel", for: .normal)
+            button.setImage(UIImage(systemName: "xmark"), for: .normal)
+            button.tintColor = .white
             return button
         }()
+    
     
         lazy var createButton: UIButton = {
             let button = UIButton()
             button.setImage(UIImage(systemName: "plus"), for: .normal)
+            button.tintColor = .white
             return button
         }()
     

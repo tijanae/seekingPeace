@@ -71,7 +71,7 @@ class CreateSequenceHeaderView: UIView {
             
             [savePlaylistButton.topAnchor.constraint(equalTo: topAnchor),
              savePlaylistButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 50),
-             savePlaylistButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 275),
+             savePlaylistButton.leadingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
              savePlaylistButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)].forEach {$0.isActive = true}
         }
         
@@ -84,7 +84,7 @@ class CreateSequenceHeaderView: UIView {
             [cancelPlaylistButton.topAnchor.constraint(equalTo: topAnchor),
              cancelPlaylistButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 50),
              cancelPlaylistButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-             cancelPlaylistButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -275)].forEach {$0.isActive = true}
+             cancelPlaylistButton.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 30)].forEach {$0.isActive = true}
         }
         
         
