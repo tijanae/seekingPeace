@@ -10,6 +10,10 @@ import UIKit
 
 class SequenceTVC: UITableViewCell {
     
+//    weak var delegate: DeleteDelegate?
+    
+    var index = Int()
+    
 //    MARK: UI OBJECTS
     
     lazy var poseImage: UIImageView = {
@@ -33,7 +37,7 @@ class SequenceTVC: UITableViewCell {
     lazy var deleteButton: UIButton = {
        let button = UIButton()
         button.setImage(UIImage(systemName: "trash"), for: .normal)
-
+//        button.addTarget(self, action: #selector(deletePlaylist), for: .touchUpInside)
         return button
     }()
     
@@ -54,6 +58,14 @@ class SequenceTVC: UITableViewCell {
         addConstraints()
 
     }
+    
+//    @objc func deletePlaylist() {
+//        delegate?.deleteObject(tag: <#T##Int#>)
+//
+//        try? PlaylistPersistenceManager.manager.deletePlaylist(playlist: self.savedPlaylists, atIndex: )
+////        self.loadData()
+////        loadView()
+//    }
     
     private func addViews() {
         contentView.addSubview(poseImage)

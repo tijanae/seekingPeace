@@ -15,7 +15,7 @@ class GlossaryView: UIView {
     lazy var glossaryTableView: UITableView = {
         let poseIndex = UITableView()
         poseIndex.backgroundColor = .lightGray
-        poseIndex.register(SequenceTVC.self, forCellReuseIdentifier: "poseData")
+        poseIndex.register(GlossaryTVC.self, forCellReuseIdentifier: "poseData")
         return poseIndex
     }()
     

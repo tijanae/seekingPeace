@@ -18,6 +18,12 @@ class SequenceView: UIView {
         label.textColor = .white
         return label
     }()
+    
+    lazy var createPlaylistButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        return button
+    }()
  
     lazy var poseTableView: UITableView = {
        let poseIndex = UITableView()
@@ -30,6 +36,7 @@ class SequenceView: UIView {
         super.init(frame: frame)
         titleConstraint()
         poseTableViewConstraint()
+        createPlaylistConstraint()
         
     }
     
@@ -59,6 +66,15 @@ class SequenceView: UIView {
          poseTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
          poseTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
          poseTableView.trailingAnchor.constraint(equalTo: trailingAnchor)].forEach{$0.isActive = true}
+    }
+    
+    private func createPlaylistConstraint() {
+        addSubview(createPlaylistButton)
+        
+        createPlaylistButton.translatesAutoresizingMaskIntoConstraints = false
+        [createPlaylistButton.topAnchor.constraint(equalTo: topAnchor, constant: 50),
+         createPlaylistButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 100),
+         createPlaylistButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50)].forEach {$0.isActive = true}
     }
     
 

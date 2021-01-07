@@ -21,18 +21,18 @@ class LoginView: UIView {
         return img
     }()
     
-//    lazy var emailTextField: UITextField = {
-//        let text = UITextField()
-//        text.text = "email"
-//        text.backgroundColor = CrayonBox.Green.mid
-//        text.borderStyle = .line
-//        text.textColor = CrayonBox.White.opaque
-//        text.layer.borderWidth = 2
-//        text.layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
-//        return text
-//       }()
+    lazy var emailTextField: UITextField = {
+        let text = UITextField()
+        text.text = "enter email"
+        text.backgroundColor = CrayonBox.Green.mid
+        text.borderStyle = .line
+        text.textColor = CrayonBox.White.opaque
+        text.layer.borderWidth = 2
+        text.layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
+        return text
+       }()
     
-    var emailTextField = SpTextField(placeholder: "enter email")
+//    var emailTextField = SpTextField(placeholder: "enter email")
        
     lazy var passwordTextField: UITextField = {
         let passWord = UITextField()
@@ -45,6 +45,13 @@ class LoginView: UIView {
         passWord.layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
         return passWord
        }()
+    
+    lazy var textSecureButton: UIButton = {
+       let button = UIButton()
+        button.tintColor = .white
+        button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        return button
+    }()
     
     lazy var signInError: UILabel = {
         let errorLabel = UILabel()
@@ -87,6 +94,7 @@ class LoginView: UIView {
         backdropConstraint()
         emailTextConstraint()
         passwordTextConstraint()
+        textSecureButtonConstraint()
         signUpContraint()
         loginContraint()
         }
@@ -126,6 +134,17 @@ class LoginView: UIView {
          passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
          passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50)].forEach{$0.isActive = true}
         }
+    
+    private func textSecureButtonConstraint() {
+        addSubview(textSecureButton)
+        
+        textSecureButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        [textSecureButton.topAnchor.constraint(equalTo: passwordTextField.topAnchor),
+         textSecureButton.bottomAnchor.constraint(equalTo: passwordTextField.bottomAnchor),
+         textSecureButton.leadingAnchor.constraint(equalTo: passwordTextField.trailingAnchor, constant: -50),
+         textSecureButton.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor, constant: -10)].forEach{$0.isActive = true}
+    }
         
         
     private func signUpContraint() {

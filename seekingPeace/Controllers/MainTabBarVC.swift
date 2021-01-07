@@ -10,21 +10,19 @@ import UIKit
 
 class MainTabBarVC: UITabBarController {
 
-    
-//    let firstvc = YogaController()
-    let firstvc = CreateVC()
-    let secondvc = SequenceVC()
-    let thirdvc = GlossaryVC()
+
+    let firstvc = SequenceVC()
+    let secondvc = GlossaryVC()
+    let thirdvc = SettingsVC()
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        createMainTabBarController()
-        view.backgroundColor = .green
-        firstvc.tabBarItem = UITabBarItem(title: "Create", image: UIImage(systemName: "flowchart"), tag: 0)
-        secondvc.tabBarItem = UITabBarItem(title: "Sequences", image: UIImage(systemName: "doc.plaintext"), tag: 1)
-        thirdvc.tabBarItem = UITabBarItem(title: "Index", image: UIImage(systemName: "doc.plaintext"), tag: 2)
+
+        firstvc.tabBarItem = UITabBarItem(title: "Sequences", image: UIImage(systemName: "doc.plaintext"), tag: 0)
+        secondvc.tabBarItem = UITabBarItem(title: "Glossary", image: UIImage(systemName: "text.book.closed.fill"), tag: 1)
+        thirdvc.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 2)
         
         self.viewControllers = [firstvc, secondvc, thirdvc]
         self.viewControllers?.forEach({$0.tabBarController?.tabBar.barStyle = .default})

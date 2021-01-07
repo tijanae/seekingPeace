@@ -30,12 +30,19 @@ class LoginVC: UIViewController {
         loginView.passwordTextField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         loginView.loginButton.addTarget(self, action: #selector(tryLogin), for: .touchUpInside)
         loginView.signUpButton.addTarget(self, action: #selector(showSignUp), for: .touchUpInside)
+        loginView.textSecureButton.addTarget(self, action: #selector(viewPassword), for: .touchUpInside)
+        loginView.emailTextField.addTarget(self, action: #selector(deleteTextPlaceholder), for: .editingDidBegin)
     }
     
 //    MARK: Objective C
     
 
     @objc func validateFields() {
+//        if loginView.emailTextField.text == "enter email" {
+//            loginView.emailTextField.text = ""
+//        }
+//        loginView.emailTextField.text = ""
+
         guard loginView.emailTextField.hasText, loginView.passwordTextField.hasText else {
             loginView.loginButton.backgroundColor = .darkGray
             loginView.loginButton.isEnabled = false
@@ -70,6 +77,21 @@ class LoginVC: UIViewController {
         FirebaseAuthService.manager.loginUser(email: email.lowercased(), password: password) { (result) in
             self.handleLogin(with: result)
         }
+    }
+    
+    @objc func viewPassword() {
+        if loginView.passwordTextField.isSecureTextEntry == true {
+            loginView.passwordTextField.isSecureTextEntry = false
+            loginView.textSecureButton.setImage(UIImage(systemName: "eye"), for: .normal)
+        } else {
+            loginView.passwordTextField.isSecureTextEntry = true
+            loginView.textSecureButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        }
+    
+    }
+    
+    @objc func deleteTextPlaceholder() {
+        loginView.emailTextField.text = ""
     }
     
 //    MARK: Private Func

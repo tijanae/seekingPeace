@@ -32,7 +32,7 @@ class PoseDetailView: UIView {
     
     lazy var muscleLabel: UILabel = {
        let label = UILabel()
-        label.text = "Yoga Pose: Sanscrit Name"
+        label.text = "Muscles"
         return label
     }()
     
@@ -50,7 +50,7 @@ class PoseDetailView: UIView {
 //    MARK: PrivateData
     
     private func constraints() {
-        poseImageConstraint()
+//        poseImageConstraint()
         engLabelConstraint()
     }
     

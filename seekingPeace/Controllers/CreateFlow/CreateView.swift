@@ -19,15 +19,22 @@ class CreateView: UIView {
             return label
         }()
     
-        lazy var createButton: UIButton = {
+        lazy var dismissButton: UIButton = {
             let button = UIButton()
             button.backgroundColor = CrayonBox.Green.mid
             button.layer.borderWidth = 2
             button.layer.borderColor = CGColor.init(red: 1, green: 1, blue: 1, alpha: 1)
             button.setTitleColor(.white, for: .normal)
-            button.setTitle("create", for: .normal)
+            button.setTitle("cancel", for: .normal)
             return button
         }()
+    
+        lazy var createButton: UIButton = {
+            let button = UIButton()
+            button.setImage(UIImage(systemName: "plus"), for: .normal)
+            return button
+        }()
+    
     
         lazy var createFlowCollection: UICollectionView = {
             let layout = UICollectionViewFlowLayout()
@@ -45,7 +52,8 @@ class CreateView: UIView {
         super.init(frame: frame)
         titleConstraint()
         flowCollectionConstraint()
-        buttonConstraint()
+        addButtonConstraint()
+        dismissConstraint()
         
     }
     
@@ -60,21 +68,21 @@ class CreateView: UIView {
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        [titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 50),
-         titleLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 100),
-         titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
-         titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100)].forEach {$0.isActive = true}
+        [titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 25),
+         titleLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 125),
+         titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 125),
+         titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50)].forEach {$0.isActive = true}
     }
     
-    private func buttonConstraint() {
+    private func addButtonConstraint() {
         addSubview(createButton)
         
         createButton.translatesAutoresizingMaskIntoConstraints = false
         
         [createButton.topAnchor.constraint(equalTo: topAnchor, constant: 50),
          createButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 90),
-         createButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 275),
-         createButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)].forEach {$0.isActive = true}
+         createButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 300),
+         createButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach {$0.isActive = true}
     }
     
     private func flowCollectionConstraint() {
@@ -90,6 +98,18 @@ class CreateView: UIView {
         
         createFlowCollection.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     
+    }
+    
+    private func dismissConstraint() {
+        
+        addSubview(dismissButton)
+        
+        dismissButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        [dismissButton.topAnchor.constraint(equalTo: topAnchor, constant: 60),
+         dismissButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 95),
+         dismissButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+         dismissButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -300)].forEach {$0.isActive = true}
     }
     
 }

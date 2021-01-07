@@ -9,6 +9,25 @@
 import Foundation
 
 /*
+ 12/23 Notes
+ 
+ - create user settings
+    - dark mode
+    - logout
+    - 
+ 
+ Completed Tasks
+    - color palette created named Crayon Box
+    - basic button style created
+    -
+ 
+ 11/30 Notes
+ 
+ Color Palette
+ green/ white/ black
+ 
+ Button Style
+ 
  11/28 Notes
  Firestore has been created
  FireAuth is up and working
@@ -36,12 +55,7 @@ import Foundation
     - create log out button
     - dark mode
  
- 11/30 Notes
  
- Color Palette
- green/ white/ black
- 
- Button Style
  
  
  */

@@ -36,10 +36,18 @@ class SignUpView: UIView {
         passWord.text = "password"
         passWord.backgroundColor = CrayonBox.Green.mid
         passWord.borderStyle = .line
+        passWord.isSecureTextEntry = true
         passWord.textColor = CrayonBox.White.opaque
         passWord.layer.borderWidth = 2
         passWord.layer.borderColor = CGColor(red: 255/255, green: 255/255.0, blue: 255/255.0, alpha: 1)
         return passWord
+    }()
+    
+    lazy var textSecureButton: UIButton = {
+       let button = UIButton()
+        button.tintColor = .white
+        button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        return button
     }()
     
     lazy var cancelButton: UIButton = {
@@ -81,6 +89,7 @@ class SignUpView: UIView {
         backdropConstraint()
         emailTextConstraint()
         passwordTextConstraint()
+        textSecureButtonConstraint()
         signUpConstraint()
         cancelConstraint()
     }
@@ -123,6 +132,18 @@ class SignUpView: UIView {
             passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50)].forEach{$0.isActive = true}
             
         }
+    
+    
+    private func textSecureButtonConstraint() {
+        addSubview(textSecureButton)
+        
+        textSecureButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        [textSecureButton.topAnchor.constraint(equalTo: passwordTextField.topAnchor),
+         textSecureButton.bottomAnchor.constraint(equalTo: passwordTextField.bottomAnchor),
+         textSecureButton.leadingAnchor.constraint(equalTo: passwordTextField.trailingAnchor, constant: -50),
+         textSecureButton.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor, constant: -10)].forEach{$0.isActive = true}
+    }
         
         
     private func signUpConstraint() {
@@ -134,6 +155,7 @@ class SignUpView: UIView {
         [signUpButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
         signUpButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 225),
         signUpButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100)].forEach{$0.isActive = true}
+        
         }
     
     private func cancelConstraint() {

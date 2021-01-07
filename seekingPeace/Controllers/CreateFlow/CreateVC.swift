@@ -39,6 +39,7 @@ class CreateVC: UIViewController {
     
     func createObjectSetUp() {
         createFlowView.createButton.addTarget(self, action: #selector(createPlaylistTapped), for: .touchUpInside)
+        createFlowView.dismissButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
     }
 
     @objc func createPlaylistTapped() {
@@ -49,9 +50,13 @@ class CreateVC: UIViewController {
         showPlaylistDetails()
 //        print(selectedPoses)
     }
+    
+    @objc func cancel() {
+        dismiss(animated: true, completion: nil)
+    }
 //
     func showPlaylistDetails() {
-        let detailedPlaylist = createSequenceVC()
+        let detailedPlaylist = CreateSequenceVC()
         detailedPlaylist.poses = selectedPoses
 //        print(detailedPlaylist.poses)
         detailedPlaylist.modalPresentationStyle = .fullScreen

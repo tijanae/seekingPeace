@@ -30,6 +30,7 @@ class SignUpVC: UIViewController {
         signUpView.passwordTextField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         signUpView.signUpButton.addTarget(self, action: #selector(trySignUp), for: .touchUpInside)
         signUpView.cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
+        signUpView.textSecureButton.addTarget(self, action: #selector(viewPassword), for: .touchUpInside)
     }
     
 //    MARK: Objective C
@@ -68,6 +69,17 @@ class SignUpVC: UIViewController {
     
     @objc func cancel() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func viewPassword() {
+        if signUpView.passwordTextField.isSecureTextEntry == true {
+            signUpView.passwordTextField.isSecureTextEntry = false
+            signUpView.textSecureButton.setImage(UIImage(systemName: "eye"), for: .normal)
+        } else {
+            signUpView.passwordTextField.isSecureTextEntry = true
+            signUpView.textSecureButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        }
+    
     }
     
 // MARK: Private Funcs
