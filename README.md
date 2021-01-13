@@ -1,3 +1,2 @@
 # seekingPeace
 
-add readme
