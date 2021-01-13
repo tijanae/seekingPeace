@@ -10,7 +10,6 @@
 		4E002C8D257F38020046639C /* PoseSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E002C8C257F38020046639C /* PoseSettingsView.swift */; };
 		4E002C91257F38980046639C /* PoseSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E002C90257F38980046639C /* PoseSettingsVC.swift */; };
 		4E002C952581731A0046639C /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E002C942581731A0046639C /* PersistenceHelper.swift */; };
-		4E005B0925720451000CEF55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E005B0825720451000CEF55 /* GoogleService-Info.plist */; };
 		4E005B0D2572151C000CEF55 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E005B0C2572151C000CEF55 /* Notes.swift */; };
 		4E005B112572E801000CEF55 /* CrayonBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E005B102572E801000CEF55 /* CrayonBox.swift */; };
 		4E07E9A823FDD0FB00D65CEC /* yogaImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E07E9A723FDD0FB00D65CEC /* yogaImageHelper.swift */; };
@@ -26,6 +25,7 @@
 		4E29CBA323CE7AE6009BFEC4 /* SequenceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA223CE7AE6009BFEC4 /* SequenceVC.swift */; };
 		4E29CBA523CE7B61009BFEC4 /* yogaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA423CE7B61009BFEC4 /* yogaModel.swift */; };
 		4E388EF4254E0A9100C86653 /* CreateCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E388EF3254E0A9100C86653 /* CreateCVC.swift */; };
+		4E42D44D25AF900C00033769 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E42D44C25AF900C00033769 /* GoogleService-Info.plist */; };
 		4E43C19325A37A28000AE049 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43C19225A37A28000AE049 /* SettingsView.swift */; };
 		4E43C19725A37A4D000AE049 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43C19625A37A4D000AE049 /* SettingsVC.swift */; };
 		4E43C19D25A37C6E000AE049 /* MainSettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43C19C25A37C6E000AE049 /* MainSettingsTVC.swift */; };
@@ -80,7 +80,6 @@
 		4E002C8C257F38020046639C /* PoseSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseSettingsView.swift; sourceTree = "<group>"; };
 		4E002C90257F38980046639C /* PoseSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseSettingsVC.swift; sourceTree = "<group>"; };
 		4E002C942581731A0046639C /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
-		4E005B0825720451000CEF55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4E005B0C2572151C000CEF55 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		4E005B102572E801000CEF55 /* CrayonBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrayonBox.swift; sourceTree = "<group>"; };
 		4E07E9A723FDD0FB00D65CEC /* yogaImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaImageHelper.swift; sourceTree = "<group>"; };
@@ -100,6 +99,7 @@
 		4E29CBA223CE7AE6009BFEC4 /* SequenceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceVC.swift; sourceTree = "<group>"; };
 		4E29CBA423CE7B61009BFEC4 /* yogaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaModel.swift; sourceTree = "<group>"; };
 		4E388EF3254E0A9100C86653 /* CreateCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCVC.swift; sourceTree = "<group>"; };
+		4E42D44C25AF900C00033769 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E43C19225A37A28000AE049 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4E43C19625A37A4D000AE049 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		4E43C19C25A37C6E000AE049 /* MainSettingsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsTVC.swift; sourceTree = "<group>"; };
@@ -203,6 +203,7 @@
 		4E29CB6423CE7358009BFEC4 = {
 			isa = PBXGroup;
 			children = (
+				4E42D44C25AF900C00033769 /* GoogleService-Info.plist */,
 				4E43C1B325A40F5D000AE049 /* NavasanaBoatPose.mp4 */,
 				4E29CB6F23CE7358009BFEC4 /* seekingPeace */,
 				4E29CB8623CE735B009BFEC4 /* seekingPeaceTests */,
@@ -234,7 +235,6 @@
 				4E29CB9923CE7933009BFEC4 /* Persistence */,
 				4E29CB9223CE74AB009BFEC4 /* Supporting Files */,
 				4E29CB7E23CE735A009BFEC4 /* Info.plist */,
-				4E005B0825720451000CEF55 /* GoogleService-Info.plist */,
 			);
 			path = seekingPeace;
 			sourceTree = "<group>";
@@ -473,9 +473,9 @@
 			files = (
 				4E43C1D025A41F10000AE049 /* NavasanaBoatPose.mp4 in Resources */,
 				4E43C1AB25A407F2000AE049 /* modifiedJson.json in Resources */,
+				4E42D44D25AF900C00033769 /* GoogleService-Info.plist in Resources */,
 				4E29CB7A23CE735A009BFEC4 /* Assets.xcassets in Resources */,
 				4E29CB9D23CE79A0009BFEC4 /* Yoga.json in Resources */,
-				4E005B0925720451000CEF55 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,7 +52,9 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell  = tableView.dequeueReusableCell(withIdentifier: "settings", for: indexPath) as? MainSettingsTVC else{
+            return UITableViewCell()}
+        return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
