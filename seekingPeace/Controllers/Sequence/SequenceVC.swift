@@ -17,6 +17,8 @@ class SequenceVC: UIViewController {
 
     
     var playlistHasCount = true
+    
+    var createButton: UIBarButtonItem!
 
 //    MARK: DATA
     var poseIndex = [YogaPose]()
@@ -36,22 +38,27 @@ class SequenceVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .darkGray
+//        view.backgroundColor = .white
         sequenceView.poseTableView.dataSource = self
         sequenceView.poseTableView.delegate = self
-        objectSetUp()
-    }
+//        objectSetUp()
+        navigationItem.title = "Sequence"
+        createButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showCreatePlaylist))
+        navigationItem.rightBarButtonItem = createButton
+            }
     
     override func viewWillAppear(_ animated: Bool) {
         loadView()
     }
     
+
+    
 //    MARK:  PRIVATE FUNCS
         
-    private func objectSetUp() {
-        sequenceView.createPlaylistButton.addTarget(self, action: #selector(showCreatePlaylist), for: .touchUpInside)
-        noSequenceView.createPlaylistButton.addTarget(self, action: #selector(showCreatePlaylist), for: .touchUpInside)
-    }
+//    private func objectSetUp() {
+//        sequenceView.createPlaylistButton.addTarget(self, action: #selector(showCreatePlaylist), for: .touchUpInside)
+//        noSequenceView.createPlaylistButton.addTarget(self, action: #selector(showCreatePlaylist), for: .touchUpInside)
+//    }
     
     private func loadData() {
         do {
@@ -80,17 +87,19 @@ class SequenceVC: UIViewController {
 }
 
 extension SequenceVC: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        print(" count is \(savedPlaylists.count)")
         return savedPlaylists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let data = savedPlaylists[indexPath.row]
         
         guard let poseCell = tableView.dequeueReusableCell(withIdentifier: "poseData", for: indexPath) as? SequenceTVC else{return UITableViewCell()}
         poseCell.playlistNameLabel.text = data.playlistName
-        poseCell.poseImage.image = UIImage(named: "lotus")
+        poseCell.poseImage.image = UIImage(data: data.sequenceImageData)
 //        poseCell.delegate = self
         poseCell.deleteButton.tag = indexPath.row
         poseCell.deleteButton.addTarget(self, action: #selector(deletePlaylist), for: .touchUpInside)
@@ -99,9 +108,21 @@ extension SequenceVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         return 150
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let detailedVC = EditVC()
+        let selectedSequence = savedPlaylists[indexPath.row]
+        detailedVC.sequenceObjects = selectedSequence
+        
+        detailedVC.modalPresentationStyle = .fullScreen
+        
+        self.present(detailedVC, animated: true, completion: nil)
+        
+    }
     
     
     

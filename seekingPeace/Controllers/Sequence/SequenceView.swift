@@ -12,9 +12,15 @@ class SequenceView: UIView {
     
 //    MARK: UIOBJECTS
     
+    lazy var backdrop: UIImageView = {
+       let img = UIImageView()
+        img.image = UIImage(named: "leaf")
+        return img
+    }()
+    
     lazy var playlistLabel: UILabel = {
        let label = UILabel()
-        label.text = "Saved Sequences"
+        label.text = "Sequences"
         label.textColor = .white
         return label
     }()
@@ -22,18 +28,20 @@ class SequenceView: UIView {
     lazy var createPlaylistButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.tintColor = .white
         return button
     }()
  
     lazy var poseTableView: UITableView = {
        let poseIndex = UITableView()
-        poseIndex.backgroundColor = .lightGray
+        poseIndex.backgroundColor = .clear
         poseIndex.register(SequenceTVC.self, forCellReuseIdentifier: "poseData")
         return poseIndex
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backdropConstraint()
         titleConstraint()
         poseTableViewConstraint()
         createPlaylistConstraint()
@@ -45,6 +53,18 @@ class SequenceView: UIView {
     }
     
 //    MARK: Constraints
+    
+    private func backdropConstraint() {
+        
+        addSubview(backdrop)
+        
+        backdrop.translatesAutoresizingMaskIntoConstraints = false
+        
+        [backdrop.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+         backdrop.leadingAnchor.constraint(equalTo: leadingAnchor),
+         backdrop.trailingAnchor.constraint(equalTo: trailingAnchor),
+         backdrop.bottomAnchor.constraint(equalTo: bottomAnchor)].forEach{$0.isActive = true}
+    }
     
     private func titleConstraint() {
         

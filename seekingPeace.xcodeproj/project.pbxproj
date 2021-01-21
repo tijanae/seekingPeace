@@ -46,14 +46,19 @@
 		4E7D4374257D3F8A006FEB92 /* YogiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D4373257D3F8A006FEB92 /* YogiModel.swift */; };
 		4E915315258AF55B00AAFBEE /* PlaylistPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E915314258AF55B00AAFBEE /* PlaylistPersistenceManager.swift */; };
 		4E915319258AF73100AAFBEE /* PlaylistPersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E915318258AF73100AAFBEE /* PlaylistPersisted.swift */; };
-		4E9153B5258B1FEE00AAFBEE /* CreateSequenceHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9153B4258B1FEE00AAFBEE /* CreateSequenceHeaderView.swift */; };
+		4E9153B5258B1FEE00AAFBEE /* EditSequenceHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9153B4258B1FEE00AAFBEE /* EditSequenceHeaderView.swift */; };
+		4EA2C0CA25B8DFA300A365E0 /* EditViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA2C0C925B8DFA300A365E0 /* EditViewHeader.swift */; };
 		4EC1CF66254CCE650011DA10 /* SequenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF65254CCE650011DA10 /* SequenceView.swift */; };
 		4EC1CF6A254D0B530011DA10 /* SequenceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF69254D0B530011DA10 /* SequenceTVC.swift */; };
 		4EC65ED5254C87F4006B2C7A /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */; };
-		4ECF70F4257DA55E00F92BA2 /* createSequenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF70F3257DA55E00F92BA2 /* createSequenceView.swift */; };
-		4ECF70F8257DA86200F92BA2 /* createSequenceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF70F7257DA86200F92BA2 /* createSequenceVC.swift */; };
+		4ECBCADA25B775E800A0EF70 /* NewSequenceHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECBCAD925B775E800A0EF70 /* NewSequenceHeaderVC.swift */; };
+		4ECBCAE025B7CD7800A0EF70 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECBCADF25B7CD7800A0EF70 /* EditVC.swift */; };
+		4ECBCAE425B7CD9A00A0EF70 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECBCAE325B7CD9A00A0EF70 /* EditView.swift */; };
+		4ECBCAE825B7CF1E00A0EF70 /* EditTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECBCAE725B7CF1E00A0EF70 /* EditTVC.swift */; };
+		4ECF70F4257DA55E00F92BA2 /* EditSequenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF70F3257DA55E00F92BA2 /* EditSequenceView.swift */; };
+		4ECF70F8257DA86200F92BA2 /* EditSequenceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF70F7257DA86200F92BA2 /* EditSequenceVC.swift */; };
 		4ECF711A257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF7119257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift */; };
-		4ECF711E257EFF6F00F92BA2 /* CreateSequenceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF711D257EFF6E00F92BA2 /* CreateSequenceTVC.swift */; };
+		4ECF711E257EFF6F00F92BA2 /* EditSequenceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF711D257EFF6E00F92BA2 /* EditSequenceTVC.swift */; };
 		4EDAD00D259435AE00574CB7 /* PlaylistCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDAD00C259435AE00574CB7 /* PlaylistCellDelegate.swift */; };
 		4EECC0212577F732008AF4AC /* SpTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC0202577F732008AF4AC /* SpTextField.swift */; };
 		4EECC06625787FE6008AF4AC /* GlossaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC06525787FE6008AF4AC /* GlossaryView.swift */; };
@@ -120,14 +125,19 @@
 		4E7D4373257D3F8A006FEB92 /* YogiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogiModel.swift; sourceTree = "<group>"; };
 		4E915314258AF55B00AAFBEE /* PlaylistPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistPersistenceManager.swift; sourceTree = "<group>"; };
 		4E915318258AF73100AAFBEE /* PlaylistPersisted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistPersisted.swift; sourceTree = "<group>"; };
-		4E9153B4258B1FEE00AAFBEE /* CreateSequenceHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSequenceHeaderView.swift; sourceTree = "<group>"; };
+		4E9153B4258B1FEE00AAFBEE /* EditSequenceHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSequenceHeaderView.swift; sourceTree = "<group>"; };
+		4EA2C0C925B8DFA300A365E0 /* EditViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewHeader.swift; sourceTree = "<group>"; };
 		4EC1CF65254CCE650011DA10 /* SequenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceView.swift; sourceTree = "<group>"; };
 		4EC1CF69254D0B530011DA10 /* SequenceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceTVC.swift; sourceTree = "<group>"; };
 		4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
-		4ECF70F3257DA55E00F92BA2 /* createSequenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createSequenceView.swift; sourceTree = "<group>"; };
-		4ECF70F7257DA86200F92BA2 /* createSequenceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createSequenceVC.swift; sourceTree = "<group>"; };
+		4ECBCAD925B775E800A0EF70 /* NewSequenceHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSequenceHeaderVC.swift; sourceTree = "<group>"; };
+		4ECBCADF25B7CD7800A0EF70 /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
+		4ECBCAE325B7CD9A00A0EF70 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		4ECBCAE725B7CF1E00A0EF70 /* EditTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTVC.swift; sourceTree = "<group>"; };
+		4ECF70F3257DA55E00F92BA2 /* EditSequenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSequenceView.swift; sourceTree = "<group>"; };
+		4ECF70F7257DA86200F92BA2 /* EditSequenceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSequenceVC.swift; sourceTree = "<group>"; };
 		4ECF7119257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistTableViewCell.swift; sourceTree = "<group>"; };
-		4ECF711D257EFF6E00F92BA2 /* CreateSequenceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSequenceTVC.swift; sourceTree = "<group>"; };
+		4ECF711D257EFF6E00F92BA2 /* EditSequenceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSequenceTVC.swift; sourceTree = "<group>"; };
 		4EDAD00C259435AE00574CB7 /* PlaylistCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCellDelegate.swift; sourceTree = "<group>"; };
 		4EECC0202577F732008AF4AC /* SpTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpTextField.swift; sourceTree = "<group>"; };
 		4EECC06525787FE6008AF4AC /* GlossaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryView.swift; sourceTree = "<group>"; };
@@ -173,20 +183,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4E1EA56A23E9D70700780F86 /* CreateFlow */ = {
+		4E1EA56A23E9D70700780F86 /* CreateSequence */ = {
 			isa = PBXGroup;
 			children = (
 				4E29CBA023CE7AD4009BFEC4 /* CreateVC.swift */,
 				4EF257AC2554E6BD001A425F /* CreateView.swift */,
 				4E388EF3254E0A9100C86653 /* CreateCVC.swift */,
-				4ECF70F7257DA86200F92BA2 /* createSequenceVC.swift */,
-				4ECF70F3257DA55E00F92BA2 /* createSequenceView.swift */,
-				4E9153B4258B1FEE00AAFBEE /* CreateSequenceHeaderView.swift */,
-				4ECF711D257EFF6E00F92BA2 /* CreateSequenceTVC.swift */,
+				4ECF70F7257DA86200F92BA2 /* EditSequenceVC.swift */,
+				4ECF70F3257DA55E00F92BA2 /* EditSequenceView.swift */,
+				4E9153B4258B1FEE00AAFBEE /* EditSequenceHeaderView.swift */,
+				4ECF711D257EFF6E00F92BA2 /* EditSequenceTVC.swift */,
 				4E002C8C257F38020046639C /* PoseSettingsView.swift */,
 				4E002C90257F38980046639C /* PoseSettingsVC.swift */,
 			);
-			path = CreateFlow;
+			path = CreateSequence;
 			sourceTree = "<group>";
 		};
 		4E1EA56B23E9D71000780F86 /* Sequence */ = {
@@ -194,8 +204,13 @@
 			children = (
 				4E29CBA223CE7AE6009BFEC4 /* SequenceVC.swift */,
 				4EC1CF65254CCE650011DA10 /* SequenceView.swift */,
+				4ECBCAD925B775E800A0EF70 /* NewSequenceHeaderVC.swift */,
 				4E2611F2259462E2004D32BD /* NoSequencesView.swift */,
 				4EC1CF69254D0B530011DA10 /* SequenceTVC.swift */,
+				4ECBCADF25B7CD7800A0EF70 /* EditVC.swift */,
+				4ECBCAE325B7CD9A00A0EF70 /* EditView.swift */,
+				4EA2C0C925B8DFA300A365E0 /* EditViewHeader.swift */,
+				4ECBCAE725B7CF1E00A0EF70 /* EditTVC.swift */,
 			);
 			path = Sequence;
 			sourceTree = "<group>";
@@ -204,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				4E42D44C25AF900C00033769 /* GoogleService-Info.plist */,
-				4E43C1B325A40F5D000AE049 /* NavasanaBoatPose.mp4 */,
 				4E29CB6F23CE7358009BFEC4 /* seekingPeace */,
 				4E29CB8623CE735B009BFEC4 /* seekingPeaceTests */,
 				4E29CB6E23CE7358009BFEC4 /* Products */,
@@ -265,7 +279,7 @@
 			children = (
 				4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */,
 				4E5402F7256967060049A472 /* Authentication */,
-				4E1EA56A23E9D70700780F86 /* CreateFlow */,
+				4E1EA56A23E9D70700780F86 /* CreateSequence */,
 				4E1EA56B23E9D71000780F86 /* Sequence */,
 				4EECC06425787F94008AF4AC /* Index */,
 				4E43C19125A378F0000AE049 /* UserSettings */,
@@ -327,6 +341,7 @@
 		4E43C1B225A40F45000AE049 /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				4E43C1B325A40F5D000AE049 /* NavasanaBoatPose.mp4 */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -563,9 +578,10 @@
 				4EC65ED5254C87F4006B2C7A /* MainTabBarVC.swift in Sources */,
 				4EF257AD2554E6BD001A425F /* CreateView.swift in Sources */,
 				4E7D436C257D2B9D006FEB92 /* YogiPlaylistModel.swift in Sources */,
-				4E9153B5258B1FEE00AAFBEE /* CreateSequenceHeaderView.swift in Sources */,
+				4E9153B5258B1FEE00AAFBEE /* EditSequenceHeaderView.swift in Sources */,
 				4E29CBA123CE7AD4009BFEC4 /* CreateVC.swift in Sources */,
-				4ECF70F4257DA55E00F92BA2 /* createSequenceView.swift in Sources */,
+				4ECF70F4257DA55E00F92BA2 /* EditSequenceView.swift in Sources */,
+				4EA2C0CA25B8DFA300A365E0 /* EditViewHeader.swift in Sources */,
 				4E1EA56823E9D56A00780F86 /* NetworkManger.swift in Sources */,
 				4E07E9A823FDD0FB00D65CEC /* yogaImageHelper.swift in Sources */,
 				4E29CB7123CE7358009BFEC4 /* AppDelegate.swift in Sources */,
@@ -578,10 +594,12 @@
 				4E2611F7259BB74D004D32BD /* PhotoCredits.swift in Sources */,
 				4EDAD00D259435AE00574CB7 /* PlaylistCellDelegate.swift in Sources */,
 				4E29CBA323CE7AE6009BFEC4 /* SequenceVC.swift in Sources */,
-				4ECF711E257EFF6F00F92BA2 /* CreateSequenceTVC.swift in Sources */,
+				4ECF711E257EFF6F00F92BA2 /* EditSequenceTVC.swift in Sources */,
+				4ECBCAE025B7CD7800A0EF70 /* EditVC.swift in Sources */,
 				4E002C91257F38980046639C /* PoseSettingsVC.swift in Sources */,
 				4EC1CF6A254D0B530011DA10 /* SequenceTVC.swift in Sources */,
 				4EECC06C25787FFF008AF4AC /* GlossaryVC.swift in Sources */,
+				4ECBCAE825B7CF1E00A0EF70 /* EditTVC.swift in Sources */,
 				4E43C19D25A37C6E000AE049 /* MainSettingsTVC.swift in Sources */,
 				4E54032A2569ABC70049A472 /* StringsValidations.swift in Sources */,
 				4E388EF4254E0A9100C86653 /* CreateCVC.swift in Sources */,
@@ -593,7 +611,7 @@
 				4E43C19325A37A28000AE049 /* SettingsView.swift in Sources */,
 				4E2611F3259462E2004D32BD /* NoSequencesView.swift in Sources */,
 				4EECC0212577F732008AF4AC /* SpTextField.swift in Sources */,
-				4ECF70F8257DA86200F92BA2 /* createSequenceVC.swift in Sources */,
+				4ECF70F8257DA86200F92BA2 /* EditSequenceVC.swift in Sources */,
 				4E5402D42568AFAD0049A472 /* FirestoreService.swift in Sources */,
 				4ECF711A257DC00B00F92BA2 /* CreatePlaylistTableViewCell.swift in Sources */,
 				4E7D4374257D3F8A006FEB92 /* YogiModel.swift in Sources */,
@@ -602,6 +620,8 @@
 				4E5402D82568B0940049A472 /* UserModel.swift in Sources */,
 				4E29CBA523CE7B61009BFEC4 /* yogaModel.swift in Sources */,
 				4E915319258AF73100AAFBEE /* PlaylistPersisted.swift in Sources */,
+				4ECBCAE425B7CD9A00A0EF70 /* EditView.swift in Sources */,
+				4ECBCADA25B775E800A0EF70 /* NewSequenceHeaderVC.swift in Sources */,
 				4E002C8D257F38020046639C /* PoseSettingsView.swift in Sources */,
 				4E43C19725A37A4D000AE049 /* SettingsVC.swift in Sources */,
 				4E005B0D2572151C000CEF55 /* Notes.swift in Sources */,

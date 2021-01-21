@@ -12,6 +12,7 @@ struct PlaylistPersisted: Codable {
     let playlistName: String
 //    let dateCreated: Date
     let sequenceItem: [SequenceItem]
+    let sequenceImageData: Data
 
 }
 

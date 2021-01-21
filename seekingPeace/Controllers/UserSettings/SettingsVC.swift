@@ -12,6 +12,8 @@ class SettingsVC: UIViewController {
     
     private let settingsView = SettingsView()
     
+    private let settingsNames = ["display", "yoga"]
+    
 
     override func loadView() {
         view = settingsView
@@ -48,13 +50,17 @@ class SettingsVC: UIViewController {
 extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return settingsNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell  = tableView.dequeueReusableCell(withIdentifier: "settings", for: indexPath) as? MainSettingsTVC else{
-            return UITableViewCell()}
+        guard let cell  = tableView.dequeueReusableCell(withIdentifier: "settings", for: indexPath) as? MainSettingsTVC else{fatalError("Couldnt Dequeue MainSettingsTVC")}
+        cell.settingsLabel.text = settingsNames[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -62,3 +68,5 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+
+

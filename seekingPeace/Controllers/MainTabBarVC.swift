@@ -24,8 +24,8 @@ class MainTabBarVC: UITabBarController {
         secondvc.tabBarItem = UITabBarItem(title: "Glossary", image: UIImage(systemName: "text.book.closed.fill"), tag: 1)
         thirdvc.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 2)
         
-        self.viewControllers = [firstvc, secondvc, thirdvc]
-        self.viewControllers?.forEach({$0.tabBarController?.tabBar.barStyle = .default})
+        viewControllers = [UINavigationController(rootViewController: firstvc), secondvc, thirdvc]
+        viewControllers?.forEach({$0.tabBarController?.tabBar.barStyle = .default})
     }
 
     

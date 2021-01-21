@@ -24,11 +24,13 @@ class MainSettingsTVC: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        settingsLabelConstraint()
         // Configure the view for the selected state
     }
     
     private func settingsLabelConstraint() {
+        
+        contentView.addSubview(settingsLabel)
         
         settingsLabel.translatesAutoresizingMaskIntoConstraints = false
         
