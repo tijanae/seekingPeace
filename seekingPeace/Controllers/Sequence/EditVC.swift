@@ -12,14 +12,11 @@ class EditVC: UIViewController {
     
     private let editView = EditView()
     
+    private let editHeaderView = EditViewHeader()
+    
 //    MARK: Data
     
     var sequenceObjects: PlaylistPersisted!
-    
-    private let editHeaderView = EditViewHeader()
-    
-    
-    private let randomData = ["poses", "pose2", "pose3"]
     
     override func loadView() {
         view = editView
@@ -32,11 +29,18 @@ class EditVC: UIViewController {
         editView.sequenceTV.dataSource = self
         editView.sequenceTV.delegate = self
         editView.sequenceTV.tableHeaderView = editHeaderView
+        setUpHeader()
         setUp()
     }
+//    private func
     
+    private func setUpHeader() {
+        editHeaderView.sequenceImage.image = UIImage(data: sequenceObjects.sequenceImageData)
+        editHeaderView.sequenceLabel.text = sequenceObjects.playlistName
+    }
     private func setUp() {
         editHeaderView.dismissSequence.addTarget(self, action: #selector(cancel), for: .touchUpInside)
+        editHeaderView.playSequence.addTarget(self, action: #selector(playSequence), for: .touchUpInside)
     }
 
 //    MARK: ObjC funcs
@@ -44,13 +48,19 @@ class EditVC: UIViewController {
     @objc func cancel() {
         dismiss(animated: true, completion: nil)
     }
+    
+    @objc func playSequence() {
+        let sequence = PlayVC()
+        sequence.modalPresentationStyle = .fullScreen
+        present(sequence, animated: true, completion: nil)
+    }
 
 }
 
 extension EditVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(sequenceObjects)
+        print(sequenceObjects!)
         return sequenceObjects.sequenceItem.count
 //        return randomData.count
     }

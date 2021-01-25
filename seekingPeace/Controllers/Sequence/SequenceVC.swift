@@ -9,18 +9,13 @@
 import UIKit
 
 class SequenceVC: UIViewController {
-    
-    weak var delegate: DeleteDelegate?
-    
+//    MARK: Views
     private let sequenceView = SequenceView()
     private let noSequenceView = NoSequencesView()
-
-    
-    var playlistHasCount = true
     
     var createButton: UIBarButtonItem!
 
-//    MARK: DATA
+//    MARK: Data
     var poseIndex = [YogaPose]()
     
     var savedPlaylists = [PlaylistPersisted]() {
@@ -38,7 +33,7 @@ class SequenceVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .white
+        view.backgroundColor = .white
         sequenceView.poseTableView.dataSource = self
         sequenceView.poseTableView.delegate = self
 //        objectSetUp()
@@ -50,6 +45,10 @@ class SequenceVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         loadView()
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//
+//    }
     
 
     
@@ -67,7 +66,7 @@ class SequenceVC: UIViewController {
             fatalError("Could Not Get Playlist")
         }
     }
-    
+//    MARK: OBJC Funcs
     
     @objc func showCreatePlaylist() {
         let createPlaylist = CreateVC()
@@ -76,7 +75,6 @@ class SequenceVC: UIViewController {
     }
     
     @objc func deletePlaylist(sender: UIButton) {
-//        delegate?.deleteObject(tag: sender.tag)
         
         try? PlaylistPersistenceManager.manager.deletePlaylist(playlist: self.savedPlaylists, atIndex: sender.tag )
         self.loadData()
