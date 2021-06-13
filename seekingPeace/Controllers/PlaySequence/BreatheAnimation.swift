@@ -26,22 +26,21 @@ private let pauseTime: Double = 0.5
 private let ghostMaxSize: CGFloat = maxSize * 0.99
 private let ghostMinSize: CGFloat = maxSize * 0.94
 
-
 struct BreatheAnimation: View {
     @State private var size = minSize
     @State private var inhaling = false
-    
+
     @State private var ghostSize = ghostMaxSize
     @State private var ghostBlur: Double = 0
     @State private var ghostOpacity: Double = 0
-    
+
     var body: some View {
         ZStack {
             Petals(size: ghostSize, inhaling: inhaling)
 //                .blur(radius: CGFloat(ghostBlur))
 //                .opacity(ghostOpacity)
                 .drawingGroup()
-            
+
             Petals(size: size, inhaling: inhaling, isMask: true)
             Petals(size: size, inhaling: inhaling)
         }
@@ -50,33 +49,33 @@ struct BreatheAnimation: View {
             performAnimations()
         }
     }
-    
+
     private func performAnimations() {
         withAnimation(.easeInOut(duration: inhaleTime)) {
             inhaling = true
             size = maxSize
         }
-        Timer.scheduledTimer(withTimeInterval: inhaleTime + pauseTime, repeats: false) { (timer) in
-            
+        Timer.scheduledTimer(withTimeInterval: inhaleTime + pauseTime, repeats: false) { (_) in
+
             ghostSize = ghostMaxSize
             ghostBlur = 0
             ghostOpacity = 0.8
-            
-            Timer.scheduledTimer(withTimeInterval: exhaleTime * 0.2, repeats: false) { (Timer) in
+
+            Timer.scheduledTimer(withTimeInterval: exhaleTime * 0.2, repeats: false) { (_) in
                 withAnimation(.easeOut(duration: exhaleTime * 0.6)) {
                     ghostOpacity = 0
                     ghostBlur = 10
-                    
+
                 }
             }
-            
+
             withAnimation(.easeInOut(duration: exhaleTime)) {
                 inhaling = false
                 size = minSize
                 ghostSize = ghostMinSize
             }
         }
-        
+
     }
 }
 
@@ -84,7 +83,7 @@ private struct Petals: View {
     let size: CGFloat
     let inhaling: Bool
     var isMask = false
-    
+
     var body: some View {
 
         let petalsGradient = isMask ? maskGradient : gradient
@@ -100,7 +99,7 @@ private struct Petals: View {
                     )
                     .blendMode(isMask ? .normal : .screen)
             }
-            
+
         }
         .frame(width: gradientSize, height: gradientSize)
     }
@@ -108,7 +107,7 @@ private struct Petals: View {
 
 struct BreatheAnimation_Previews: PreviewProvider {
     struct BreathAnimation_Harness: View {
-        
+
         var body: some View {
             BreatheAnimation()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -116,7 +115,7 @@ struct BreatheAnimation_Previews: PreviewProvider {
 //                .ignoresSafeArea() // not available must upgrade
         }
     }
-    
+
     static var previews: some View {
         BreathAnimation_Harness()
             .previewDevice("iPhone 11 Pro Max")

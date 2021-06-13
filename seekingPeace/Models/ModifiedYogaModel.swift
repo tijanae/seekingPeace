@@ -12,15 +12,13 @@ enum ModifiedYogaJSON: Error {
     case decodingError(Error)
 }
 
-
 struct ModifiedYogaPose: Codable {
-    
+
     let id: Int
     let sanskrit_name: String
     let english_name: String
 //    let img_url: String
-    
-    
+
     static func getModifiedYogaPoses(from data: Data)  throws -> [YogaPose] {
     do {
         let yoga = try JSONDecoder().decode([YogaPose].self, from: data)
@@ -28,6 +26,6 @@ struct ModifiedYogaPose: Codable {
     } catch {
         throw YogaJSON.decodingError(error)
     }
-    
+
     }
 }
