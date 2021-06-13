@@ -40,11 +40,10 @@ class EditView: UIView {
         
         sequenceTV.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate(
-            [sequenceTV.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-             sequenceTV.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
-             sequenceTV.leadingAnchor.constraint(equalTo: leadingAnchor),
-             sequenceTV.trailingAnchor.constraint(equalTo: trailingAnchor)])
+        [sequenceTV.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+        sequenceTV.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+        sequenceTV.leadingAnchor.constraint(equalTo: leadingAnchor),
+        sequenceTV.trailingAnchor.constraint(equalTo: trailingAnchor)].forEach {$0.isActive = true}
     }
 
 }
