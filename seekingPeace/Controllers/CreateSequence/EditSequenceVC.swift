@@ -9,23 +9,21 @@
 import UIKit
 
 class EditSequenceVC: UIViewController {
-    
-//    MARK: DATA
-    
+
+// MARK: DATA
+
     var poses: [YogaPose]!
-    
+
     var savedPlaylists = [PlaylistPersisted]()
-    
+
     var savedPlaylistNames = [String]()
-    
+
 //    var poseCell = poses
-    
+
     private let sequenceDetailView = EditSequenceView()
-    
+
     private let sequenceHeaderView = EditSequenceHeaderView()
-    
-    
-    
+
     override func loadView() {
         view = sequenceDetailView
         loadData()
@@ -39,14 +37,14 @@ class EditSequenceVC: UIViewController {
         sequenceDetailView.playlistTV.tableHeaderView = sequenceHeaderView
         setUp()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         setGradientBackground(colorBottom: UIColor(red: 8/255, green: 92/255, blue: 0/255, alpha: 1), colorTop: .white)
     }
-    
-//    MARK: Private Func
-    
-    private func setGradientBackground(colorBottom: UIColor, colorTop: UIColor){
+
+// MARK: Private Func
+
+    private func setGradientBackground(colorBottom: UIColor, colorTop: UIColor) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [colorBottom.cgColor, colorTop.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.5)
@@ -55,27 +53,26 @@ class EditSequenceVC: UIViewController {
         gradientLayer.frame = view.bounds
        self.view.layer.insertSublayer(gradientLayer, at: 0)
       }
-    
-    
+
     private func setUp() {
         sequenceHeaderView.savePlaylistButton.addTarget(self, action: #selector(tryCreatePlaylist), for: .touchUpInside)
         sequenceHeaderView.cancelPlaylistButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         sequenceHeaderView.playlistName.addTarget(self, action: #selector(deleteTextPlaceholder), for: .editingDidBegin)
         sequenceHeaderView.sequenceImage.addTarget(self, action: #selector(sequencePhoto), for: .touchUpInside)
     }
-    
+
     private func loadData() {
         do {
             savedPlaylists = try PlaylistPersistenceManager.manager.getPlaylist()
         } catch {
             fatalError("Could Not Get Playlist")
         }
-        
+
         savedPlaylistNames = savedPlaylists.map {$0.playlistName}
         print(savedPlaylistNames)
-    
+
     }
-    
+
     private func getDataFromImage() -> Data? {
         guard let image = sequenceHeaderView.playlistImage.image else {
             return nil
@@ -84,46 +81,46 @@ class EditSequenceVC: UIViewController {
 
         return sequenceImageAsData
     }
-    
+
     private func displayInvalidProjectAlert() {
         displayAlert(title: "Invalid Post", message: "Please complete playlist name field")
     }
-    
+
     private func displayDuplicateProjectAlert() {
         displayAlert(title: "Invalid Post", message: "Please enter a unique playlisst name")
     }
-    
+
     private func displayAlert(title: String, message: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
-    
-//    MARK: ObjC funcs
-    
+
+// MARK: ObjC funcs
+
     @objc func cancel() {
         dismiss(animated: true, completion: nil)
     }
-    
+
     @objc func deleteTextPlaceholder() {
         sequenceHeaderView.playlistName.text = ""
     }
-    
+
     @objc func tryCreatePlaylist() {
         guard sequenceHeaderView.playlistName.text != "" else {
             displayInvalidProjectAlert()
             return
         }
-        
+
         guard !savedPlaylistNames.contains(sequenceHeaderView.playlistName.text!) else {
             displayDuplicateProjectAlert()
             return
         }
- 
-        guard let playlistName = sequenceHeaderView.playlistName.text else{
+
+        guard let playlistName = sequenceHeaderView.playlistName.text else {
             return
         }
-        
+
         var sequenceItems = [SequenceItem]()
         for pose in poses {
             let sequenceItem = SequenceItem(poseDuration: 300, hasAudio: false, yogaPose: pose)
@@ -136,14 +133,12 @@ class EditSequenceVC: UIViewController {
         }
         dismiss(animated: true, completion: nil)
     }
-    
+
     @objc func sequencePhoto() {
         let imagePickerViewController =  UIImagePickerController()
         imagePickerViewController.delegate = self
         present(imagePickerViewController, animated: true, completion: nil)
     }
-
-
 
 }
 
@@ -152,11 +147,11 @@ extension EditSequenceVC: UITableViewDelegate, UITableViewDataSource {
         print(poses.count)
         return poses.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = poses[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "playlistTable", for: indexPath) as? EditSequenceTVC else {return UITableViewCell()}
-    
+
         cell.engTitle.text = data.english_name
         cell.sanscritTitle.text = data.sanskrit_name
         let cellImage = UIImage(named: "\(data.english_name)") ??  UIImage(named: "lotus")
@@ -164,38 +159,35 @@ extension EditSequenceVC: UITableViewDelegate, UITableViewDataSource {
 
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailedVC = PoseSettingsVC()
         let selectedPose = poses[indexPath.row]
         detailedVC.poseData = selectedPose
-        
+
         detailedVC.modalPresentationStyle = .fullScreen
-        
+
         self.present(detailedVC, animated: true, completion: nil)
     }
 
-    
 }
 
 extension EditSequenceVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+
         guard let image = info[.originalImage] as? UIImage else {return}
-        
+
         self.sequenceHeaderView.playlistImage.image = image
-        
+
         dismiss(animated: true, completion: nil)
     }
 }
-
-

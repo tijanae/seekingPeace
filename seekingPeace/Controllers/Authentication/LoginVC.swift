@@ -10,13 +10,12 @@ import UIKit
 
 class LoginVC: UIViewController {
 
-    
     private let loginView = LoginView()
-    
+
     override func loadView() {
         view = loginView
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         objectSetUp()
@@ -24,7 +23,7 @@ class LoginVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+
     func objectSetUp() {
         loginView.emailTextField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
         loginView.passwordTextField.addTarget(self, action: #selector(validateFields), for: .editingChanged)
@@ -33,9 +32,8 @@ class LoginVC: UIViewController {
         loginView.textSecureButton.addTarget(self, action: #selector(viewPassword), for: .touchUpInside)
         loginView.emailTextField.addTarget(self, action: #selector(deleteTextPlaceholder), for: .editingDidBegin)
     }
-    
-//    MARK: Objective C
-    
+
+// MARK: Objective C
 
     @objc func validateFields() {
 //        if loginView.emailTextField.text == "enter email" {
@@ -51,34 +49,34 @@ class LoginVC: UIViewController {
         loginView.loginButton.isEnabled = true
         loginView.loginButton.backgroundColor = UIColor(red: 8/255.0, green: 100/255.0, blue: 8/255.0, alpha: 0.7)
     }
-    
+
     @objc func showSignUp() {
         let signUp = SignUpVC()
         signUp.modalPresentationStyle = .fullScreen
         present(signUp, animated: true, completion: nil)
     }
-    
+
     @objc func tryLogin() {
         guard let email = loginView.emailTextField.text, let password = loginView.passwordTextField.text else {
             showAlert(with: "ERROR", and: "Incomplete Field")
             return
         }
-        
+
         guard email.isVaildEmail else {
             showAlert(with: "Error", and: "Please enter a valid email")
             return
         }
-        
+
         guard password.isValidPassword else {
             showAlert(with: "Error", and: "Please enter a vaild password. Passwords must have at least 8 characters")
             return
         }
-        
+
         FirebaseAuthService.manager.loginUser(email: email.lowercased(), password: password) { (result) in
             self.handleLogin(with: result)
         }
     }
-    
+
     @objc func viewPassword() {
         if loginView.passwordTextField.isSecureTextEntry == true {
             loginView.passwordTextField.isSecureTextEntry = false
@@ -87,21 +85,21 @@ class LoginVC: UIViewController {
             loginView.passwordTextField.isSecureTextEntry = true
             loginView.textSecureButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
         }
-    
+
     }
-    
+
     @objc func deleteTextPlaceholder() {
         loginView.emailTextField.text = ""
     }
-    
-//    MARK: Private Func
-    
+
+// MARK: Private Func
+
     private func showAlert(with title: String, and message: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
-    
+
     private func handleLogin(with result: Result<(), Error>) {
         switch result {
         case .failure(let error):
@@ -119,8 +117,5 @@ class LoginVC: UIViewController {
             }, completion: nil)
         }
     }
-    
-    
-
 
 }

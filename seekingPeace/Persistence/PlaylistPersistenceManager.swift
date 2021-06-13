@@ -9,21 +9,21 @@
 import Foundation
 
 struct PlaylistPersistenceManager {
-    
+
     private init() {}
-    
+
     static let manager = PlaylistPersistenceManager()
-    
+
     private let persistenceHelper = PersistenceHelper<PlaylistPersisted>(fileName: "playlistPersisted.plist")
-    
+
     func savePlaylist(playlistData: PlaylistPersisted) throws {
         try persistenceHelper.save(newElement: playlistData)
     }
-    
+
     func getPlaylist() throws -> [PlaylistPersisted] {
         return try persistenceHelper.getObjects()
     }
-    
+
     func deletePlaylist(playlist: [PlaylistPersisted], atIndex: Int) throws {
         try persistenceHelper.delete(elements: playlist, index: atIndex)
     }

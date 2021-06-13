@@ -9,18 +9,18 @@
 import UIKit
 
 class EditVC: UIViewController {
-    
+
     private let editView = EditView()
-    
+
     private let editHeaderView = EditViewHeader()
-    
-//    MARK: Data
-    
+
+// MARK: Data
+
     var sequenceObjects: PlaylistPersisted!
-    
+
     override func loadView() {
         view = editView
-        
+
     }
 
     override func viewDidLoad() {
@@ -33,7 +33,7 @@ class EditVC: UIViewController {
         setUp()
     }
 //    private func
-    
+
     private func setUpHeader() {
         editHeaderView.sequenceImage.image = UIImage(data: sequenceObjects.sequenceImageData)
         editHeaderView.sequenceLabel.text = sequenceObjects.playlistName
@@ -43,12 +43,12 @@ class EditVC: UIViewController {
         editHeaderView.playSequence.addTarget(self, action: #selector(playSequence), for: .touchUpInside)
     }
 
-//    MARK: ObjC funcs
-    
+// MARK: ObjC funcs
+
     @objc func cancel() {
         dismiss(animated: true, completion: nil)
     }
-    
+
     @objc func playSequence() {
         let sequence = PlayVC()
         sequence.sequenceOjc = sequenceObjects
@@ -59,27 +59,26 @@ class EditVC: UIViewController {
 }
 
 extension EditVC: UITableViewDelegate, UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //print(sequenceObjects!)
+        // print(sequenceObjects!)
         return sequenceObjects.sequenceItem.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let data = sequenceObjects.sequenceItem[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "editSequence", for: indexPath) as? EditTVC else {fatalError("Couldnt dequeue EditTVC")}
         cell.poseLabel.text = data.yogaPose.english_name
         let cellImage = UIImage(named: "\(data.yogaPose.english_name)") ??  UIImage(named: "lotus")
         cell.poseImage.image = cellImage
-        
+
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
+
         return 100
     }
-    
-    
+
 }

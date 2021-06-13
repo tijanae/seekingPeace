@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseFirestore
 
-fileprivate enum FireStoreCollections: String {
+private enum FireStoreCollections: String {
     case yogis
     case yogiData
     case playlists
@@ -28,11 +28,11 @@ enum SortingCriteria: String {
 
 class FirestoreService {
     static let manager = FirestoreService()
-    
+
     private let db = Firestore.firestore()
-    
-    //MARK: AppUsers
-    func createAppUser(user: AppUser, completion: @escaping (Result<(), Error>) -> ()) {
+
+    // MARK: AppUsers
+    func createAppUser(user: AppUser, completion: @escaping (Result<(), Error>) -> Void) {
         var fields = user.fieldsDict
         fields["dateCreated"] = Date()
         db.collection(FireStoreCollections.yogis.rawValue).document(user.uid).setData(fields) { (error) in
@@ -44,35 +44,34 @@ class FirestoreService {
             completion(.success(()))
         }
     }
-    
-    func updateCurrentUser(userName: String? = nil, photoURL: URL? = nil, completion: @escaping (Result<(), Error>) -> ()){
+
+    func updateCurrentUser(userName: String? = nil, photoURL: URL? = nil, completion: @escaping (Result<(), Error>) -> Void) {
         guard let userId = FirebaseAuthService.manager.currentUser?.uid else {
-            //MARK: TODO - handle can't get current user
+            // MARK: TODO - handle can't get current user
             return
         }
-        var updateFields = [String:Any]()
-        
+        var updateFields = [String: Any]()
+
         if let user = userName {
             updateFields["userName"] = user
         }
-        
+
         if let photo = photoURL {
             updateFields["photoURL"] = photo.absoluteString
         }
-        
-       
-        //PUT request
+
+        // PUT request
         db.collection(FireStoreCollections.yogis.rawValue).document(userId).updateData(updateFields) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {
                 completion(.success(()))
             }
-            
+
         }
     }
-    
-    func getAllUsers(completion: @escaping (Result<[AppUser], Error>) -> ()) {
+
+    func getAllUsers(completion: @escaping (Result<[AppUser], Error>) -> Void) {
         db.collection(FireStoreCollections.yogis.rawValue).getDocuments { (snapshot, error) in
             if let error = error {
                 completion(.failure(error))
@@ -86,13 +85,12 @@ class FirestoreService {
             }
         }
     }
-    
-    
-    func createYogaSequence(yogi: YogiModel, playlist: YogiPlaylistModel, poses: PlaylistPoseModel, completion: @escaping (Result<(), Error>) -> ()){
+
+    func createYogaSequence(yogi: YogiModel, playlist: YogiPlaylistModel, poses: PlaylistPoseModel, completion: @escaping (Result<(), Error>) -> Void) {
         let yogiId = yogi.fieldsDict
         let fields = playlist.fieldsDict
         let poseData = poses.fieldsDict
-        
+
         db.collection(FireStoreCollections.yogiData.rawValue).addDocument(data: yogiId) { (error) in
             if let error = error {
                 completion(.failure(error))
@@ -100,7 +98,7 @@ class FirestoreService {
                 completion(.success(()))
             }
         }
-        
+
         db.collection(FireStoreCollections.yogiData.rawValue).document().collection(FireStoreCollections.playlists.rawValue).addDocument(data: fields) { (error) in
             if let error = error {
                 completion(.failure(error))
@@ -115,14 +113,10 @@ class FirestoreService {
             } else {
                 completion(.success(()))
             }
-            
-        }
-            
-            
-    }
-    
-    
 
-    
+        }
+
+    }
+
     private init () {}
 }

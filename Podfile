@@ -8,15 +8,18 @@ target 'seekingPeace' do
   # Pods for seekingPeace
 
 
-	pod 'Firebase/Analytics'
-	pod 'Firebase/Auth'
-	pod 'Firebase/Firestore'
-	pod 'Firebase/Storage'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+	
 
 
-  target 'seekingPeaceTests' do
+ target 'seekingPeaceTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'SwiftLint'
+
   end
 
 end

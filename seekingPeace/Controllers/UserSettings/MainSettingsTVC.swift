@@ -9,13 +9,12 @@
 import UIKit
 
 class MainSettingsTVC: UITableViewCell {
-    
+
     lazy var settingsLabel: UILabel = {
         let label = UILabel()
         label.text = "Settings Text"
         return label
     }()
-
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,16 +26,16 @@ class MainSettingsTVC: UITableViewCell {
         settingsLabelConstraint()
         // Configure the view for the selected state
     }
-    
+
     private func settingsLabelConstraint() {
-        
+
         contentView.addSubview(settingsLabel)
-        
+
         settingsLabel.translatesAutoresizingMaskIntoConstraints = false
-        
+
         [settingsLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -10),
          settingsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 175),
-         settingsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)].forEach{$0.isActive = true}
+         settingsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)].forEach {$0.isActive = true}
     }
 
 }
