@@ -9,7 +9,7 @@
 import Foundation
 
 struct YogiPlaylistModel: Codable {
-    
+
     let playlistId: String
     let playlistName: String?
 //    let dateCreated: Date?
@@ -18,7 +18,7 @@ struct YogiPlaylistModel: Codable {
     let yogiId: String
     let id: String
 //    let playlistImage: String
-    
+
     init(playlistId: String, playlistName: String, sequenceItemId: String, playlistStatus: Bool, yogiId: String) {
         self.playlistId = playlistId
         self.playlistName = playlistName
@@ -27,14 +27,14 @@ struct YogiPlaylistModel: Codable {
         self.yogiId = yogiId
         self.id = UUID().description
     }
-    
+
     init?(from dict: [String: Any], id: String) {
         guard let playlistId = dict["playlistId"] as? String,
               let playlistName = dict["playlistName"] as? String,
               let sequenceItemId = dict["sequenceItemId"] as? String,
 //              let playlistStatus = dict["playlistStatus"] as Bool,
               let yogiId = dict["yogiId"] as? String else { return nil }
-        
+
         self.playlistId = playlistId
         self.playlistName = playlistName
         self.sequenceItemId = sequenceItemId
@@ -42,15 +42,14 @@ struct YogiPlaylistModel: Codable {
         self.yogiId = yogiId
         self.id = id
     }
-    
+
     var fieldsDict: [String: Any] {
         return [
-            "playlistId" : self.playlistId,
-            "playlistName" : self.playlistName ?? "",
-            "sequenceItemId" : self.sequenceItemId ?? "",
+            "playlistId": self.playlistId,
+            "playlistName": self.playlistName ?? "",
+            "sequenceItemId": self.sequenceItemId ?? "",
 //            "playlistStatus" : self.playlistStatus ?? false,
-            "yogiId" : self.yogiId
+            "yogiId": self.yogiId
         ]
     }
 }
-

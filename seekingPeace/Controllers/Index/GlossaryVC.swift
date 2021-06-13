@@ -9,36 +9,35 @@
 import UIKit
 
 class GlossaryVC: UIViewController {
-    
-//    MARK: DATA
+
+// MARK: DATA
     var poseIndex = [YogaPose]()
-    
+
     private let glossaryView = GlossaryView()
-    
+
     override func loadView() {
         view = glossaryView
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .darkGray
         loadData()
         glossaryView.glossaryTableView.dataSource = self
         glossaryView.glossaryTableView.delegate = self
-        
+
 //        view.backgroundColor = .darkGray
-        
+
     }
-    
-//    MARK:  PRIVATE FUNCS
-    
+
+// MARK: PRIVATE FUNCS
 
     private func loadData() {
         guard let pathToJSONFile = Bundle.main.path(forResource: "Yoga", ofType: "json") else {
             fatalError("Unexpected Error: cannot find JSON")
         }
         let url = URL(fileURLWithPath: pathToJSONFile)
-        do{
+        do {
             let data = try Data(contentsOf: url)
             self.poseIndex = try YogaPose.getYogaPoses(from: data)
         } catch {
@@ -46,9 +45,7 @@ class GlossaryVC: UIViewController {
             fatalError("Unexpected Error in pose index")
         }
     }
-    
-    
-    
+
 }
 
 extension GlossaryVC: UITableViewDelegate, UITableViewDataSource {
@@ -56,24 +53,23 @@ extension GlossaryVC: UITableViewDelegate, UITableViewDataSource {
 //        print(poseIndex.count) // 48
         return poseIndex.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = poseIndex[indexPath.row]
-        
-        guard let poseCell = tableView.dequeueReusableCell(withIdentifier: "poseData", for: indexPath) as? GlossaryTVC else{return UITableViewCell()}
+
+        guard let poseCell = tableView.dequeueReusableCell(withIdentifier: "poseData", for: indexPath) as? GlossaryTVC else {return UITableViewCell()}
         poseCell.engTitle.text = data.english_name
         poseCell.sanscritTitle.text = data.sanskrit_name
         let cellImage = UIImage(named: "\(data.english_name)") ??  UIImage(named: "lotus")
         poseCell.poseImage.image = cellImage
-        
+
         return poseCell
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailedVC = PoseDetailVC()
         let selectedPose = poseIndex[indexPath.row]
@@ -82,5 +78,5 @@ extension GlossaryVC: UITableViewDelegate, UITableViewDataSource {
 //        present(detailedVC, animated: true, completion: nil)
         self.present(detailedVC, animated: true, completion: nil)
     }
-    
+
 }

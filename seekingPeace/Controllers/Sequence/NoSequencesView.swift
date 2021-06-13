@@ -16,45 +16,41 @@ class NoSequencesView: UIView {
         label.font = UIFont(name: "Thonburi-Bold", size: 30)
         label.adjustsFontSizeToFitWidth = true
         return label
-    
+
     }()
-    
+
     lazy var createPlaylistButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus"), for: .normal)
         return button
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        //backgroundColor = .white
+        // backgroundColor = .white
         titleConstraint()
         createPlaylistConstraint()
     }
-    
-    
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    
-//    MARK: Constraints
-    
+
+// MARK: Constraints
+
     private func titleConstraint() {
-        
+
         addSubview(sequenceRequestTitle)
-        
+
         sequenceRequestTitle.translatesAutoresizingMaskIntoConstraints = false
-        
+
         [sequenceRequestTitle.centerYAnchor.constraint(equalTo: centerYAnchor),
          sequenceRequestTitle.centerXAnchor.constraint(equalTo: centerXAnchor)].forEach {$0.isActive = true}
     }
-    
+
     private func createPlaylistConstraint() {
         addSubview(createPlaylistButton)
-        
+
         createPlaylistButton.translatesAutoresizingMaskIntoConstraints = false
         [createPlaylistButton.topAnchor.constraint(equalTo: topAnchor, constant: 50),
          createPlaylistButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 100),

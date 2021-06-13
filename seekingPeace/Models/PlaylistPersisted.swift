@@ -22,5 +22,5 @@ struct SequenceItem: Codable {
     let poseDuration: Int
     let hasAudio: Bool
     let yogaPose: YogaPose
-    
+
 }

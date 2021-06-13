@@ -10,24 +10,19 @@ import UIKit
 
 class MainTabBarVC: UITabBarController {
 
-
     let firstvc = SequenceVC()
     let secondvc = GlossaryVC()
     let thirdvc = SettingsVC()
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         firstvc.tabBarItem = UITabBarItem(title: "Sequences", image: UIImage(systemName: "doc.plaintext"), tag: 0)
         secondvc.tabBarItem = UITabBarItem(title: "Glossary", image: UIImage(systemName: "text.book.closed.fill"), tag: 1)
         thirdvc.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 2)
-        
+
         viewControllers = [UINavigationController(rootViewController: firstvc), secondvc, thirdvc]
         viewControllers?.forEach({$0.tabBarController?.tabBar.barStyle = .default})
     }
-
-    
 
 }
