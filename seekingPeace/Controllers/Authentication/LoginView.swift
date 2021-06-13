@@ -21,18 +21,7 @@ class LoginView: UIView {
         return img
     }()
     
-    lazy var emailTextField: UITextField = {
-        let text = UITextField()
-        text.text = "enter email"
-        text.backgroundColor = CrayonBox.Green.mid
-        text.borderStyle = .line
-        text.textColor = CrayonBox.White.opaque
-        text.layer.borderWidth = 2
-        text.layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
-        return text
-       }()
-    
-//    var emailTextField = SpTextField(placeholder: "enter email")
+    lazy var emailTextField = SpTextField(placeholder: "enter email")
        
     lazy var passwordTextField: UITextField = {
         let passWord = UITextField()

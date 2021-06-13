@@ -15,14 +15,16 @@ class CreateView: UIView {
         lazy var titleLabel: UILabel = {
             let label = UILabel()
             label.text = "Create a Sequence"
-            label.textColor = .white
+            label.font = UIFont(name: "Thonburi-Bold", size: 30)
+            label.adjustsFontSizeToFitWidth = true
+            label.textColor = CrayonBox.Green.mid
             return label
         }()
     
         lazy var dismissButton: UIButton = {
             let button = UIButton()
             button.setImage(UIImage(systemName: "xmark"), for: .normal)
-            button.tintColor = .white
+            button.tintColor = .black
             return button
         }()
     
@@ -30,7 +32,7 @@ class CreateView: UIView {
         lazy var createButton: UIButton = {
             let button = UIButton()
             button.setImage(UIImage(systemName: "plus"), for: .normal)
-            button.tintColor = .white
+            button.tintColor = .black
             return button
         }()
     
@@ -41,7 +43,7 @@ class CreateView: UIView {
             layout.minimumInteritemSpacing = 5
 //          layout.scrollDirection = .horizontal
             let flowCV = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: layout)
-            flowCV.backgroundColor = .white
+            flowCV.backgroundColor = .clear
             flowCV.register(CreateCVC.self, forCellWithReuseIdentifier: "CreateFlowCVC")
 
             return flowCV
@@ -94,8 +96,8 @@ class CreateView: UIView {
         
         [titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 25),
          titleLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 125),
-         titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 125),
-         titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50)].forEach {$0.isActive = true}
+         titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 70),
+         titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40)].forEach {$0.isActive = true}
     }
     
     private func addButtonConstraint() {
@@ -103,10 +105,10 @@ class CreateView: UIView {
         
         createButton.translatesAutoresizingMaskIntoConstraints = false
         
-        [createButton.topAnchor.constraint(equalTo: topAnchor, constant: 50),
-         createButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 90),
-         createButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 300),
-         createButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach {$0.isActive = true}
+        [createButton.topAnchor.constraint(equalTo: topAnchor),
+         createButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 150),
+         createButton.leadingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
+         createButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)].forEach {$0.isActive = true}
     }
     
     private func flowCollectionConstraint() {

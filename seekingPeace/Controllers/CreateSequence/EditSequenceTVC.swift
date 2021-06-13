@@ -21,6 +21,7 @@ class EditSequenceTVC: UITableViewCell {
     lazy var engTitle: UILabel = {
         let engLabel = UILabel()
         engLabel.text = "Yoga Pose: Eng Name"
+        engLabel.adjustsFontSizeToFitWidth = true
         return engLabel
     }()
         
@@ -37,6 +38,7 @@ class EditSequenceTVC: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        backgroundColor = .clear
         addViews()
         addConstraints()
 
@@ -45,7 +47,7 @@ class EditSequenceTVC: UITableViewCell {
     private func addViews() {
         contentView.addSubview(poseImage)
         contentView.addSubview(engTitle)
-//        contentView.addSubview(sanscritTitle)
+        contentView.addSubview(sanscritTitle)
         
     }
 
@@ -53,7 +55,7 @@ class EditSequenceTVC: UITableViewCell {
     private func addConstraints() {
         poseImageConstraint()
         engTitleConstraint()
-//        sanscritTitleConstraint()
+        sanscritTitleConstraint()
     }
     
     
@@ -73,8 +75,9 @@ class EditSequenceTVC: UITableViewCell {
         engTitle.translatesAutoresizingMaskIntoConstraints = false
         
         [engTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -10),
+         engTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
          engTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 175),
-         engTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)].forEach{$0.isActive = true}
+         engTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)].forEach{$0.isActive = true}
     }
     
     private func sanscritTitleConstraint() {

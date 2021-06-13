@@ -28,8 +28,13 @@ class EditViewHeader: UIView {
         button.tintColor = .white
         button.setImage(UIImage(systemName: "play"), for: .normal)
         button.setTitle(" Play", for: .normal)
-        button.backgroundColor = .black
+        button.backgroundColor = CrayonBox.Green.opaque
         button.layer.cornerRadius = 10
+        let xPostion:CGFloat = 125
+        let yPostion:CGFloat = 275
+        let elementWidth:CGFloat = 150
+        let elementHeight:CGFloat = 30
+        button.frame = CGRect(x: xPostion, y: yPostion, width: elementWidth, height: elementHeight)
         return button
     }()
     
@@ -37,6 +42,7 @@ class EditViewHeader: UIView {
        let label = UILabel()
         label.tintColor = .white
         label.text = "sequenceName"
+        label.font = UIFont(name: "Noteworthy-Bold", size: 30)
         return label
     }()
     
@@ -51,6 +57,7 @@ class EditViewHeader: UIView {
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 350))
         constraints()
+        addSubview(playSequence)
     }
     
     required init?(coder: NSCoder) {
@@ -60,7 +67,7 @@ class EditViewHeader: UIView {
     private func constraints(){
         dismissConstraint()
         sequenceImageConstraint()
-        playSequenceConstraint()
+        //playSequenceConstraint()
         sequenceLabelConstraint()
         menuConstraint()
     }
@@ -101,27 +108,29 @@ class EditViewHeader: UIView {
     
     }
     
-    private func playSequenceConstraint() {
-        
-        addSubview(playSequence)
-        
-        playSequence.translatesAutoresizingMaskIntoConstraints = false
-        
-        [playSequence.topAnchor.constraint(equalTo: topAnchor, constant: 300),
-         playSequence.bottomAnchor.constraint(equalTo: topAnchor, constant: 325),
-         playSequence.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
-         playSequence.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 125)].forEach{$0.isActive = true}
-    }
+//    private func playSequenceConstraint() {
+//
+//        addSubview(playSequence)
+//
+//        playSequence.translatesAutoresizingMaskIntoConstraints = false
+//
+//        [playSequence.topAnchor.constraint(equalTo: topAnchor, constant: 300),
+//         playSequence.bottomAnchor.constraint(equalTo: topAnchor, constant: 325),
+//         playSequence.centerXAnchor.constraint(equalTo: centerXAnchor)
+////         playSequence.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 175),
+////         playSequence.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 275)
+//        ].forEach{$0.isActive = true}
+//    }
     
     private func sequenceLabelConstraint() {
         addSubview(sequenceLabel)
         
         sequenceLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        [sequenceLabel.topAnchor.constraint(equalTo: topAnchor, constant: 250),
+        [sequenceLabel.topAnchor.constraint(equalTo: topAnchor, constant: 225),
          sequenceLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 275),
-         sequenceLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 150),
-         sequenceLabel.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 275)].forEach { $0.isActive = true}
+         sequenceLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 125),
+         sequenceLabel.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 325)].forEach { $0.isActive = true}
     }
 
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import SwiftUI
 
 class PlayView: UIView {
 
@@ -20,12 +21,19 @@ class PlayView: UIView {
     lazy var sequenceLabel: UILabel = {
         let label = UILabel()
         label.text = "sequence name"
+        label.font = UIFont(name: "Noteworthy-Bold", size: 30)
         label.tintColor = .black
         return label
     }()
     
+//    lazy var circleView: UIBezierPath = {
+//        let circle = UIBezierPath(arcCenter: .zero, radius: UIScreen.main.bounds.size.width, startAngle: 0, endAngle: 2, clockwise: true)
+//        circle.fill(with: UI, alpha: <#T##CGFloat#>)
+//        return circle
+//    }()
+    
     lazy var circleView: UIView = {
-      let view = UIView(frame: CGRect(x: 90, y: 300, width: 250, height: 250))
+        let view = UIView(frame: CGRect(x: 83, y: 300, width: 250, height: 250))
 //        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemGreen
         view.layer.cornerRadius = view.frame.width / 2
@@ -71,6 +79,8 @@ class PlayView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         constraints()
+        addSubview(circleView)
+//        addSubview(UIHostingController(rootView: BreatheAnimation()))
     }
     
     required init?(coder: NSCoder) {
@@ -79,10 +89,15 @@ class PlayView: UIView {
     
 //    MARK: Private Func
     
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        circleView.layer.cornerRadius = circleView.frame.width / 2
+//    }
+    
     private func constraints() {
         backConstraint()
         sequenceNameConstraint()
-        circleConstraint()
+        //circleConstraint()
         poseNameConstraints()
         rewindConstraint()
         pauseConstraint()
@@ -96,7 +111,7 @@ class PlayView: UIView {
         
         [backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),
          backButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 75),
-         backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
+         backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
          backButton.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 75)].forEach{$0.isActive = true}
     }
     
@@ -107,18 +122,23 @@ class PlayView: UIView {
         sequenceLabel.translatesAutoresizingMaskIntoConstraints = false
         
         [sequenceLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),
-         sequenceLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 75),
+         sequenceLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
          sequenceLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-         sequenceLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -300)].forEach{$0.isActive = true}
+//         sequenceLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -300)
+        ].forEach{$0.isActive = true}
     }
     
-    private func circleConstraint() {
-        addSubview(circleView)
-        
-        NSLayoutConstraint.activate([
-            circleView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            circleView.centerYAnchor.constraint(equalTo: centerYAnchor)])
-    }
+//    private func circleConstraint() {
+//
+//        addSubview(circleView)
+//
+//        circleView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        [circleView.topAnchor.constraint(equalTo: topAnchor, constant: 400),
+//         circleView.bottomAnchor.constraint(equalTo: topAnchor, constant: 600),
+//
+//        ].forEach{$0.isActive = true}
+//    }
     
     private func poseNameConstraints() {
         
@@ -126,10 +146,11 @@ class PlayView: UIView {
         
         poseNameLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        [poseNameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -200),
-         poseNameLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -175),
+        [poseNameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 125),
+         poseNameLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 175),
          poseNameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-         poseNameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 300)].forEach{$0.isActive = true}
+//         poseNameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 300)
+        ].forEach{$0.isActive = true}
         
     }
     

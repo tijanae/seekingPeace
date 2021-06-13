@@ -12,6 +12,7 @@ class SequenceVC: UIViewController {
 //    MARK: Views
     private let sequenceView = SequenceView()
     private let noSequenceView = NoSequencesView()
+    private let breatheAnimation = BreatheAnimation()
     
     var createButton: UIBarButtonItem!
 
@@ -39,6 +40,7 @@ class SequenceVC: UIViewController {
 //        objectSetUp()
         navigationItem.title = "Sequence"
         createButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showCreatePlaylist))
+        createButton.tintColor = .black
         navigationItem.rightBarButtonItem = createButton
             }
     
@@ -46,18 +48,21 @@ class SequenceVC: UIViewController {
         loadView()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        setGradientBackground(colorBottom: UIColor(red: 50/255, green: 175/255, blue: 0/255, alpha: 1), colorTop: .white)
+    }
     
-
+//    MARK: Private Func
     
-//    MARK:  PRIVATE FUNCS
-        
-//    private func objectSetUp() {
-//        sequenceView.createPlaylistButton.addTarget(self, action: #selector(showCreatePlaylist), for: .touchUpInside)
-//        noSequenceView.createPlaylistButton.addTarget(self, action: #selector(showCreatePlaylist), for: .touchUpInside)
-//    }
+    private func setGradientBackground(colorBottom: UIColor, colorTop: UIColor){
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorBottom.cgColor, colorTop.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.5)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.locations = [NSNumber(floatLiteral: 0.0), NSNumber(floatLiteral: 1.0)]
+        gradientLayer.frame = view.bounds
+       self.view.layer.insertSublayer(gradientLayer, at: 0)
+      }
     
     private func loadData() {
         do {

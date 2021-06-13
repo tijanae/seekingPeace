@@ -104,8 +104,8 @@ class EditSequenceHeaderView: UIView {
             
             [playlistImage.topAnchor.constraint(equalTo: topAnchor, constant: 50),
              playlistImage.bottomAnchor.constraint(equalTo: topAnchor, constant: 250),
-             playlistImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
-             playlistImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -50)].forEach{$0.isActive = true}
+             playlistImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+             playlistImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -30)].forEach{$0.isActive = true}
             
         }
     
@@ -129,8 +129,8 @@ class EditSequenceHeaderView: UIView {
             
             [playlistName.topAnchor.constraint(equalTo: topAnchor, constant: 260),
              playlistName.bottomAnchor.constraint(equalTo: topAnchor, constant: 285),
-             playlistName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 150),
-             playlistName.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -150)].forEach{$0.isActive = true}
+             playlistName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 75),
+             playlistName.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -75)].forEach{$0.isActive = true}
             
         }
         

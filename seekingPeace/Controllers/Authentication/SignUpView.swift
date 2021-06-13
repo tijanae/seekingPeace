@@ -20,28 +20,9 @@ class SignUpView: UIView {
         return img
     }()
     
-    lazy var emailTextField: UITextField = {
-        let text = UITextField()
-        text.text = "email"
-        text.backgroundColor = CrayonBox.Green.mid
-        text.borderStyle = .line
-        text.textColor = CrayonBox.White.opaque
-        text.layer.borderWidth = 2
-        text.layer.borderColor = CGColor(red: 255/255, green: 255/255.0, blue: 255/255.0, alpha: 1)
-        return text
-    }()
+    lazy var emailTextField = SpTextField(placeholder: "enter email")
     
-    lazy var passwordTextField: UITextField = {
-        let passWord = UITextField()
-        passWord.text = "password"
-        passWord.backgroundColor = CrayonBox.Green.mid
-        passWord.borderStyle = .line
-        passWord.isSecureTextEntry = true
-        passWord.textColor = CrayonBox.White.opaque
-        passWord.layer.borderWidth = 2
-        passWord.layer.borderColor = CGColor(red: 255/255, green: 255/255.0, blue: 255/255.0, alpha: 1)
-        return passWord
-    }()
+    lazy var passwordTextField = SpTextField(placeholder: "enter password")
     
     lazy var textSecureButton: UIButton = {
        let button = UIButton()

@@ -22,6 +22,8 @@ class CreateCVC: UICollectionViewCell {
     lazy var engTitle: UILabel = {
        let label = UILabel()
         label.contentMode = .scaleToFill
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .center
         label.numberOfLines = 2
         return label
     }()
@@ -35,7 +37,7 @@ class CreateCVC: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addConstraints()
-        contentView.backgroundColor = .lightGray
+        contentView.backgroundColor = CrayonBox.Black.sheer
     }
     
     
@@ -64,10 +66,10 @@ class CreateCVC: UICollectionViewCell {
         
         engTitle.translatesAutoresizingMaskIntoConstraints = false
         
-        [ engTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 55),
-          engTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-          engTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-          engTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)].forEach{$0.isActive = true}
+        [ engTitle.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -50),
+          engTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+          engTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+          engTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5)].forEach{$0.isActive = true}
     }
     
     private func sanskritTitleConstraint() {

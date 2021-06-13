@@ -19,26 +19,32 @@ class PoseSettingsView: UIView {
     lazy var engTitle: UILabel = {
        let engLabel = UILabel()
         engLabel.text = "Yoga Pose: Eng Name"
+        engLabel.textColor = .black
+        engLabel.font = UIFont(name: "Thonburi", size: 25)
+        engLabel.adjustsFontSizeToFitWidth = true
+        return engLabel
+    }()
+    
+    lazy var sanTitle: UILabel = {
+       let engLabel = UILabel()
+        engLabel.text = "Yoga Pose: San Name"
+        engLabel.textColor = .black
+        engLabel.font = UIFont(name: "Thonburi", size: 25)
+        engLabel.adjustsFontSizeToFitWidth = true
         return engLabel
     }()
     
     lazy var savePlaylistButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = CrayonBox.Green.mid
-        button.layer.borderWidth = 2
-        button.layer.borderColor = CGColor.init(red: 1, green: 1, blue: 1, alpha: 1)
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("save", for: .normal)
+        button.setImage(UIImage(systemName: "checkmark"), for: .normal)
+        button.tintColor = .black
         return button
     }()
     
     lazy var cancelPlaylistButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = CrayonBox.Green.mid
-        button.layer.borderWidth = 2
-        button.layer.borderColor = CGColor.init(red: 1, green: 1, blue: 1, alpha: 1)
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("cancel", for: .normal)
+        button.setImage(UIImage(systemName: "xmark"), for: .normal)
+        button.tintColor = .black
         return button
     }()
     
@@ -89,6 +95,7 @@ class PoseSettingsView: UIView {
         poseImageConstraint()
         poseNameConstraint()
         durationLabelConstraint()
+        sanNameConstraint()
         
     }
     
@@ -98,10 +105,10 @@ class PoseSettingsView: UIView {
         
         savePlaylistButton.translatesAutoresizingMaskIntoConstraints = false
         
-        [savePlaylistButton.topAnchor.constraint(equalTo: topAnchor, constant: 50),
-         savePlaylistButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 90),
-         savePlaylistButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 275),
-         savePlaylistButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)].forEach {$0.isActive = true}
+        [savePlaylistButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),
+         savePlaylistButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 90),
+         savePlaylistButton.leadingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
+         savePlaylistButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25)].forEach {$0.isActive = true}
     }
     
     private func cancelbuttonConstraint() {
@@ -110,10 +117,10 @@ class PoseSettingsView: UIView {
         
         cancelPlaylistButton.translatesAutoresizingMaskIntoConstraints = false
         
-        [cancelPlaylistButton.topAnchor.constraint(equalTo: topAnchor, constant: 50),
-         cancelPlaylistButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 90),
-         cancelPlaylistButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-         cancelPlaylistButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -275)].forEach {$0.isActive = true}
+        [cancelPlaylistButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),
+         cancelPlaylistButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 90),
+         cancelPlaylistButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+         cancelPlaylistButton.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 35)].forEach {$0.isActive = true}
     }
     
     private func poseImageConstraint() {
@@ -122,10 +129,10 @@ class PoseSettingsView: UIView {
         
         poseImage.translatesAutoresizingMaskIntoConstraints = false
         
-        [poseImage.topAnchor.constraint(equalTo: topAnchor, constant: 100),
-         poseImage.bottomAnchor.constraint(equalTo: topAnchor, constant: 275),
-         poseImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
-         poseImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -50)].forEach{$0.isActive = true}
+        [poseImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
+         poseImage.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 275),
+         poseImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 75),
+         poseImage.trailingAnchor.constraint(equalTo: leadingAnchor, constant:  275)].forEach{$0.isActive = true}
     }
     
     private func poseNameConstraint() {
@@ -133,10 +140,21 @@ class PoseSettingsView: UIView {
         
         engTitle.translatesAutoresizingMaskIntoConstraints = false
         
-        [engTitle.topAnchor.constraint(equalTo: topAnchor, constant: 275),
-         engTitle.bottomAnchor.constraint(equalTo: topAnchor, constant: 300),
-         engTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 150),
-         engTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -150)].forEach{$0.isActive = true}
+        [engTitle.topAnchor.constraint(equalTo: topAnchor, constant: 325),
+         engTitle.bottomAnchor.constraint(equalTo: topAnchor, constant: 375),
+         engTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
+         engTitle.trailingAnchor.constraint(equalTo: leadingAnchor, constant:  175)].forEach{$0.isActive = true}
+    }
+    
+    private func sanNameConstraint() {
+        addSubview(sanTitle)
+        
+        sanTitle.translatesAutoresizingMaskIntoConstraints = false
+        
+        [sanTitle.topAnchor.constraint(equalTo: topAnchor, constant: 375),
+         sanTitle.bottomAnchor.constraint(equalTo: topAnchor, constant: 425),
+         sanTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
+         sanTitle.trailingAnchor.constraint(equalTo: leadingAnchor, constant:  175)].forEach{$0.isActive = true}
     }
     
     private func durationLabelConstraint() {
@@ -145,10 +163,10 @@ class PoseSettingsView: UIView {
         
         durationLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        [durationLabel.topAnchor.constraint(equalTo: topAnchor, constant: 400),
-         durationLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -280),
+        [durationLabel.topAnchor.constraint(equalTo: topAnchor, constant: 425),
+         durationLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 475),
          durationLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
-         durationLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -250)].forEach{$0.isActive = true}
+         durationLabel.trailingAnchor.constraint(equalTo: leadingAnchor, constant:  175)].forEach{$0.isActive = true}
     }
     
     private func durationTFConstraint() {

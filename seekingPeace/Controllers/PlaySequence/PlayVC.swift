@@ -6,7 +6,8 @@
 //  Copyright © 2021 Tia Lendor. All rights reserved.
 //
 
-import UIKit
+//import UIKit
+import SwiftUI
 
 class PlayVC: UIViewController {
     
@@ -14,7 +15,7 @@ class PlayVC: UIViewController {
     
 //    MARK: Data
     
-    var sequenceObjects: PlaylistPersisted!
+    var sequenceOjc: PlaylistPersisted!
     
     override func loadView() {
         view = playView
@@ -25,9 +26,9 @@ class PlayVC: UIViewController {
         view.backgroundColor = .white
         setUpUI()
         setTargets()
-
         // Do any additional setup after loading the view.
     }
+
     
     @objc func cancel() {
         dismiss(animated: true, completion: nil)
@@ -38,9 +39,8 @@ class PlayVC: UIViewController {
         playView.circleView.alpha = 1
         
         UIView.animate(withDuration: 10, delay: 0, options: [.curveLinear, .autoreverse], animations: {
-            self.playView.circleView.transform = .identity
+//            self.playView.circleView.transform = .identity
             self.playView.circleView.transform = CGAffineTransform(scaleX: 2, y: 2)
-//            self.playView.circleView.
         }, completion: nil)
         
         
@@ -49,9 +49,10 @@ class PlayVC: UIViewController {
 //    MARK: Private Func
 
     private func setUpUI() {
-//        playView.sequenceLabel.text = sequenceObjects.playlistName
+        playView.sequenceLabel.text = sequenceOjc.playlistName
+        print(sequenceOjc.playlistName)
         playView.sequenceLabel.text = "Morning Sunshine"
-        playView.poseNameLabel.text = "PLANK and Something else"
+        
     }
     
     private func setTargets() {

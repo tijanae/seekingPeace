@@ -52,6 +52,7 @@
 		4EA2C0CA25B8DFA300A365E0 /* EditViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA2C0C925B8DFA300A365E0 /* EditViewHeader.swift */; };
 		4EC1CF66254CCE650011DA10 /* SequenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF65254CCE650011DA10 /* SequenceView.swift */; };
 		4EC1CF6A254D0B530011DA10 /* SequenceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1CF69254D0B530011DA10 /* SequenceTVC.swift */; };
+		4EC3938826766B67005EE332 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3938726766B67005EE332 /* UIViewController+Alerts.swift */; };
 		4EC65ED5254C87F4006B2C7A /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */; };
 		4ECBCAE025B7CD7800A0EF70 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECBCADF25B7CD7800A0EF70 /* EditVC.swift */; };
 		4ECBCAE425B7CD9A00A0EF70 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECBCAE325B7CD9A00A0EF70 /* EditView.swift */; };
@@ -69,6 +70,7 @@
 		4EECC074257880B8008AF4AC /* PoseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC073257880B8008AF4AC /* PoseDetailView.swift */; };
 		4EECC07A257886DE008AF4AC /* GlossaryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECC079257886DE008AF4AC /* GlossaryTVC.swift */; };
 		4EF257AD2554E6BD001A425F /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF257AC2554E6BD001A425F /* CreateView.swift */; };
+		4EF484D125C4758900A0FFE8 /* BreatheAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF484D025C4758900A0FFE8 /* BreatheAnimation.swift */; };
 		B79B34A1DF4217554C19DF74 /* Pods_seekingPeace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D82031FCA342A7A0FF55566 /* Pods_seekingPeace.framework */; };
 		E6CF666C3F6CD8B573DFA7C8 /* Pods_seekingPeaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE6A79644C7B929E1F71D70 /* Pods_seekingPeaceTests.framework */; };
 /* End PBXBuildFile section */
@@ -133,6 +135,7 @@
 		4EA2C0C925B8DFA300A365E0 /* EditViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewHeader.swift; sourceTree = "<group>"; };
 		4EC1CF65254CCE650011DA10 /* SequenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceView.swift; sourceTree = "<group>"; };
 		4EC1CF69254D0B530011DA10 /* SequenceTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceTVC.swift; sourceTree = "<group>"; };
+		4EC3938726766B67005EE332 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		4EC65ED4254C87F4006B2C7A /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		4ECBCADF25B7CD7800A0EF70 /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		4ECBCAE325B7CD9A00A0EF70 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
@@ -150,6 +153,7 @@
 		4EECC073257880B8008AF4AC /* PoseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseDetailView.swift; sourceTree = "<group>"; };
 		4EECC079257886DE008AF4AC /* GlossaryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryTVC.swift; sourceTree = "<group>"; };
 		4EF257AC2554E6BD001A425F /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
+		4EF484D025C4758900A0FFE8 /* BreatheAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheAnimation.swift; sourceTree = "<group>"; };
 		7D82031FCA342A7A0FF55566 /* Pods_seekingPeace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seekingPeace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE6A79644C7B929E1F71D70 /* Pods_seekingPeaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seekingPeaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0200D0D69222FDF55ABB802 /* Pods-seekingPeaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seekingPeaceTests.debug.xcconfig"; path = "Target Support Files/Pods-seekingPeaceTests/Pods-seekingPeaceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -365,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				4E5403292569ABC70049A472 /* StringsValidations.swift */,
+				4EC3938726766B67005EE332 /* UIViewController+Alerts.swift */,
 				4E005B102572E801000CEF55 /* CrayonBox.swift */,
 				4EECC0202577F732008AF4AC /* SpTextField.swift */,
 				4EDAD00C259435AE00574CB7 /* PlaylistCellDelegate.swift */,
@@ -387,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				4E83295825BB892D00476082 /* PlayVC.swift */,
+				4EF484D025C4758900A0FFE8 /* BreatheAnimation.swift */,
 				4E83295C25BB89A100476082 /* PlayView.swift */,
 			);
 			path = PlaySequence;
@@ -627,6 +633,7 @@
 				4EC1CF66254CCE650011DA10 /* SequenceView.swift in Sources */,
 				4E43C19325A37A28000AE049 /* SettingsView.swift in Sources */,
 				4E2611F3259462E2004D32BD /* NoSequencesView.swift in Sources */,
+				4EC3938826766B67005EE332 /* UIViewController+Alerts.swift in Sources */,
 				4EECC0212577F732008AF4AC /* SpTextField.swift in Sources */,
 				4ECF70F8257DA86200F92BA2 /* EditSequenceVC.swift in Sources */,
 				4E5402D42568AFAD0049A472 /* FirestoreService.swift in Sources */,
@@ -634,6 +641,7 @@
 				4E7D4374257D3F8A006FEB92 /* YogiModel.swift in Sources */,
 				4E540301256967580049A472 /* SignUpView.swift in Sources */,
 				4E5402FB256967440049A472 /* LoginView.swift in Sources */,
+				4EF484D125C4758900A0FFE8 /* BreatheAnimation.swift in Sources */,
 				4E5402D82568B0940049A472 /* UserModel.swift in Sources */,
 				4E29CBA523CE7B61009BFEC4 /* yogaModel.swift in Sources */,
 				4E915319258AF73100AAFBEE /* PlaylistPersisted.swift in Sources */,

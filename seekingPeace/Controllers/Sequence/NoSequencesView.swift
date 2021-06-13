@@ -13,6 +13,8 @@ class NoSequencesView: UIView {
     lazy var sequenceRequestTitle: UILabel = {
         let label = UILabel()
         label.text = "Please Create Playlist"
+        label.font = UIFont(name: "Thonburi-Bold", size: 30)
+        label.adjustsFontSizeToFitWidth = true
         return label
     
     }()
@@ -25,10 +27,12 @@ class NoSequencesView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .blue
+        //backgroundColor = .white
         titleConstraint()
         createPlaylistConstraint()
     }
+    
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

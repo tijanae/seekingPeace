@@ -51,6 +51,7 @@ class EditVC: UIViewController {
     
     @objc func playSequence() {
         let sequence = PlayVC()
+        sequence.sequenceOjc = sequenceObjects
         sequence.modalPresentationStyle = .fullScreen
         present(sequence, animated: true, completion: nil)
     }
@@ -60,9 +61,8 @@ class EditVC: UIViewController {
 extension EditVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(sequenceObjects!)
+        //print(sequenceObjects!)
         return sequenceObjects.sequenceItem.count
-//        return randomData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

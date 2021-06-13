@@ -12,7 +12,7 @@ class SpTextField: UITextField {
     
     override init(frame: CGRect){
         super.init(frame: frame)
-        configure()
+    
     }
     
     required init?(coder: NSCoder) {
@@ -21,9 +21,8 @@ class SpTextField: UITextField {
     
     convenience init(placeholder: String) {
         self.init(frame: .zero)
-//        self.placeholder = placeholder
-        self.text = placeholder
-        configure()
+
+        configure(placeholder: placeholder)
     }
     
     var textPadding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
@@ -43,10 +42,10 @@ class SpTextField: UITextField {
             return rect.inset(by: textPadding)
         }
     
-    private func configure() {
+    private func configure(placeholder: String) {
         backgroundColor = CrayonBox.Green.mid
-//        backgroundColor = CrayonBox.White.opaque
         borderStyle = .line
+        attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         textColor = CrayonBox.White.opaque
         layer.borderWidth = 2
         layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)

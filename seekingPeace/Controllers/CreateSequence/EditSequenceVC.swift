@@ -85,6 +85,20 @@ class EditSequenceVC: UIViewController {
         return sequenceImageAsData
     }
     
+    private func displayInvalidProjectAlert() {
+        displayAlert(title: "Invalid Post", message: "Please complete playlist name field")
+    }
+    
+    private func displayDuplicateProjectAlert() {
+        displayAlert(title: "Invalid Post", message: "Please enter a unique playlisst name")
+    }
+    
+    private func displayAlert(title: String, message: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+    }
+    
 //    MARK: ObjC funcs
     
     @objc func cancel() {
@@ -97,16 +111,15 @@ class EditSequenceVC: UIViewController {
     
     @objc func tryCreatePlaylist() {
         guard sequenceHeaderView.playlistName.text != "" else {
-            print("Error: No PlaylistName")
+            displayInvalidProjectAlert()
             return
         }
         
         guard !savedPlaylistNames.contains(sequenceHeaderView.playlistName.text!) else {
-            print("need a different name")
+            displayDuplicateProjectAlert()
             return
         }
  
-        
         guard let playlistName = sequenceHeaderView.playlistName.text else{
             return
         }
@@ -136,7 +149,7 @@ class EditSequenceVC: UIViewController {
 
 extension EditSequenceVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print(poses)
+        print(poses.count)
         return poses.count
     }
     
@@ -145,7 +158,7 @@ extension EditSequenceVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "playlistTable", for: indexPath) as? EditSequenceTVC else {return UITableViewCell()}
     
         cell.engTitle.text = data.english_name
-//        cell.sanscritTitle = data.sanskrit_name
+        cell.sanscritTitle.text = data.sanskrit_name
         let cellImage = UIImage(named: "\(data.english_name)") ??  UIImage(named: "lotus")
         cell.poseImage.image = cellImage
 

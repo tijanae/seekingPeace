@@ -32,8 +32,8 @@ class PoseSettingsVC: UIViewController {
     
     private func loadData() {
         poseSettingObject.engTitle.text = poseData.english_name
-        print(poseData )
-        poseSettingObject.poseImage.image = UIImage(named: "plant")
+        poseSettingObject.sanTitle.text = poseData.sanskrit_name
+        poseSettingObject.poseImage.image = UIImage(named: "\(poseData.english_name)")
         
     }
     

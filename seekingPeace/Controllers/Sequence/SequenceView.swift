@@ -14,13 +14,14 @@ class SequenceView: UIView {
     
     lazy var backdrop: UIImageView = {
        let img = UIImageView()
-        img.image = UIImage(named: "leaf")
+        img.image = UIImage(named: "forest")
         return img
     }()
     
     lazy var playlistLabel: UILabel = {
        let label = UILabel()
         label.text = "Sequences"
+        label.font = UIFont(name: "Thonburi-Bold", size: 30)
         label.textColor = .white
         return label
     }()
@@ -41,8 +42,8 @@ class SequenceView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backdropConstraint()
-        titleConstraint()
+        //backdropConstraint()
+        //titleConstraint()
         poseTableViewConstraint()
         createPlaylistConstraint()
         
