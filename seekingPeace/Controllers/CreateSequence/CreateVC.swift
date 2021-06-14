@@ -115,10 +115,10 @@ extension CreateVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
         guard let flowCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CreateFlowCVC", for: indexPath) as? CreateCVC else {return UICollectionViewCell()}
         let data = flowData[indexPath.row]
 
-        flowCell.engTitle.text = data.english_name
-        flowCell.sanskritTitle.text = data.sanskrit_name
+        flowCell.engTitle.text = data.english
+        flowCell.sanskritTitle.text = data.sanskrit
 
-        let cellImage = UIImage(named: "\(data.english_name)") ??  UIImage(named: "lotus")
+        let cellImage = UIImage(named: "\(data.english)") ??  UIImage(named: "lotus")
         flowCell.flowImage.image = cellImage
 
         return flowCell

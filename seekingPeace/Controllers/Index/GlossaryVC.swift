@@ -58,9 +58,9 @@ extension GlossaryVC: UITableViewDelegate, UITableViewDataSource {
         let data = poseIndex[indexPath.row]
 
         guard let poseCell = tableView.dequeueReusableCell(withIdentifier: "poseData", for: indexPath) as? GlossaryTVC else {return UITableViewCell()}
-        poseCell.engTitle.text = data.english_name
-        poseCell.sanscritTitle.text = data.sanskrit_name
-        let cellImage = UIImage(named: "\(data.english_name)") ??  UIImage(named: "lotus")
+        poseCell.engTitle.text = data.english
+        poseCell.sanscritTitle.text = data.sanskrit
+        let cellImage = UIImage(named: "\(data.english)") ??  UIImage(named: "lotus")
         poseCell.poseImage.image = cellImage
 
         return poseCell

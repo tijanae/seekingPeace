@@ -99,22 +99,23 @@ class FirestoreService {
             }
         }
 
-        db.collection(FireStoreCollections.yogiData.rawValue).document().collection(FireStoreCollections.playlists.rawValue).addDocument(data: fields) { (error) in
+        db.collection(FireStoreCollections.yogiData.rawValue).document().collection(FireStoreCollections.playlists.rawValue).addDocument(data: fields)
+        { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {
                 completion(.success(()))
             }
         }
-        db.collection(FireStoreCollections.playlists.rawValue).document().collection(FireStoreCollections.sequenceItems.rawValue).document().collection(FireStoreCollections.sequenceItems.rawValue).addDocument(data: poseData) {
-            (error) in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                completion(.success(()))
-            }
-
-        }
+        //  db.collection(FireStoreCollections.playlists.rawValue).document().collection(FireStoreCollections.sequenceItems.rawValue).document().collection(FireStoreCollections.sequenceItems.rawValue).addDocument(data: poseData)
+                //        {(error) in
+                //            if let error = error {
+                //                completion(.failure(error))
+                //            } else {
+                //                completion(.success(()))
+                //            }
+                //
+                //        }
 
     }
 

@@ -35,7 +35,7 @@ class PoseDetailVC: UIViewController {
 
     private func loadData() {
 //        poseObjects.engTitle.text = poseIndex.english_name
-        poseObjects.engTitle.text = poseIndex.english_name
+        poseObjects.engTitle.text = poseIndex.english
         poseObjects.poseImage.image = UIImage(named: "lotus")
     }
 

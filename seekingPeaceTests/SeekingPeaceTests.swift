@@ -1,6 +1,6 @@
 //
-//  seekingPeaceTests.swift
-//  seekingPeaceTests
+//  SeekingPeaceTests.swift
+//  SeekingPeaceTests
 //
 //  Created by Tia Lendor on 1/14/20.
 //  Copyright © 2020 Tia Lendor. All rights reserved.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import seekingPeace
 
-class seekingPeaceTests: XCTestCase {
+class SeekingPeaceTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

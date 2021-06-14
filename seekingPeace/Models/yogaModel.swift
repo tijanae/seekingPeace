@@ -14,10 +14,17 @@ enum YogaJSON: Error {
 
 struct YogaPose: Codable {
 
-    let id: Int
-    let sanskrit_name: String
-    let english_name: String
+    let yogaId: Int
+    let sanskrit: String
+    let english: String
 //    let img_url: String
+    
+    enum CodingKeys: String, CodingKey {
+        case yogaId = "id"
+        case sanskrit = "sanskrit_name"
+        case english = "english_name"
+        
+    }
 
     static func getYogaPoses(from data: Data)  throws -> [YogaPose] {
     do {

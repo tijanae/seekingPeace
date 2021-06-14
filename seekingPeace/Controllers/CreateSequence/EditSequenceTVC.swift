@@ -28,6 +28,7 @@ class EditSequenceTVC: UITableViewCell {
     lazy var sanscritTitle: UILabel = {
         let sanscritLabel = UILabel()
         sanscritLabel.text = "Yoga Pose: Sanscrit Name"
+        sanscritLabel.adjustsFontSizeToFitWidth = true
         return sanscritLabel
     }()
 

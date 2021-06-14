@@ -152,9 +152,9 @@ extension EditSequenceVC: UITableViewDelegate, UITableViewDataSource {
         let data = poses[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "playlistTable", for: indexPath) as? EditSequenceTVC else {return UITableViewCell()}
 
-        cell.engTitle.text = data.english_name
-        cell.sanscritTitle.text = data.sanskrit_name
-        let cellImage = UIImage(named: "\(data.english_name)") ??  UIImage(named: "lotus")
+        cell.engTitle.text = data.english
+        cell.sanscritTitle.text = data.sanskrit
+        let cellImage = UIImage(named: "\(data.english)") ??  UIImage(named: "lotus")
         cell.poseImage.image = cellImage
 
         return cell

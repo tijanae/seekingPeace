@@ -12,7 +12,7 @@ class SequenceVC: UIViewController {
 // MARK: Views
     private let sequenceView = SequenceView()
     private let noSequenceView = NoSequencesView()
-    private let breatheAnimation = BreatheAnimation()
+//    private let breatheAnimation = BreatheAnimation()
 
     var createButton: UIBarButtonItem!
 

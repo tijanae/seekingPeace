@@ -46,8 +46,8 @@ class EditSequenceHeaderView: UIView {
 
     lazy var sequenceImage: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "camera"), for: .normal)
-        button.tintColor = .black
+//        button.setImage(UIImage(named: "camera"), for: .normal)
+//        button.tintColor = .white
         return button
     }()
 
@@ -78,7 +78,8 @@ class EditSequenceHeaderView: UIView {
             [savePlaylistButton.topAnchor.constraint(equalTo: topAnchor),
              savePlaylistButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 50),
              savePlaylistButton.leadingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
-             savePlaylistButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)].forEach {$0.isActive = true}
+             savePlaylistButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            ].forEach {$0.isActive = true}
         }
 
         private func cancelbuttonConstraint() {
@@ -90,7 +91,8 @@ class EditSequenceHeaderView: UIView {
             [cancelPlaylistButton.topAnchor.constraint(equalTo: topAnchor),
              cancelPlaylistButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 50),
              cancelPlaylistButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-             cancelPlaylistButton.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 40)].forEach {$0.isActive = true}
+             cancelPlaylistButton.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 40)
+            ].forEach {$0.isActive = true}
         }
 
         private func playlistImageConstraint() {
@@ -102,7 +104,8 @@ class EditSequenceHeaderView: UIView {
             [playlistImage.topAnchor.constraint(equalTo: topAnchor, constant: 50),
              playlistImage.bottomAnchor.constraint(equalTo: topAnchor, constant: 250),
              playlistImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-             playlistImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30)].forEach {$0.isActive = true}
+             playlistImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30)
+            ].forEach {$0.isActive = true}
 
         }
 
@@ -112,10 +115,11 @@ class EditSequenceHeaderView: UIView {
 
             sequenceImage.translatesAutoresizingMaskIntoConstraints = false
 
-            [sequenceImage.topAnchor.constraint(equalTo: playlistImage.topAnchor, constant: 10),
-             sequenceImage.bottomAnchor.constraint(equalTo: playlistImage.bottomAnchor, constant: 10),
-             sequenceImage.leadingAnchor.constraint(equalTo: playlistImage.leadingAnchor, constant: 5),
-             sequenceImage.trailingAnchor.constraint(equalTo: playlistImage.trailingAnchor, constant: -5)].forEach {$0.isActive = true}
+            [sequenceImage.topAnchor.constraint(equalTo: playlistImage.topAnchor),
+             sequenceImage.bottomAnchor.constraint(equalTo: playlistImage.bottomAnchor),
+             sequenceImage.leadingAnchor.constraint(equalTo: playlistImage.leadingAnchor),
+             sequenceImage.trailingAnchor.constraint(equalTo: playlistImage.trailingAnchor)
+            ].forEach {$0.isActive = true}
 
         }
 
@@ -127,7 +131,8 @@ class EditSequenceHeaderView: UIView {
             [playlistName.topAnchor.constraint(equalTo: topAnchor, constant: 260),
              playlistName.bottomAnchor.constraint(equalTo: topAnchor, constant: 285),
              playlistName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 75),
-             playlistName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -75)].forEach {$0.isActive = true}
+             playlistName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -75)
+            ].forEach {$0.isActive = true}
 
         }
 

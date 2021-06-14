@@ -19,7 +19,7 @@
 		4E29CB7123CE7358009BFEC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CB7023CE7358009BFEC4 /* AppDelegate.swift */; };
 		4E29CB7323CE7358009BFEC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CB7223CE7358009BFEC4 /* SceneDelegate.swift */; };
 		4E29CB7A23CE735A009BFEC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E29CB7923CE735A009BFEC4 /* Assets.xcassets */; };
-		4E29CB8823CE735B009BFEC4 /* seekingPeaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CB8723CE735B009BFEC4 /* seekingPeaceTests.swift */; };
+		4E29CB8823CE735B009BFEC4 /* SeekingPeaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CB8723CE735B009BFEC4 /* SeekingPeaceTests.swift */; };
 		4E29CB9D23CE79A0009BFEC4 /* Yoga.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E29CB9C23CE79A0009BFEC4 /* Yoga.json */; };
 		4E29CBA123CE7AD4009BFEC4 /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA023CE7AD4009BFEC4 /* CreateVC.swift */; };
 		4E29CBA323CE7AE6009BFEC4 /* SequenceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29CBA223CE7AE6009BFEC4 /* SequenceVC.swift */; };
@@ -101,7 +101,7 @@
 		4E29CB7923CE735A009BFEC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E29CB7E23CE735A009BFEC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E29CB8323CE735B009BFEC4 /* seekingPeaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seekingPeaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E29CB8723CE735B009BFEC4 /* seekingPeaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seekingPeaceTests.swift; sourceTree = "<group>"; };
+		4E29CB8723CE735B009BFEC4 /* SeekingPeaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekingPeaceTests.swift; sourceTree = "<group>"; };
 		4E29CB8923CE735B009BFEC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E29CB9C23CE79A0009BFEC4 /* Yoga.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Yoga.json; sourceTree = "<group>"; };
 		4E29CBA023CE7AD4009BFEC4 /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
@@ -263,7 +263,7 @@
 		4E29CB8623CE735B009BFEC4 /* seekingPeaceTests */ = {
 			isa = PBXGroup;
 			children = (
-				4E29CB8723CE735B009BFEC4 /* seekingPeaceTests.swift */,
+				4E29CB8723CE735B009BFEC4 /* SeekingPeaceTests.swift */,
 				4E29CB8923CE735B009BFEC4 /* Info.plist */,
 			);
 			path = seekingPeaceTests;
@@ -676,7 +676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E29CB8823CE735B009BFEC4 /* seekingPeaceTests.swift in Sources */,
+				4E29CB8823CE735B009BFEC4 /* SeekingPeaceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

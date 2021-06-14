@@ -69,8 +69,8 @@ extension EditVC: UITableViewDelegate, UITableViewDataSource {
 
         let data = sequenceObjects.sequenceItem[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "editSequence", for: indexPath) as? EditTVC else {fatalError("Couldnt dequeue EditTVC")}
-        cell.poseLabel.text = data.yogaPose.english_name
-        let cellImage = UIImage(named: "\(data.yogaPose.english_name)") ??  UIImage(named: "lotus")
+        cell.poseLabel.text = data.yogaPose.english
+        let cellImage = UIImage(named: "\(data.yogaPose.english)") ??  UIImage(named: "lotus")
         cell.poseImage.image = cellImage
 
         return cell
